@@ -61,9 +61,17 @@ void InitWingData()
                             "World Eater",
                             "Triggers after each spirit phase if the group fails to destroy all spirits and allow one to reach Gorseval. Will also occour at the end of the fight after the last CC phase.",
                             "Gorseval channels a massive explosion with a distinct animation and audio cue.",
-                            "Glide or run to the safe platform before the explosion goes off.",
+                            "Damage the final CC bar slowly, Defeat Gorseval before the end of the cast or perish.",
                             "Instant raid wipe if players do not destroy the boss before the cast is complete.",
                             "Breaking the final CC bar too early whilst also having inadequate DPS. Either one or the other will save the group, but a lack of self control and a lack of ability combined lead to certain demise."
+                        },
+                        {
+                            "Eggs / Circles",
+                            "Starting at 33% of his health bar remaining.",
+                            "Circles spawn under players feet.",
+                            "Move off of the circle.",
+                            "Get trapped in a prison bubble until broken out, leading to a reduction of damage being delt at a vital time to deal damage.",
+                            "Not moving out of the mechanic."
                         },
                     },
                     {

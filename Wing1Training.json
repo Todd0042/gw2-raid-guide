@@ -52,9 +52,17 @@
           "name": "World Eater",
           "when": "Triggers after each spirit phase if the group fails to destroy all spirits and allow one to reach Gorseval. Will also occour at the end of the fight after the last CC phase.",
           "watch_for": "Gorseval channels a massive explosion with a distinct animation and audio cue.",
-          "what_to_do": "Glide or run to the safe platform before the explosion goes off.",
+          "what_to_do": "Damage the final CC bar slowly, Defeat Gorseval before the end of the cast or perish.",
           "failure": "Instant raid wipe if players do not destroy the boss before the cast is complete.",
           "common_mistakes": "Breaking the final CC bar too early whilst also having inadequate DPS. Either one or the other will save the group, but a lack of self control and a lack of ability combined lead to certain demise."
+        },
+        {
+          "name": "Eggs / Circles",
+          "when": "Starting at 33% of his health bar remaining.",
+          "watch_for": "Circles spawn under players feet.",
+          "what_to_do": "Move off of the circle.",
+          "failure": "Get trapped in a prison bubble until broken out, leading to a reduction of damage being delt at a vital time to deal damage.",
+          "common_mistakes": "Not moving out of the mechanic."
         }
       ],
       "minor_mechanics": [
