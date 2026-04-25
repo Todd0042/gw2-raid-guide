@@ -1,0 +1,12 @@
+Yes — Wing 8 gets a tab automatically. The tab bar iterates g_Wings, which is populated by InitWingData() from WingData.cpp. Since gen_wingdata.py now includes Wing 8 (Mount Balrior with Decima, Greer, Ura), it will appear as a "Mount Balrior" tab alongside Wings 1–7 with no code changes needed in RaidGuide.cpp.
+
+When you expand any of the three bosses, the "Coming Soon..." mechanic nodes will now show ... for every empty field instead of showing nothing. When you fill in the JSON later and re-run python3 gen_wingdata.py + ./build.sh, the real text will appear automatically.
+
+perfect. thank you.
+You're welcome! Here's a quick reminder of your workflow when you're ready to add Wing 8 mechanics:
+
+Edit Wing8Training.json with the real mechanic data
+Run python3 gen_wingdata.py to regenerate src/data/WingData.cpp
+Run ./build.sh to compile the new DLL
+Copy build/RaidGuide.dll to your GW2 addons folder
+Same process works for any wing if you add or change mechanics.

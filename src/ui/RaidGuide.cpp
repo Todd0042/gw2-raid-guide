@@ -7,7 +7,7 @@ namespace RaidGuide
 {
 
 // ── State ──────────────────────────────────────────────────────────────────────
-static bool s_Visible    = true;
+static bool s_Visible    = false;
 static bool s_ImguiReady = false;
 
 // ── Color palette ──────────────────────────────────────────────────────────────
