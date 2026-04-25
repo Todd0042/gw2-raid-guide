@@ -1,0 +1,91 @@
+{
+  "Wing 6 – Mythwright Gambit": {
+    "Conjured Amalgamate": {
+      "major_mechanics": [
+        {
+          "name": "Arm Breaks",
+          "when": "Occurs during each damage phase when the boss exposes its arms.",
+          "watch_for": "The Amalgamate raises its arms and glowing weak points appear on each one.",
+          "what_to_do": "Split into left and right groups, break both arms quickly to expose the core.",
+          "failure": "If arms are not broken in time, the phase ends early and the fight drags on.",
+          "common_mistakes": "Groups unevenly split; players attacking the wrong arm; ignoring add pressure."
+        },
+        {
+          "name": "Conjured Shields",
+          "when": "Spawn during the arm phases and before core exposure.",
+          "watch_for": "Floating shields appear around the arena with glowing protective barriers.",
+          "what_to_do": "Break the shields quickly to prevent them from blocking damage to arms or the core.",
+          "failure": "Shields block critical damage windows, causing phase failures.",
+          "common_mistakes": "Players tunneling the boss; ignoring shield spawns; poor target prioritization."
+        },
+        {
+          "name": "Orb Delivery",
+          "when": "Occurs during each core phase after both arms are broken.",
+          "watch_for": "Orbs dropping from the sky and glowing collection points on the platform.",
+          "what_to_do": "Pick up orbs and deliver them to the designated spots to weaken the boss.",
+          "failure": "Insufficient orb deliveries result in a shortened or failed burn phase.",
+          "common_mistakes": "Players dropping orbs; multiple players grabbing the same orb; inefficient routing."
+        }
+      ],
+      "minor_mechanics": []
+    },
+    "Twin Largos (Nikare & Kenut)": {
+      "major_mechanics": [
+        {
+          "name": "Bubble Pulls",
+          "when": "Occurs throughout the fight, especially during high-pressure phases.",
+          "watch_for": "Large water bubbles forming around players and pulling them inward.",
+          "what_to_do": "Dodge or move out of the bubble radius before being pulled in.",
+          "failure": "Being pulled into a bubble can immobilize players and lead to lethal follow-up damage.",
+          "common_mistakes": "Players dodging too late; stacking too tightly; ignoring bubble spawn points."
+        },
+        {
+          "name": "Platform Drops",
+          "when": "Happens during the final phase as the arena begins to collapse.",
+          "watch_for": "Platforms glowing red and shaking before falling away.",
+          "what_to_do": "Move quickly to safe platforms while maintaining DPS on the active boss.",
+          "failure": "Falling results in instant death and reduces group DPS significantly.",
+          "common_mistakes": "Players waiting too long; misjudging jump distances; splitting from the group."
+        },
+        {
+          "name": "Tidal Waves",
+          "when": "Triggered by Kenut at regular intervals.",
+          "watch_for": "A massive wave forming behind Kenut and sweeping across the arena.",
+          "what_to_do": "Dodge through the wave or move to a safe zone to avoid heavy damage.",
+          "failure": "Being hit by the wave deals massive damage and can knock players off platforms.",
+          "common_mistakes": "Players dodging too early; standing behind Kenut; ignoring wave direction."
+        }
+      ],
+      "minor_mechanics": []
+    },
+    "Qadim": {
+      "major_mechanics": [
+        {
+          "name": "Elemental Essences",
+          "when": "Occurs during each pylon phase as players defeat elemental creatures.",
+          "watch_for": "Essences dropping from defeated elementals and glowing with their respective colors.",
+          "what_to_do": "Collect essences and deliver them to pylons to empower them and progress the fight.",
+          "failure": "Insufficient essence delivery prolongs the phase and increases arena pressure.",
+          "common_mistakes": "Players forgetting to pick up essences; delivering to the wrong pylon; poor routing."
+        },
+        {
+          "name": "Pylon Control",
+          "when": "Active throughout the encounter during each pylon phase.",
+          "watch_for": "Pylons activating with beams connecting them to Qadim.",
+          "what_to_do": "Assign players to each pylon to maintain control and prevent Qadim from gaining strength.",
+          "failure": "Losing control of pylons causes Qadim to gain stacks and deal more damage.",
+          "common_mistakes": "Players leaving pylons unattended; insufficient CC on pylon adds; poor communication."
+        },
+        {
+          "name": "Wyvern and Hydra Adds",
+          "when": "Spawn during each pylon phase and during transitions.",
+          "watch_for": "Large wyverns and hydras entering the arena with distinct animations.",
+          "what_to_do": "Kill these adds quickly to reduce arena pressure and prevent lethal attacks.",
+          "failure": "Unmanaged adds overwhelm the group with AoEs and heavy damage.",
+          "common_mistakes": "Players tunneling Qadim; ignoring add mechanics; poor positioning."
+        }
+      ],
+      "minor_mechanics": []
+    }
+  }
+}

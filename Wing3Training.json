@@ -1,0 +1,93 @@
+{
+  "Wing 3 – Stronghold of the Faithful": {
+    "Escort (McLeod, Glenna, Towers)": {
+      "major_mechanics": [
+        {
+          "name": "Bridge Defense",
+          "when": "Occurs throughout the event as Glenna moves across the bridge.",
+          "watch_for": "Warg spawns, snipers on ledges, and Glenna calling for help.",
+          "what_to_do": "Stay near Glenna, kill incoming enemies quickly, and prevent her from being overwhelmed.",
+          "failure": "If Glenna is downed or killed, the event fails.",
+          "common_mistakes": "Players running too far ahead; ignoring snipers; leaving Glenna unprotected."
+        },
+        {
+          "name": "Tower Captures",
+          "when": "Triggered when players reach each tower along the path.",
+          "watch_for": "A champion enemy guarding the tower and Glenna stopping at the base.",
+          "what_to_do": "Split into assigned groups, kill the champion, and capture the tower to progress.",
+          "failure": "If towers are not captured, Glenna cannot proceed and the event stalls.",
+          "common_mistakes": "Groups not splitting correctly; failing to CC champions; leaving towers uncleared."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Warg Ambushes",
+          "summary": "Wargs periodically attack Glenna and must be killed quickly."
+        }
+      ]
+    },
+    "Keep Construct": {
+      "major_mechanics": [
+        {
+          "name": "Core Push",
+          "when": "Occurs during each burn phase transition when the core becomes active.",
+          "watch_for": "A glowing orb (the core) appears and begins moving slowly.",
+          "what_to_do": "Push the core into Keep Construct by attacking it while avoiding stray hits that knock it off course.",
+          "failure": "If the core is not pushed in time, the phase resets and the fight is prolonged.",
+          "common_mistakes": "Players hitting the core from the wrong angle; pushing too early; failing to stack for control."
+        },
+        {
+          "name": "Orb Collection",
+          "when": "Happens during the split phases when Keep Construct becomes invulnerable.",
+          "watch_for": "Small orbs spawning around the arena with glowing trails.",
+          "what_to_do": "Collect orbs and deliver them to the center to charge the core.",
+          "failure": "Insufficient orbs collected results in a weak burn phase or phase failure.",
+          "common_mistakes": "Players collecting orbs inefficiently; missing orbs; not coordinating routes."
+        },
+        {
+          "name": "Phantasmal Blades",
+          "when": "Occurs regularly throughout the fight, especially during burn phases.",
+          "watch_for": "Blades materializing around the arena and sweeping in straight lines.",
+          "what_to_do": "Dodge or sidestep the blades while maintaining DPS.",
+          "failure": "Being hit by multiple blades can down or kill players.",
+          "common_mistakes": "Players tunneling on DPS; standing in predictable blade paths."
+        }
+      ],
+      "minor_mechanics": []
+    },
+    "Xera": {
+      "major_mechanics": [
+        {
+          "name": "Button Phases",
+          "when": "Triggered at the start of each platform phase and during transitions.",
+          "watch_for": "Buttons glowing on platforms and Xera becoming invulnerable.",
+          "what_to_do": "Assign players to stand on buttons simultaneously to progress the encounter.",
+          "failure": "If buttons are not activated in time, the phase stalls and adds overwhelm the group.",
+          "common_mistakes": "Players standing on the wrong button; stepping off too early; poor coordination."
+        },
+        {
+          "name": "Platform Breaks",
+          "when": "Occurs during the final phase and periodically during transitions.",
+          "watch_for": "Platforms glowing red and beginning to crumble.",
+          "what_to_do": "Move quickly to intact platforms before the current one collapses.",
+          "failure": "Falling results in instant death and can cause a wipe if too many players fall.",
+          "common_mistakes": "Players waiting too long; misjudging jump distances; not following the group."
+        },
+        {
+          "name": "Mirror Images",
+          "when": "Spawn during each split phase and periodically during the fight.",
+          "watch_for": "Illusions of Xera appearing around the arena.",
+          "what_to_do": "Kill mirror images quickly to reduce pressure and prevent arena clutter.",
+          "failure": "Too many illusions overwhelm the group with damage and mechanics.",
+          "common_mistakes": "Players ignoring illusions; splitting damage inefficiently."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Bloodstone Shards",
+          "summary": "Shards fall from above and must be avoided."
+        }
+      ]
+    }
+  }
+}

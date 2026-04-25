@@ -1,0 +1,58 @@
+{
+  "Wing 8 – Mount Balrior": {
+    "Decima": {
+      "major_mechanics": [
+        {
+          "name": "Coming Soon...",
+          "when": "",
+          "watch_for": "",
+          "what_to_do": "",
+          "failure": "",
+          "common_mistakes": ""
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Coming Soon...",
+          "summary": ""
+        }
+      ]
+    },
+    "Greer": {
+      "major_mechanics": [
+        {
+          "name": "Coming Soon...",
+          "when": "",
+          "watch_for": "",
+          "what_to_do": "",
+          "failure": "",
+          "common_mistakes": ""
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Coming Soon...",
+          "summary": ""
+        }
+      ]
+    },
+    "Ura": {
+      "major_mechanics": [
+        {
+          "name": "Coming Soon...",
+          "when": "",
+          "watch_for": "",
+          "what_to_do": "",
+          "failure": "",
+          "common_mistakes": ""
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Coming Soon...",
+          "summary": ""
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "Wing 7 – The Key of Ahdashim": {
+    "Cardinal Adina": {
+      "major_mechanics": [
+        {
+          "name": "Pillar Breaks",
+          "when": "Occurs during each damage cycle when Adina becomes invulnerable.",
+          "watch_for": "Adina retreats to the center and protective pillars rise around the arena.",
+          "what_to_do": "Break the correct pillars in the assigned order to expose Adina again.",
+          "failure": "Breaking the wrong pillar or failing to break pillars in time causes arena-wide damage and resets the phase.",
+          "common_mistakes": "Players attacking the wrong pillar; poor split assignments; ignoring add pressure during breaks."
+        },
+        {
+          "name": "Sand Walls",
+          "when": "Triggered during each major attack cycle and during transitions.",
+          "watch_for": "Large walls of sand rising from the ground and sweeping across the arena.",
+          "what_to_do": "Move to safe zones or rotate around the arena to avoid being trapped or damaged.",
+          "failure": "Being hit by sand walls deals heavy damage and can trap players in lethal zones.",
+          "common_mistakes": "Players rotating too slowly; running into walls; splitting from the group."
+        },
+        {
+          "name": "Hand Crush",
+          "when": "Occurs periodically throughout the fight.",
+          "watch_for": "Giant stone hands emerging from the ground beneath players.",
+          "what_to_do": "Move out of the telegraphed zones immediately to avoid being grabbed.",
+          "failure": "Being hit results in massive damage and immobilization.",
+          "common_mistakes": "Players standing still too long; dodging into another hand zone."
+        }
+      ],
+      "minor_mechanics": []
+    },
+    "Cardinal Sabir": {
+      "major_mechanics": [
+        {
+          "name": "Electric Storm",
+          "when": "Occurs at fixed intervals throughout the fight.",
+          "watch_for": "Sabir channels energy and a large storm aura forms around him.",
+          "what_to_do": "Stack tightly inside the safe zone and use defensive cooldowns to survive the blast.",
+          "failure": "Being outside the stack zone results in instant death.",
+          "common_mistakes": "Players standing too far away; dodging out of the stack; late stacking."
+        },
+        {
+          "name": "Tornado Pushes",
+          "when": "Active throughout the fight, especially during storm phases.",
+          "watch_for": "Tornadoes forming around the arena and drifting toward players.",
+          "what_to_do": "Avoid tornado paths and reposition quickly if pushed.",
+          "failure": "Being pushed into storms or off the platform results in death.",
+          "common_mistakes": "Players standing near tornado spawn points; ignoring tornado movement patterns."
+        },
+        {
+          "name": "Jade Explosions",
+          "when": "Triggered during add phases and storm transitions.",
+          "watch_for": "Jade orbs glowing brightly before detonating.",
+          "what_to_do": "Move away from or destroy jade orbs before they explode.",
+          "failure": "Explosions deal heavy AoE damage and can chain into lethal hits.",
+          "common_mistakes": "Players ignoring orb timers; stacking too close to multiple orbs."
+        }
+      ],
+      "minor_mechanics": []
+    },
+    "Qadim the Peerless": {
+      "major_mechanics": [
+        {
+          "name": "Pylon Attunement",
+          "when": "Occurs during each pylon phase as players attune to beams.",
+          "watch_for": "Beams connecting pylons to Qadim and attunement icons appearing on players.",
+          "what_to_do": "Stand in the correct beam to maintain attunement and control pylon energy flow.",
+          "failure": "Losing attunement causes beams to destabilize and increases arena pressure.",
+          "common_mistakes": "Players standing in the wrong beam; leaving beams unattended; poor rotation timing."
+        },
+        {
+          "name": "Anomalies",
+          "when": "Spawn during each pylon phase and during transitions.",
+          "watch_for": "Small glowing anomalies drifting toward pylons or Qadim.",
+          "what_to_do": "Kill anomalies quickly before they reach their targets.",
+          "failure": "Anomalies empower Qadim or destabilize pylons, causing massive damage.",
+          "common_mistakes": "Players tunneling the boss; ignoring anomaly spawns; poor add focus."
+        },
+        {
+          "name": "Unstable Magic",
+          "when": "Occurs throughout the fight, especially during burn phases.",
+          "watch_for": "Magic eruptions forming on the ground with bright telegraphs.",
+          "what_to_do": "Move out of marked zones immediately to avoid heavy damage.",
+          "failure": "Standing in eruptions deals lethal damage and can chain into group wipes.",
+          "common_mistakes": "Players stacking too tightly; dodging into other eruptions; ignoring telegraphs."
+        },
+        {
+          "name": "Tail Swipes",
+          "when": "Triggered when players stand behind Qadim for too long.",
+          "watch_for": "Qadim shifting his weight and sweeping his tail behind him.",
+          "what_to_do": "Avoid standing directly behind Qadim; reposition to his sides.",
+          "failure": "Tail swipes deal heavy damage and knock players away.",
+          "common_mistakes": "Players tunneling DPS behind the boss; ignoring tail animations."
+        }
+      ],
+      "minor_mechanics": []
+    }
+  }
+}

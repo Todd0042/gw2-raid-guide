@@ -1,0 +1,132 @@
+{
+  "Wing 5 – Hall of Chains": {
+    "Soulless Horror (Desmina)": {
+      "major_mechanics": [
+        {
+          "name": "Death Bloom",
+          "when": "Occurs at regular intervals throughout the fight.",
+          "watch_for": "A large expanding red AoE around the boss with a pulsing animation.",
+          "what_to_do": "Move out of the expanding circle immediately while maintaining awareness of scythe patterns.",
+          "failure": "Standing in the AoE deals heavy ticking damage and can quickly down players.",
+          "common_mistakes": "Players dodging into scythes; reacting too slowly; stacking too close to the boss."
+        },
+        {
+          "name": "Spinning Scythes",
+          "when": "Active throughout the fight, with new scythes spawning in patterns as the fight progresses.",
+          "watch_for": "Scythes materializing on the ground and rotating in predictable paths.",
+          "what_to_do": "Learn the scythe patterns and position safely between them while maintaining DPS.",
+          "failure": "Being hit by a scythe deals massive damage and often results in instant death.",
+          "common_mistakes": "Players standing in scythe spawn points; panicking during movement-heavy moments."
+        },
+        {
+          "name": "Tormented Dead",
+          "when": "Spawn periodically and fixate on random players.",
+          "watch_for": "Large undead adds glowing with red energy running toward their fixated target.",
+          "what_to_do": "Kite the Tormented Dead away from the group until they explode safely.",
+          "failure": "Explosions inside the group cause lethal damage and can wipe the raid.",
+          "common_mistakes": "Fixated players running through the stack; killing the add too close to the group."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Flesh Wurms",
+          "summary": "Wurms spawn and must be killed to reduce arena pressure."
+        }
+      ]
+    },
+    "River of Souls": {
+      "major_mechanics": [
+        {
+          "name": "Orb Carriers",
+          "when": "Occurs repeatedly as players progress along the river path.",
+          "watch_for": "Orbs floating above platforms and glowing indicators showing where they must be delivered.",
+          "what_to_do": "Pick up orbs and carry them to the correct platforms to stabilize the path forward.",
+          "failure": "Missing orb deliveries causes platforms to collapse or prevents progression.",
+          "common_mistakes": "Dropping orbs accidentally; not coordinating who carries which orb; running ahead without stabilizing platforms."
+        },
+        {
+          "name": "Soul Walls",
+          "when": "Appear at fixed intervals along the path.",
+          "watch_for": "Large walls of ghostly faces sweeping horizontally across the arena.",
+          "what_to_do": "Time your movement to pass through gaps or wait for the wall to pass.",
+          "failure": "Being hit by a soul wall deals heavy damage and can knock players off platforms.",
+          "common_mistakes": "Players rushing ahead; misjudging wall timing; jumping into walls while gliding."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Platform Breaks",
+          "summary": "Platforms collapse behind the group, forcing constant movement."
+        }
+      ]
+    },
+    "Statues of Grenth": {
+      "major_mechanics": [
+        {
+          "name": "Orb Passing",
+          "when": "Occurs during each statue lane as players progress toward the final platform.",
+          "watch_for": "Orbs spawning at the start of each lane and glowing indicators showing where they must be delivered.",
+          "what_to_do": "Pass orbs between players to reach the end of the lane while handling enemies.",
+          "failure": "Dropping or losing orbs resets lane progress.",
+          "common_mistakes": "Players running ahead without passing; dropping orbs in unsafe areas; poor coordination."
+        },
+        {
+          "name": "Split Lanes",
+          "when": "Active throughout the encounter as players divide into three lanes.",
+          "watch_for": "Three distinct paths with unique enemies and mechanics.",
+          "what_to_do": "Assign balanced groups to each lane and complete lane-specific objectives simultaneously.",
+          "failure": "If one lane fails, the entire encounter resets.",
+          "common_mistakes": "Unbalanced lane assignments; ignoring lane mechanics; lack of communication."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Enforcer Adds",
+          "summary": "Enforcers spawn and must be killed quickly to avoid wipes."
+        }
+      ]
+    },
+    "Dhuum": {
+      "major_mechanics": [
+        {
+          "name": "Reapers",
+          "when": "Active throughout the fight as each Reaper performs their ritual.",
+          "watch_for": "Reapers channeling in fixed positions around the arena.",
+          "what_to_do": "Protect Reapers from adds and ensure they complete their ritual to progress the fight.",
+          "failure": "If a Reaper dies, the encounter fails.",
+          "common_mistakes": "Players leaving Reapers unprotected; ignoring add spawns; poor lane assignments."
+        },
+        {
+          "name": "Shackles",
+          "when": "Applied periodically to pairs of players starting at 60% health.",
+          "watch_for": "A glowing tether linking two players together.",
+          "what_to_do": "Move apart slowly until the tether breaks without dragging through dangerous areas.",
+          "failure": "If players move too far too fast, they take heavy damage or die.",
+          "common_mistakes": "Players sprinting apart; dragging shackles through Reapers or the group."
+        },
+        {
+          "name": "Death Mark",
+          "when": "Occurs at regular intervals during the fight, every 30 seconds rotating between greater and lesser.",
+          "watch_for": "A large red AoE appears beneath a random player.",
+          "what_to_do": "Move the AoE away from the group before it detonates.",
+          "failure": "Detonating Death Mark inside the group deals massive damage.",
+          "common_mistakes": "Players panicking and running through the stack; dropping marks near Reapers."
+        },
+        {
+          "name": "Messengers",
+          "when": "Spawn periodically and move toward Dhuum.",
+          "watch_for": "Ghostly adds floating toward the boss.",
+          "what_to_do": "Kill Messengers before they reach Dhuum to prevent him from gaining strength.",
+          "failure": "If Messengers reach Dhuum, he gains stacks that increase raid damage.",
+          "common_mistakes": "Players ignoring Messenger spawns; chasing them too far from the group."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Greater Death Mark",
+          "summary": "A larger version of Death Mark that requires careful placement."
+        }
+      ]
+    }
+  }
+}

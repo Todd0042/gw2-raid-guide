@@ -1,0 +1,118 @@
+{
+  "Wing 1 – Spirit Vale": {
+    "Vale Guardian": {
+      "major_mechanics": [
+        {
+          "name": "Color Split (Blue/Green/Red)",
+          "when": "Occurs every 33% of the bosses health.",
+          "watch_for": "Boss divides into three colored fragments and the arena glows with matching colors.",
+          "what_to_do": "Assign players to either split into groups to kill the fragments or to pull them together and kill them all together. Condition damage (2 or more) go to red, everyone else goes to Blue or Green.",
+          "failure": "If any fragment survives too long, the boss reconstitutes and deals massive raid damage.",
+          "common_mistakes": "Players running to the wrong color; groups failing to break defiance bars quickly which is required after depleting each fragments health bar."
+        },
+        {
+          "name": "Disturbed Magic (Green Circles)",
+          "when": "Happens at regular intervals throughout the fight.",
+          "watch_for": "Large green AoE circles appear on the ground with a pulsing glow.",
+          "what_to_do": "Stand inside the green circle to prevent a raid-wide explosion.",
+          "failure": "If the circle is not filled, the raid takes lethal damage. This can be healed through if the healers are paying attention and saving large heals for this mechanic.",
+          "common_mistakes": "Players standing too far away from the group to either receive heals or get in the circle with the group."
+        },
+        {
+          "name": "Unstable Magic Spike (Blue Teleports)",
+          "when": "Every 10 seconds.",
+          "watch_for": "Small blue AoE circles appear on the ground under players - 5 until 33% then 10. Screen borders of all players standing on a Blue Circle will glow Yellow. Audio cues sound like crackly buzzing.",
+          "what_to_do": "Move off of the Blue Circle so that you do not get teleported.",
+          "failure": "Staying on the blue circle results in getting teleported to a random location in the arena.",
+          "common_mistakes": "Players not paying attention to the many queues that the mechanic is about to affect them."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Red Seeker Orbs",
+          "summary": "Slow-moving orbs pressure positioning and require avoidance. Ensure that players know not to use skills that will pull these to the group."
+        },
+        {
+          "name": "Simon Says",
+          "summary": "The arena floor will light up in a rotating pattern beginning in Phase 2. Players need to avoid the lit up areas by rotating the group clockwise around the arena ahead of the lit up portions."
+        }
+      ]
+    },
+    "Gorseval": {
+      "major_mechanics": [
+        {
+          "name": "Charged Souls",
+          "when": "Occurs during each break phase when Gorseval becomes invulnerable.",
+          "watch_for": "Gorseval will hunker down and get a bubble shaped shield around him. in the NW, NE, SW, SE sides of the arena 1 spirit will spawn (for each of the 4 locations).",
+          "what_to_do": "Slow or immobilize all ghosts while destroying them. It is common practice for 1 or 2 players to take on the back ghosts and keep them slowed while the rest of the group destroys the others then the groups reunite and destroy the remaining two.",
+          "failure": "If any of the spirits reach the center, Gorseval will begin his World Eater attack and must be destroyed before he conpletes the cast of the ability or the entire group dies instantly.",
+          "common_mistakes": "Inadequate DPS, Players not going to the correct area, Spirits not being slowed."
+        },
+        {
+          "name": "World Eater",
+          "when": "Triggers after each spirit phase if the group fails to destroy all spirits and allow one to reach Gorseval. Will also occour at the end of the fight after the last CC phase.",
+          "watch_for": "Gorseval channels a massive explosion with a distinct animation and audio cue.",
+          "what_to_do": "Glide or run to the safe platform before the explosion goes off.",
+          "failure": "Instant raid wipe if players do not destroy the boss before the cast is complete.",
+          "common_mistakes": "Breaking the final CC bar too early whilst also having inadequate DPS. Either one or the other will save the group, but a lack of self control and a lack of ability combined lead to certain demise."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Spectral Walls",
+          "summary": "This mechanic is largelly ignored now days and considered a group DPS check rather than a mechanic to perform properly. Have 13k+ DPS average or more for the group and you should be fine."
+        }
+      ]
+    },
+    "Sabetha": {
+      "major_mechanics": [
+        {
+          "name": "Cannon Duty",
+          "when": "Occurs on a fixed rotation every 30 seconds.",
+          "watch_for": "Sabetha calls out a cannon and a player receives a bomb SAK giving them a green circle under their feet.",
+          "what_to_do": "Launch to the platform using the launch pad aligned with the platform by someone going onto the launch pad and whoever gets the 'green bomb' throwing it at the launch pad., kill the cannon, and glide back to the arena being careful not to glide into a flame wall.",
+          "failure": "If cannons are not destroyed, they bombard the arena and eventually the arena can be destroyed, wiping the group.",
+          "common_mistakes": "Players missing launch timing; forgetting rotation order; missing the bomb throw."
+        },
+        {
+          "name": "Player Bombs",
+          "when": "Randomly targets players throughout the fight.",
+          "watch_for": "A bomb icon appears above the two nearest player's heads with a countdown.",
+          "what_to_do": "Move away from the group until the bomb explodes.",
+          "failure": "Bombs that explode in the group cause massive damage to group members.",
+          "common_mistakes": "Players either ignoring the bombs or panicking and running through the stack."
+        },
+        {
+          "name": "Heavy Bomb",
+          "when": "Randomly starting at 75% health.",
+          "watch_for": "A large bomb spawns on the platform with a timer above it.",
+          "what_to_do": "Run up to the bomb and push F to kick it off the platform.",
+          "failure": "Bombs that are allowed to explode on the platform will cause damage to the playform.",
+          "common_mistakes": "Players ignoring the bombs."
+        },
+        {
+          "name": "Firestorm (Flame Wall)",
+          "when": "Every 45 seconds. This aligns with every 3rd cannon phase.",
+          "watch_for": "Sabetha will target a player at random, lock in place, and yell burn. A red line indicator depicts the spawn location of the flame wall.",
+          "what_to_do": "avoid the flame wall by rotating counter clockwise around the arena.",
+          "failure": "Instant death for any hit by the flame wall.",
+          "common_mistakes": "Not.. Paying.. Attention. This mechanic has a large and loud tell with plenty time to react."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Flak Shots",
+          "summary": "Ranged attacks target the player furthest from Sabetha and leave a damage field on the ground."
+        },
+        {
+          "name": "Karde’s Flame Turrets",
+          "summary": "Turrets spawn and must be destroyed quickly to reduce pressure."
+        },
+        {
+          "name": "Knucklle's knock back.",
+          "summary": "When Knuckle's joins the fight the group needs to watch for when he gets a CC bar and break it immediately. Failing to do so causes a large knockback effect on all players."
+        }
+      ]
+    }
+  }
+}

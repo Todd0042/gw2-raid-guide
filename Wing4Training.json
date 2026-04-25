@@ -1,0 +1,131 @@
+{
+  "Wing 4 – Bastion of the Penitent": {
+    "Cairn the Indomitable": {
+      "major_mechanics": [
+        {
+          "name": "Displacement",
+          "when": "Occurs regularly throughout the fight, especially after Cairn teleports.",
+          "watch_for": "Cairn raises his arm and a glowing line appears indicating the direction of the teleport.",
+          "what_to_do": "Quickly reposition after each teleport to maintain stack and avoid being caught out of range.",
+          "failure": "Players left behind take heavy damage or die from subsequent mechanics.",
+          "common_mistakes": "Players not reacting to teleports; running in the wrong direction; losing uptime."
+        },
+        {
+          "name": "Shared Agony",
+          "when": "Applied periodically to a random player.",
+          "watch_for": "A tether appears linking the afflicted player to the group.",
+          "what_to_do": "The tethered player should stand slightly away from the group but not too far to avoid lethal damage.",
+          "failure": "If the tether is stretched too far, the afflicted player dies instantly.",
+          "common_mistakes": "Players running too far away; stacking too close and causing unnecessary damage."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Orb Spawns",
+          "summary": "Orbs appear and must be avoided to prevent damage."
+        }
+      ]
+    },
+    "Mursaat Overseer": {
+      "major_mechanics": [
+        {
+          "name": "Mosaic Tiles",
+          "when": "Active throughout the fight as safe and unsafe tiles rotate.",
+          "watch_for": "Tiles glow with shifting patterns indicating safe zones.",
+          "what_to_do": "Move to safe tiles as they appear while maintaining DPS on the boss.",
+          "failure": "Standing on unsafe tiles deals heavy damage and can quickly down players.",
+          "common_mistakes": "Players tunneling on DPS; moving too late; misreading tile patterns."
+        },
+        {
+          "name": "Jade Soldiers",
+          "when": "Spawn at regular intervals and march across the arena.",
+          "watch_for": "Jade constructs emerging from portals and walking in straight lines.",
+          "what_to_do": "Avoid their paths entirely; do not attempt to tank or kill them.",
+          "failure": "Being touched by a Jade Soldier results in instant death.",
+          "common_mistakes": "Players dodging into soldier paths; standing too close to spawn points."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Overhead Slam",
+          "summary": "A large slam attack requires players to dodge or block."
+        }
+      ]
+    },
+    "Samarog": {
+      "major_mechanics": [
+        {
+          "name": "Guldhem and Rigom",
+          "when": "Triggered at 66% and 33% health thresholds.",
+          "watch_for": "Samarog becomes invulnerable and the two adds spawn on opposite sides.",
+          "what_to_do": "CC Guldhem, kite Rigom into him, and kill them in the correct sequence.",
+          "failure": "If Rigom dies too far from Guldhem, the phase resets.",
+          "common_mistakes": "Players killing Rigom too early; poor CC timing; failing to kite properly."
+        },
+        {
+          "name": "Impaling Stab",
+          "when": "Occurs periodically throughout the fight.",
+          "watch_for": "Samarog targets a player and performs a long, telegraphed thrust.",
+          "what_to_do": "The targeted player must dodge or block the attack; allies should avoid standing in the line.",
+          "failure": "Being hit results in a stun and heavy damage, often leading to death.",
+          "common_mistakes": "Players not noticing the targeting animation; standing behind the targeted player."
+        },
+        {
+          "name": "Shockwaves",
+          "when": "Triggered after Samarog performs a large slam attack.",
+          "watch_for": "Circular shockwaves radiating outward from Samarog.",
+          "what_to_do": "Jump or dodge each shockwave to avoid damage.",
+          "failure": "Taking multiple shockwaves can down or kill players.",
+          "common_mistakes": "Players mistiming jumps; dodging too early; standing too close to Samarog."
+        }
+      ],
+      "minor_mechanics": []
+    },
+    "Deimos": {
+      "major_mechanics": [
+        {
+          "name": "Black Oil",
+          "when": "Spawns periodically throughout the fight, especially during later phases.",
+          "watch_for": "Black puddles forming beneath players or at random locations.",
+          "what_to_do": "Place oil away from the group and avoid standing in it.",
+          "failure": "Oil expands and deals heavy damage, overwhelming the arena.",
+          "common_mistakes": "Players dropping oil in the stack; placing oil near Saul or key positions."
+        },
+        {
+          "name": "Hand Kiting",
+          "when": "Hands spawn regularly and fixate on a designated player.",
+          "watch_for": "Shadowy hands emerging from the ground and moving toward the kiter.",
+          "what_to_do": "The kiter must move in a controlled path away from the group while avoiding oil.",
+          "failure": "Hands reaching the group cause massive damage and chaos.",
+          "common_mistakes": "Kiter running through the group; hands being dragged into oil or mechanics."
+        },
+        {
+          "name": "Mind Crush",
+          "when": "Occurs at fixed intervals throughout the fight.",
+          "watch_for": "Deimos raises his arms and a large red AoE appears on the ground.",
+          "what_to_do": "Stack tightly to share the damage and use defensive cooldowns.",
+          "failure": "Unstacked players are instantly killed.",
+          "common_mistakes": "Players standing too far away; dodging out of the stack; late stacking."
+        },
+        {
+          "name": "Saul Phases",
+          "when": "Triggered at 75%, 50%, and 25% health thresholds.",
+          "watch_for": "Saul gaining new behaviors such as gambling, drinking, or summoning adds.",
+          "what_to_do": "Manage adds, interrupt Saul’s dangerous abilities, and maintain control of the arena.",
+          "failure": "Unmanaged adds overwhelm the group or Saul dies prematurely.",
+          "common_mistakes": "Players ignoring adds; failing to interrupt; poor positioning during transitions."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Greater Death Mark",
+          "summary": "A large AoE requires coordinated movement to avoid group damage."
+        },
+        {
+          "name": "Shackles",
+          "summary": "Players are tethered together and must coordinate movement to break the link."
+        }
+      ]
+    }
+  }
+}

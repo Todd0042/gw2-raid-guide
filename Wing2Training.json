@@ -1,0 +1,158 @@
+{
+  "Wing 2 – Salvation Pass": {
+    "Slothasor  (Ohhh Slothy.. Why must you kill me?)": {
+      "major_mechanics": [
+        {
+          "name": "Poison Mushrooms",
+          "when": "Already in the arena at the beginning of the fight and respawning after a delay.",
+          "watch_for": "Green mushroom on the ground and rising poison stacks on players.",
+          "what_to_do": "Eat mushrooms in the correct rotation to cleanse poison and keep the group alive - Approximate locations of the order is NE, N, W, S.",
+          "failure": "Poison stacks overwhelm the group, causing rapid deaths.",
+          "common_mistakes": "Not eating the green mushroom so that you can go eat the red mushrooms, the group killing the player that ate the green mushroom before they could clear a path through the red mushrooms."
+        },
+        {
+          "name": "Tantrum",
+          "when": "Occurs at fixed intervals throughout the fight.",
+          "watch_for": "Slothasor rears up and begins stomping repeatedly.",
+          "what_to_do": "Use stability or dodge the stomps while maintaining healing on the group. you can also simply walk off the purple circles if you're not the type that is inclined to panic.",
+          "failure": "Unmitigated stomps deal heavy damage and are very likely to down any player hit by the effect.",
+          "common_mistakes": "Players not stacking for heals or not avoiding the circles."
+        },
+        {
+          "name": "Narcolepsy",
+          "when": "Every 20% of Slothasor's health and again at 10%.",
+          "watch_for": "Slothasor falls asleep because he doesn't see our piddly damage as a threat.",
+          "what_to_do": "Healers must be ready to provide the group with stability or aegis, or alternatively the players need to be ready with a stun break when the CC bar is broken, everyone needs to break the CC bar.",
+          "failure": "Death to poison by being feared into it.",
+          "common_mistakes": "Players not stacking for stability / aegis or being prepared with a stun break."
+        },
+        {
+          "name": "Volatile Poison (SAK)",
+          "when": "Every 25 seconds.",
+          "watch_for": "A random player in the group is given a SAK and gets a poison skull above their head.",
+          "what_to_do": "If you get the SAK run in the direction that the group came from (clockwise along the path) and drop the poison cloud a fair distance behind the group close to the wall then return to the group for healing.",
+          "failure": "Death to the entire group as the dropped poison cloud expands encompassing the arena.",
+          "common_mistakes": "Not paying attention to if you receive the SAK."
+        },
+        {
+          "name": "Spore Release (Shakes)",
+          "when": "Starting at 50% health.",
+          "watch_for": "Slothasor will shake sending spores out at the group.",
+          "what_to_do": "Use evade skills, projectile disrupting skills, or dodge the spores as they come toward you.",
+          "failure": "Multiple stacks of damaging conditions that must be cleansed to prevent certain demise.",
+          "common_mistakes": "Not avoiding the spores, not paying attention to the fight."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Fixate",
+          "summary": "A random player is targeted and must kite Slothasor safely around the arena."
+        },
+        {
+          "name": "Slubling Waves",
+          "summary": "Slublings spawn and must be destroyed either by pulling them to the group and cleaving them down or with ranged attacks."
+        }
+      ]
+    },
+    "Bandit Trio": {
+      "major_mechanics": [
+        {
+          "name": "Saboteurs",
+          "when": "Spawn regularly throughout the event as cages are being opened.",
+          "watch_for": "Saboteurs sprinting toward cages with bombs in hand.",
+          "what_to_do": "Kill saboteurs immediately before they reach the cages.",
+          "failure": "Saboteurs destroy cages, causing event failure.",
+          "common_mistakes": "Players tunneling on other enemies; failing to assign saboteur watchers."
+        },
+        {
+          "name": "Berg",
+          "when": "Spawns at 6:50 on the timer.",
+          "watch_for": "Berg will spawn near the Eastern gate.",
+          "what_to_do": "Throw a beehive at Berg to give him a debuff then destroy him with maximum prejudice.",
+          "failure": "Unlikely to fail this fight but it would lead to death and Cage damage.",
+          "common_mistakes": "Throwing all behives at Berg at the same time. They do not stack, throw one at a time when the previous one wears off."
+        },
+        {
+          "name": "Zane",
+          "when": "Spawns at 5:00 on the timer.",
+          "watch_for": "Zane will spawn near the Eastern gate, but you need to already be there so go there at 5:10.",
+          "what_to_do": "Release the hounds as Zane is about to spawn, keep Zane in the far South by the gate facing away from the cage so that his attacks do not reach the cage.",
+          "failure": "The cage takes massive damage leading to potential encounter failure.",
+          "common_mistakes": "Not being in place on time, not staying with the group, not paying attention."
+        },
+        {
+          "name": "Narella (Nutella)",
+          "when": "Spawns at 2:55 on the timer.",
+          "watch_for": "Narella will spawn near the West gate.",
+          "what_to_do": "Watch for a Saboteur that spawns right before Narella and deal with them then throw oil kegs onto the ground causing Narella to ignite them, Avoid fire tornadoes, kill Narella.",
+          "failure": "Death and demise of both your characters life and your dignity.",
+          "common_mistakes": "Being hit by the fire tornadoes."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Mortar Barrage",
+          "summary": "Mortars fire into the arena, one group member needs to go outside the walls and deal with the adds that shoot these off."
+        }
+      ]
+    },
+    "Matthias Gabrel": {
+      "major_mechanics": [
+        {
+          "name": "Elemental Phases",
+          "when": "Matthias transitions at health thresholds: 80%, 60%, and 40% between Ice (starting), Fire, Water, and Abomination phases.",
+          "watch_for": "Matthias gains a new aura and begins using elemental attacks.",
+          "what_to_do": "Adapt to each phase’s unique mechanics such as avoiding or burning ice patches with player skills, avoiding fire storms and not standing still during that phase, or avoiding rain clouds and not moving more than you absolutely have to.",
+          "failure": "Incorrect handling of elemental mechanics leads to rapid group damage or deaths.",
+          "common_mistakes": "Players walking through Ice patches, getting hit by fire tornadoes, standing in rain clouds, not moving during fire, not standing still during water."
+        },
+        {
+          "name": "Blood Sacrifice",
+          "when": "Starting at 9:45 then every 45 seconds until 40% health",
+          "watch_for": "A player is lifted into the air inside a bloodstone Shard.",
+          "what_to_do": "Break the shards defiance bar without killing your party member before they die to the sacrifice.",
+          "failure": "The sacrificed player dies if not freed in time.",
+          "common_mistakes": "Players not noticing the sacrifice; insufficient burst CC on the shard."
+        },
+        {
+          "name": "Blood Shield (bubble)",
+          "when": "Periodically throughout the fight.",
+          "watch_for": "Mathias gains a protective barrier and begins shooting projectiles at a player in the group.",
+          "what_to_do": "Someone must reflect Mathias's own projectiles back at him. 18 of the 20 to 25 that he shoots must be reflected back to break the shield.",
+          "failure": "It's kindof a rinse and repeat until the shield is broken but Mathias can not be damaged while he has the protective shield.",
+          "common_mistakes": "Nobody reflecting the projectiles as required."
+        },
+        {
+          "name": "Corruption",
+          "when": "Every 30 seconds.",
+          "watch_for": "A red circle under your feet and no SAK.",
+          "what_to_do": "Run into one of the CLEAN water fountains around the edge of the arena to cleanse the poison from yourself.",
+          "failure": "Poison clouds spawning at the players location when they die from the poison that deal high damage to the group.",
+          "common_mistakes": "Not knowing what fountains are clean at any given time in the fight, not reacting quickly enough."
+        },
+        {
+          "name": "Poison (SAK)",
+          "when": "Periodically throughout the fight.",
+          "watch_for": "A red circle under your feet and a SAK.",
+          "what_to_do": "Run to the wall between fountains and drop the poison cloud then run back to the group for healing.",
+          "failure": "Poison clouds spawning at the players location when they die from the poison that deal high damage to the group.",
+          "common_mistakes": "Not reacting quickly enough, dropping the poison where it overlaps a fountain."
+        },
+        {
+          "name": "Shards of Rage & Hadoken",
+          "when": "Periodically throughout the fight.",
+          "watch_for": "Mathias either leaps into the air or spins around as a wind-up.",
+          "what_to_do": "Projectile destroy or avoid the attacks as appropriate.",
+          "failure": "Large damage inflicted upon the player.",
+          "common_mistakes": "Reflecting the projectiles rather than destroying them, standing in the way of the hadoken."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Misc",
+          "summary": "Most attacks in this encounter are serious enough to be considered major attacks, he does throw some punches as well though."
+        }
+      ]
+    }
+  }
+}
