@@ -19,6 +19,6 @@ Users should be aware that:
 .
 
 
-Raid Guide addon for Nexus for Guild Wars 2 in progress.
+Raid Guide addon for Nexus for Guild Wars 2.
 
 Information looks pretty accurate, let me know if you see any issues.
