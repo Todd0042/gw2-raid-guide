@@ -65,13 +65,13 @@ extern "C" __declspec(dllexport) AddonDefinition_t* GetAddonDef()
     AddonDef.APIVersion  = NEXUS_API_VERSION;
     AddonDef.Name        = "Raid Training Guide";
     AddonDef.Version     = { 1, 0, 0, 0 };
-    AddonDef.Author      = "BuildCoach";
+    AddonDef.Author      = "Todd0042";
     AddonDef.Description = "In-game mechanic reference for all raid wings.";
     AddonDef.Load        = AddonLoad;
     AddonDef.Unload      = AddonUnload;
     AddonDef.Flags       = AF_None;
-    AddonDef.Provider    = UP_None;
-    AddonDef.UpdateLink  = nullptr;
+    AddonDef.Provider    = UP_GitHub;
+    AddonDef.UpdateLink  = "https://github.com/Todd0042/gw2-raid-guide";
     return &AddonDef;
 }
 
