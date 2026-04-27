@@ -1,3 +1,4 @@
+
 AI Notice
 
 This addon includes AI-generated content and/or AI-assisted code.
@@ -12,13 +13,13 @@ Users should be aware that:
 
 .
 
-
+<img width="679" height="748" alt="Screenshot_20260427_131556" src="https://github.com/user-attachments/assets/38f7700a-3ad6-4807-b746-b15aead6d83e" />
 <img width="681" height="751" alt="Screenshot_20260425_120204" src="https://github.com/user-attachments/assets/6bc6f76b-10f1-4127-bacb-8a328a56bb65" />
 
 
 .
 
 
-Raid Guide addon for Nexus for Guild Wars 2.
+"Raid" Guide addon for Nexus for Guild Wars 2. Includes Quick Play "Raid Encounters" and a few Strike Missions.
 
 Information looks pretty accurate, let me know if you see any issues.
