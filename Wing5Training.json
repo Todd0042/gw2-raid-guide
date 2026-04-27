@@ -3,128 +3,344 @@
     "Soulless Horror (Desmina)": {
       "major_mechanics": [
         {
+          "name": "Necrosis (Dual Tank Swap)",
+          "when": "Active throughout the fight. The active tank gains one Necrosis stack every 12 seconds. Tanks must swap using the Issue Challenge special action key (45-second cooldown).",
+          "watch_for": "Necrosis debuff stacking on the active tank. At four or more stacks incoming damage becomes extreme.",
+          "what_to_do": "Designate two tanks. The inactive tank uses Issue Challenge before the active tank reaches four stacks to transfer fixation. Both tanks track their stack count and cooldown and communicate swaps clearly.",
+          "failure": "Failing to swap tanks causes the active tank to die from compounding 40% damage-per-stack amplification. Swapping too late is the most common cause of tank deaths.",
+          "common_mistakes": "Swapping too late or the incoming tank using Issue Challenge before their cooldown resets. Both tanks must coordinate timing verbally."
+        },
+        {
           "name": "Death Bloom",
-          "when": "Occurs at regular intervals throughout the fight.",
-          "watch_for": "A large expanding red AoE around the boss with a pulsing animation.",
-          "what_to_do": "Move out of the expanding circle immediately while maintaining awareness of scythe patterns.",
-          "failure": "Standing in the AoE deals heavy ticking damage and can quickly down players.",
-          "common_mistakes": "Players dodging into scythes; reacting too slowly; stacking too close to the boss."
+          "when": "Occurs at regular intervals starting from the pull. Every other cast triggers Howling Death immediately after.",
+          "watch_for": "Eight cone-shaped AoEs radiating outward from the boss. Each cone has a visible telegraph before detonating. There are safe gaps between cones.",
+          "what_to_do": "Walk slightly backward away from the boss into a safe gap between cones. Do not dodge outward — being close to the boss and dodging can put you into an adjacent cone. Position in a safe gap before detonation.",
+          "failure": "Being struck deals heavy damage. Standing close to the boss risks being caught by two adjacent cones simultaneously.",
+          "common_mistakes": "Dodging outward into another cone; standing too close to the boss so gaps are too narrow to use safely."
+        },
+        {
+          "name": "Howling Death (Breakbar)",
+          "when": "Triggers after every other Death Bloom cast. All Surging Souls walls despawn during this window.",
+          "watch_for": "Boss gains a defiance bar immediately after a Death Bloom resolves.",
+          "what_to_do": "Break the defiance bar immediately using crowd-control skills. Use the Howling Death window to reposition safely since Surging Souls walls are absent.",
+          "failure": "If the bar is not broken, the boss casts an uncleansable Fear that forces all players off the platform, causing a squad wipe.",
+          "common_mistakes": "Saving CC for other uses and failing to break the bar; not coordinating CC cooldowns so they land simultaneously."
+        },
+        {
+          "name": "Surging Souls",
+          "when": "Active throughout the fight. Walls begin spawning early in the fight and persist until Howling Death windows.",
+          "watch_for": "Walls of ghostly energy moving slowly across the arena floor.",
+          "what_to_do": "Keep track of wall positions at all times and move to avoid them. Walls cannot be dodged, blocked, or invulned — only sidestepped. Use Howling Death windows (when walls despawn) to reposition.",
+          "failure": "Any player struck by a wall is instantly killed. There is no survival skill that negates a direct hit.",
+          "common_mistakes": "Not watching wall positions while focused on DPS; being caught off guard when walls fail to render due to low Character Model Limit graphics settings."
         },
         {
           "name": "Spinning Scythes",
-          "when": "Active throughout the fight, with new scythes spawning in patterns as the fight progresses.",
-          "watch_for": "Scythes materializing on the ground and rotating in predictable paths.",
-          "what_to_do": "Learn the scythe patterns and position safely between them while maintaining DPS.",
-          "failure": "Being hit by a scythe deals massive damage and often results in instant death.",
-          "common_mistakes": "Players standing in scythe spawn points; panicking during movement-heavy moments."
+          "when": "Active throughout the fight. Scythes spawn and travel in straight lines across the platform.",
+          "watch_for": "Scythes moving in linear paths across the arena. Their direction is predictable once spawned.",
+          "what_to_do": "Observe the spawn direction of each scythe and position out of its path. Do not use boons aggressively before a scythe pass.",
+          "failure": "Being hit converts all of the player's boons into conditions, greatly increasing the danger of simultaneous arena hazards.",
+          "common_mistakes": "Standing in a scythe's linear path while focused on DPS; not repositioning after boon corruption occurs."
         },
         {
           "name": "Tormented Dead",
-          "when": "Spawn periodically and fixate on random players.",
-          "watch_for": "Large undead adds glowing with red energy running toward their fixated target.",
-          "what_to_do": "Kite the Tormented Dead away from the group until they explode safely.",
-          "failure": "Explosions inside the group cause lethal damage and can wipe the raid.",
-          "common_mistakes": "Fixated players running through the stack; killing the add too close to the group."
+          "when": "Spawns every 20 seconds after the boss reaches 90% HP. Fixates on the inactive tank.",
+          "watch_for": "A large glowing undead add running toward the inactive tank.",
+          "what_to_do": "The Druid uses push abilities (Glyph of the Tides, Point-Blank Shot) to shove the Tormented Dead off the edge of the platform. Ranged DPS assists with damage. Do not allow it to remain in the center of the arena where its AoE explosion denies space.",
+          "failure": "If the Tormented Dead reaches the center and explodes, it deals lethal damage to the group and denies central space.",
+          "common_mistakes": "Trying to kite it until it expires instead of pushing it off the platform; using push skills at the wrong angle and failing to clear the edge."
+        },
+        {
+          "name": "Crumbling Arena",
+          "when": "Triggers at 90%, 66%, and 33% HP.",
+          "watch_for": "The outer edges of the platform falling away. The playable arena shrinks at each threshold.",
+          "what_to_do": "Move inward away from the collapsing edge before each threshold hits. Be aware that the arena is smaller after each collapse and Surging Souls walls now have less room to avoid.",
+          "failure": "Any player standing on the collapsing edge section is instantly defeated.",
+          "common_mistakes": "Standing near the edge at HP thresholds while focusing on DPS; not adjusting positioning after each arena shrink."
         }
       ],
       "minor_mechanics": [
         {
           "name": "Flesh Wurms",
-          "summary": "Wurms spawn and must be killed to reduce arena pressure."
+          "summary": "Eight elite Flesh Wurms spawn at the start of the fight and spit ranged projectiles. Kill them during the opening phase to reduce sustained pressure."
+        },
+        {
+          "name": "Corrupt the Living",
+          "summary": "The boss spins its hammer, applying conditions to nearby players. The active tank should dodge this when possible."
+        },
+        {
+          "name": "Vortex Slash",
+          "summary": "An expanding orange AoE followed by a larger ring. Both are dodgeable or blockable. Dodge sideways to avoid the outer ring."
         }
       ]
     },
     "River of Souls": {
       "major_mechanics": [
         {
-          "name": "Orb Carriers",
-          "when": "Occurs repeatedly as players progress along the river path.",
-          "watch_for": "Orbs floating above platforms and glowing indicators showing where they must be delivered.",
-          "what_to_do": "Pick up orbs and carry them to the correct platforms to stabilize the path forward.",
-          "failure": "Missing orb deliveries causes platforms to collapse or prevents progression.",
-          "common_mistakes": "Dropping orbs accidentally; not coordinating who carries which orb; running ahead without stabilizing platforms."
+          "name": "Escort & Desmina's Barrier",
+          "when": "Active throughout the entire encounter. Players escort Desmina along the river to the end.",
+          "watch_for": "Desmina's protective dome around her. The river deals heavy ticking damage to players outside the dome. If Desmina stops moving, check for active Enervators.",
+          "what_to_do": "Split into two groups: a forward group that runs ahead to kill Enervators, and an escort group (typically a Heal Firebrand plus a Superspeed source) that stays with Desmina, keeping her alive and applying boons. Keep Desmina alive — if she dies, the encounter fails.",
+          "failure": "Desmina dying ends the encounter immediately. Falling off the platform is instant death.",
+          "common_mistakes": "The entire squad running ahead and leaving Desmina without support; not killing Enervators fast enough to keep Desmina moving."
+        },
+        {
+          "name": "Enervators",
+          "when": "Spawn regularly along the route ahead of Desmina.",
+          "watch_for": "Enemies spawning ahead of Desmina's path. While alive, they disable her protective dome and freeze her in place.",
+          "what_to_do": "The forward group prioritizes killing Enervators immediately. Do not allow them to remain alive — every second they live is time Desmina is frozen and her escort group is exposed to the river.",
+          "failure": "Unmanaged Enervators halt Desmina's progress indefinitely and expose the escort group to lethal river damage.",
+          "common_mistakes": "Forward group members fighting other enemies or staying too far back to kill Enervators before they reach Desmina."
+        },
+        {
+          "name": "Hollowed Bombers",
+          "when": "Spawn periodically and run directly toward Desmina.",
+          "watch_for": "Enemies with a defiance bar channeling a bomb as they approach Desmina.",
+          "what_to_do": "Break the Hollowed Bomber's defiance bar to interrupt the bomb channel, or apply Aegis to Desmina preemptively. If neither is possible, be prepared to heal Desmina for the 20% HP loss.",
+          "failure": "An uninterrupted bomb detonation removes 20% of Desmina's maximum health. Multiple uninterrupted bombers can kill her.",
+          "common_mistakes": "Not noticing Bombers approaching; failing to pre-position CC or Aegis to intercept them."
+        },
+        {
+          "name": "Spectral Rifts",
+          "when": "Present along the river path throughout the encounter.",
+          "watch_for": "Rifts that pull players toward them. At 25% progress they begin spawning Spirit Hordes.",
+          "what_to_do": "Hit each Spectral Rift 10 times to temporarily deactivate its pull. At 25% encounter progress, Rifts also begin spawning Spirit Horde ghosts — prioritize deactivating Rifts near Desmina's path.",
+          "failure": "Active Rifts continuously pull players off position and can drag them into the river or away from Desmina.",
+          "common_mistakes": "Ignoring Rifts and getting pulled repeatedly; not hitting them enough times to deactivate."
+        },
+        {
+          "name": "Spirit Horde",
+          "when": "Spawns from Spectral Rifts at 25% encounter progress.",
+          "watch_for": "Small ghosts chasing Desmina and her escort group in large numbers.",
+          "what_to_do": "The escort group cleaves down Spirit Horde ghosts as they arrive. They are individually weak but accumulate dangerous sustained damage. Keep Desmina topped up with heals during this phase.",
+          "failure": "Unchecked Spirit Horde ghosts overwhelm the escort group with stacking damage.",
+          "common_mistakes": "Letting ghosts pile up without cleaving; not warning the escort group that Spirit Horde phase has begun."
+        },
+        {
+          "name": "Time Bombs",
+          "when": "Randomly applied to escort group members throughout the encounter.",
+          "watch_for": "An expanding two-circle AoE on an escort group player. The inner circle locks in and the outer circle detonates.",
+          "what_to_do": "Move to the back of Desmina's barrier immediately and drop the bomb there, away from allies. Do not drop it near the front of the barrier where it will stun players moving with Desmina.",
+          "failure": "A Time Bomb detonating near allies stuns them and disrupts escort positioning.",
+          "common_mistakes": "Standing still and letting the bomb detonate in the middle of the escort group; moving in the wrong direction and dropping the bomb at the front of the barrier."
         },
         {
           "name": "Soul Walls",
-          "when": "Appear at fixed intervals along the path.",
-          "watch_for": "Large walls of ghostly faces sweeping horizontally across the arena.",
-          "what_to_do": "Time your movement to pass through gaps or wait for the wall to pass.",
-          "failure": "Being hit by a soul wall deals heavy damage and can knock players off platforms.",
-          "common_mistakes": "Players rushing ahead; misjudging wall timing; jumping into walls while gliding."
+          "when": "Appear at 33% encounter progress.",
+          "watch_for": "Instant-kill walls sweeping across the arena, similar to Surging Souls in the Soulless Horror fight.",
+          "what_to_do": "Navigate around the walls. They cannot be dodged, blocked, or invulned. Use the gaps in wall timing to continue escorting Desmina.",
+          "failure": "Any player struck by a wall is knocked into Ghost State.",
+          "common_mistakes": "Being caught by a wall while distracted by other mechanics; not warning the group when walls begin spawning at 33%."
+        },
+        {
+          "name": "Ghost State & Respawn",
+          "when": "Activates the first time a player fully dies during the encounter.",
+          "watch_for": "Entering Ghost State instead of going to the respawn point. Purple orbs scattered throughout the river.",
+          "what_to_do": "Collect five purple orbs to respawn. After collecting the fifth orb, the player respawns on the river itself — rejoin Desmina's escort immediately.",
+          "failure": "Players who cannot collect five orbs in time remain out of the fight. Repeated deaths drain the squad's ability to protect Desmina.",
+          "common_mistakes": "Not knowing Ghost State exists and panicking; respawning too far from Desmina and getting hit by the river before rejoining."
         }
       ],
       "minor_mechanics": [
         {
-          "name": "Platform Breaks",
-          "summary": "Platforms collapse behind the group, forcing constant movement."
+          "name": "River Damage",
+          "summary": "The river beneath the path deals heavy ticking damage to any player outside Desmina's barrier. Stay inside the dome at all times. Falling off the platform is instant death."
         }
       ]
     },
-    "Statues of Grenth": {
+    "Broken King (Statue of Ice)": {
       "major_mechanics": [
         {
-          "name": "Orb Passing",
-          "when": "Occurs during each statue lane as players progress toward the final platform.",
-          "watch_for": "Orbs spawning at the start of each lane and glowing indicators showing where they must be delivered.",
-          "what_to_do": "Pass orbs between players to reach the end of the lane while handling enemies.",
-          "failure": "Dropping or losing orbs resets lane progress.",
-          "common_mistakes": "Players running ahead without passing; dropping orbs in unsafe areas; poor coordination."
+          "name": "Green Orb Capture",
+          "when": "A green circle appears every 2% of the boss's HP throughout the fight.",
+          "watch_for": "A glowing green circle appearing on the ground. It will detonate dealing lethal squad-wide damage if no player is standing in it.",
+          "what_to_do": "Assign players to always cover green circles. Move into the circle immediately when it appears and stand in it until it resolves. Communicate when you already have three Frozen Wind stacks so another player can take your next orb.",
+          "failure": "An uncovered green circle detonates dealing severe damage to the entire squad, potentially wiping the group.",
+          "common_mistakes": "Multiple players racing to the same circle and leaving another circle uncovered; players with high Frozen Wind stacks taking orbs without communicating."
         },
         {
-          "name": "Split Lanes",
-          "when": "Active throughout the encounter as players divide into three lanes.",
-          "watch_for": "Three distinct paths with unique enemies and mechanics.",
-          "what_to_do": "Assign balanced groups to each lane and complete lane-specific objectives simultaneously.",
-          "failure": "If one lane fails, the entire encounter resets.",
-          "common_mistakes": "Unbalanced lane assignments; ignoring lane mechanics; lack of communication."
+          "name": "Frozen Wind Stacks",
+          "when": "Each green orb captured grants one Frozen Wind stack. Stacks expire after 45 seconds.",
+          "watch_for": "Frozen Wind debuff stacking on players capturing orbs. At three stacks, the next capture freezes the player for 10 seconds and deals constant damage.",
+          "what_to_do": "Track your Frozen Wind stacks. At three stacks, call out that you cannot take the next orb and let a teammate cover it. Players can use invulnerability skills at three stacks to absorb a fourth orb without being frozen.",
+          "failure": "A player frozen for 10 seconds is removed from DPS and orb coverage temporarily, which can cascade into uncovered orbs and a squad wipe.",
+          "common_mistakes": "Not tracking personal stack count; taking a fourth orb without an invulnerability ready and getting frozen during a critical moment."
+        },
+        {
+          "name": "DPS Control (~75k Group DPS)",
+          "when": "Active throughout the fight. An enrage timer triggers at 3:30.",
+          "watch_for": "Green orbs spawning more frequently than the group can cover if DPS is too high; enrage at 3:30 if DPS is too low.",
+          "what_to_do": "Maintain approximately 75k total group DPS. If orbs are spawning faster than the group can cover (from DPS spiking too high), back off damage. If the group is at risk of the enrage timer, push harder. Falling below 60k risks failing the enrage timer.",
+          "failure": "Too high DPS causes orbs to spawn faster than players can capture them. Too low DPS triggers enrage at 3:30, wiping the squad.",
+          "common_mistakes": "Full-sending DPS without monitoring orb spawn rate; not recognizing when orbs are accumulating faster than the group can handle."
+        },
+        {
+          "name": "Ice Cracks",
+          "when": "Boss creates cracked ground patterns periodically throughout the fight.",
+          "watch_for": "Shining ice cracks appearing on the ground around the arena.",
+          "what_to_do": "Sidestep out of crack patterns before they pulse. They deal heavy damage on detonation.",
+          "failure": "Standing in cracks when they pulse deals heavy damage and can push players into dangerous stack situations during orb coverage.",
+          "common_mistakes": "Focusing entirely on orbs and green coverage and ignoring crack positions."
         }
       ],
       "minor_mechanics": [
         {
-          "name": "Enforcer Adds",
-          "summary": "Enforcers spawn and must be killed quickly to avoid wipes."
+          "name": "Frozen Wind Stack Timing",
+          "summary": "Stacks expire after 45 seconds, so if the fight runs long enough, stacks naturally drop. Coordinate orb assignments so players with high stacks rotate off coverage temporarily."
+        }
+      ]
+    },
+    "Eater of Souls (Statue of Death)": {
+      "major_mechanics": [
+        {
+          "name": "Twisted Spirit & Red Orb Collection",
+          "when": "Twisted Spirits spawn at the platform edge periodically. Twenty total red orbs are needed to progress.",
+          "watch_for": "A spider-shaped Twisted Spirit spawning at the edge of the platform. Defeating it releases five Reclaimed Energy orbs.",
+          "what_to_do": "Kill the Twisted Spirit immediately. Use the special action key to collect the released orbs, then target the glowing rectangle in the arena to deposit them. Placing orbs on an active rectangle during the boss kill window yields ten red orbs. Collect all twenty to light six torches and strip the boss's regeneration.",
+          "failure": "Not collecting enough orbs means the boss retains its regeneration and the fight becomes unwinnable.",
+          "common_mistakes": "Missing the deposit window by not targeting the active glowing rectangle; failing to kill Twisted Spirits quickly enough to collect all five orbs before they despawn."
+        },
+        {
+          "name": "Lost Spirit & Air Phase",
+          "when": "Every 40–50 seconds, a Lost Spirit spawns surrounded by a green launch circle.",
+          "watch_for": "A Lost Spirit appearing with a green circle around it. Any player standing in the green circle is launched airborne and gains Fractured Spirit, preventing them from taking subsequent launches.",
+          "what_to_do": "Designated players step into the green circle to be launched. While airborne, use Ascend, Spirit Surge, and Descend abilities to collect five orbs within 30 seconds. The boss also gains a defiance bar during this window — the rest of the squad breaks it, or one designated 'sac' player steps into the boss's hitbox to allow the bar to resolve.",
+          "failure": "Airborne players who fail to collect five orbs within 30 seconds die. Failing to break or resolve the defiance bar leaves it active and pressures the squad.",
+          "common_mistakes": "Players with Fractured Spirit trying to take another green launch and dying instantly; not assigning a breakbar strategy before the fight."
+        },
+        {
+          "name": "Six Torches",
+          "when": "Throughout the fight as red orbs are collected.",
+          "watch_for": "Six unlit torches around the arena. Each group of collected orbs lights additional torches.",
+          "what_to_do": "Ensure orbs are deposited efficiently to light all six torches. Lighting all six torches strips the boss's regeneration, making it possible to kill.",
+          "failure": "Without all torches lit, the boss's regeneration prevents it from being killed.",
+          "common_mistakes": "Wasting orb deposits by not timing them with the active glowing rectangle, resulting in fewer orbs counted per deposit."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Puke AoE",
+          "summary": "The boss periodically vomits a large poisonous AoE. Move out of it immediately. This is a standing hazard that pressures positioning throughout the fight."
+        }
+      ]
+    },
+    "Eyes of Janthir (Statue of Darkness)": {
+      "major_mechanics": [
+        {
+          "name": "Light Delivery (Thrower Puzzle)",
+          "when": "Active throughout the entire encounter.",
+          "watch_for": "Three lights continuously spawning on the platform. Two elevated Thrower platforms on either side of the arena.",
+          "what_to_do": "Two assigned Throwers take positions on their elevated platforms. They alternate grabbing lights (one from each end, alternating through the middle) and passing them to assigned players on the ground. Ground players receive the light and carry it to the Eye. Throwers must avoid catching lights on map geometry when rotating their grab pattern.",
+          "failure": "Light delivery failures leave the Eye without delivered lights, preventing the stun that stops teleportation.",
+          "common_mistakes": "Throwers catching lights on geometry and losing them; ground players not being in position to receive the pass."
+        },
+        {
+          "name": "Stun Thresholds & Teleport",
+          "when": "The Eye must be stunned at 85%, 70%, 55%, 40%, 25%, and 10% HP thresholds.",
+          "watch_for": "Each HP threshold approaching. Failure to stun at 70% additionally summons a Minotaur. Without a stun, the Eye teleports away.",
+          "what_to_do": "Assign one Stunner per Eye. Stunners apply the stun at each 10% threshold using the delivered light. Re-stun approximately every 10 seconds to extend the stun duration and prevent teleportation between thresholds. Do not use hard crowd control (knockback, pull, launch) as these overwrite stun duration and cause premature teleportation.",
+          "failure": "An unstunned Eye teleports to a new location, disrupting positioning and wasting time. Failing the 70% stun also spawns a Minotaur add.",
+          "common_mistakes": "Using hard CC skills (knockback/pull/launch) that overwrite the stun; stunners being too slow to re-stun between thresholds."
+        },
+        {
+          "name": "Synchronized Kill",
+          "when": "As both Eyes approach 0% HP.",
+          "watch_for": "Both Eyes' HP bars. They must die within 8 seconds of each other.",
+          "what_to_do": "Coordinate DPS across both sides. Call out HP percentages so the group can slow one Eye and push the other to sync the kills within 8 seconds.",
+          "failure": "If the two Eyes die more than 8 seconds apart, both regenerate to full HP and the encounter resets.",
+          "common_mistakes": "One side killing their Eye too quickly without communicating; not having a designated caller monitoring both HP bars."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Hard CC Restriction",
+          "summary": "Never use knockback, pull, or launch effects on either Eye. These skills overwrite the stun applied by the light delivery and cause the Eye to teleport prematurely."
+        },
+        {
+          "name": "Role Structure",
+          "summary": "Each Eye requires one Thrower (elevated platform), one Stunner (applies light stun), and three DPS. Assign roles before the encounter begins."
         }
       ]
     },
     "Dhuum": {
       "major_mechanics": [
         {
-          "name": "Reapers",
-          "when": "Active throughout the fight as each Reaper performs their ritual.",
-          "watch_for": "Reapers channeling in fixed positions around the arena.",
-          "what_to_do": "Protect Reapers from adds and ensure they complete their ritual to progress the fight.",
-          "failure": "If a Reaper dies, the encounter fails.",
-          "common_mistakes": "Players leaving Reapers unprotected; ignoring add spawns; poor lane assignments."
+          "name": "Pre-Event: Enforcers, Messengers & Deathlings",
+          "when": "Before the boss fight begins. Wave-based event that must be completed to trigger the Dhuum encounter.",
+          "watch_for": "Skeletal Enforcers spawning in four corners attacking Reapers. Messengers fixating on players. Deathling spiders swarming Reapers.",
+          "what_to_do": "Kill Enforcers fast, avoiding their frontal cone attacks. Designate a Messenger Kiter: the kiter attacks Messengers first so they fixate on the kiter for their 15-second duration, keeping them away from Reapers. Cleave Deathlings continuously to prevent accumulated damage on Reapers. Protect all Reapers throughout the event.",
+          "failure": "Reapers killed during the pre-event permanently remove them from the boss fight, making the Final Phase impossible.",
+          "common_mistakes": "No one fixating Messengers so they deal heavy damage to Reapers; standing in front of Enforcers and taking their cone attacks."
         },
         {
-          "name": "Shackles",
-          "when": "Applied periodically to pairs of players starting at 60% health.",
-          "watch_for": "A glowing tether linking two players together.",
-          "what_to_do": "Move apart slowly until the tether breaks without dragging through dangerous areas.",
-          "failure": "If players move too far too fast, they take heavy damage or die.",
-          "common_mistakes": "Players sprinting apart; dragging shackles through Reapers or the group."
+          "name": "Greens (Airborne Mechanic)",
+          "when": "Every 30 seconds throughout the fight, Dhuum targets a Reaper with a green circle.",
+          "watch_for": "A green circle appearing on a Reaper. Players assigned to greens watch for this on their rotation.",
+          "what_to_do": "The assigned Green player (G1, G2, G3 rotating) enters the green circle before it detonates. They are lifted airborne and must collect five red orbs within 15 seconds to return safely. If no player is in the circle at detonation, the Reaper dies and the squad wipes. Players cannot take two consecutive greens — doing so kills them instantly.",
+          "failure": "An uncovered green detonation kills the Reaper, wiping the squad. A player taking consecutive greens dies instantly.",
+          "common_mistakes": "G-rotation players losing track of whose turn it is; a player attempting a second consecutive green without realizing the restriction."
         },
         {
           "name": "Death Mark",
-          "when": "Occurs at regular intervals during the fight, every 30 seconds rotating between greater and lesser.",
-          "watch_for": "A large red AoE appears beneath a random player.",
-          "what_to_do": "Move the AoE away from the group before it detonates.",
-          "failure": "Detonating Death Mark inside the group deals massive damage.",
-          "common_mistakes": "Players panicking and running through the stack; dropping marks near Reapers."
+          "when": "Occurs at regular intervals throughout the fight.",
+          "watch_for": "Dhuum reappears on a random player with a large orange circle beneath him. A pillar of light appears nearby. The Death Mark leaves behind dangerous green fire after it resolves.",
+          "what_to_do": "When Dhuum's orange circle appears, all players caught in it have their boons stolen and are separated from their souls. Run immediately to the nearest pillar of light within 10 seconds to reclaim your soul. After the mechanic resolves, avoid walking through the green fire left at the Death Mark location.",
+          "failure": "Any player who fails to reach a pillar of light within 10 seconds dies instantly.",
+          "common_mistakes": "Running in the wrong direction instead of toward the pillar of light; walking through the lingering green fire after the Death Mark resolves."
+        },
+        {
+          "name": "Greater Death Mark (6:30)",
+          "when": "Occurs at the 6:30 timer mark.",
+          "watch_for": "Dhuum reappearing at the center of the arena and blasting all players backward. Each player's soul beacon (shining pillar of light at their original position) appears immediately after.",
+          "what_to_do": "When blasted backward, return immediately to your soul beacon to reclaim your soul or die instantly. Dhuum also gains an orange circle that steals boons and pulls players — position with your back against a safe wall (not the throne) before the mechanic to limit how far you are blasted. Any bombs timed to detonate at 6:35 must be detonated early; bombs coinciding with 5:15, 3:55, 2:35, or 1:15 dissipate during the soul separation.",
+          "failure": "Any player who fails to reach their soul beacon dies instantly. Being blasted into a wall without a clear return path increases the risk significantly.",
+          "common_mistakes": "Panicking after the blast and running in the wrong direction; bomb players not managing their bomb timing around this mechanic."
+        },
+        {
+          "name": "Shackles",
+          "when": "Starting at 60% HP, applied periodically to the two non-tank players closest to Dhuum.",
+          "watch_for": "Yellow border on your squad UI icon, a red chat message, and a visible glowing tether connecting two players. After 4 seconds, the shackle activates with heavy damage.",
+          "what_to_do": "The two shackled players immediately run in opposite directions to break the tether. Call out your direction using a landmark (e.g., 'throne' or 'door') so you don't both run the same way.",
+          "failure": "Failing to break the shackle within the activation window deals heavy damage to both shackled players.",
+          "common_mistakes": "Both shackled players running in the same direction; dragging the tether through Reapers or into the stack."
+        },
+        {
+          "name": "Affliction (Bombs)",
+          "when": "Starting at 9:00 on the timer. A new bomb is applied 3 seconds after the previous one detonates.",
+          "watch_for": "A bomb debuff with an icon over the player's head and a special action key prompt. The bomb detonates after 13 seconds or early if the player goes into downstate or uses the special action key.",
+          "what_to_do": "Leave the stack immediately when afflicted. Let the bomb time out naturally (do not force early detonation) to maintain spawn timing. Avoid detonating near Reapers, greens, or the Messenger Kiter.",
+          "failure": "Detonating inside the stack deals heavy damage to all nearby players. Early detonation desynchronizes the bomb timing for the rest of the fight.",
+          "common_mistakes": "Using the special action key to detonate early; running through the stack on the way out instead of moving to a safe zone."
         },
         {
           "name": "Messengers",
-          "when": "Spawn periodically and move toward Dhuum.",
-          "watch_for": "Ghostly adds floating toward the boss.",
-          "what_to_do": "Kill Messengers before they reach Dhuum to prevent him from gaining strength.",
-          "failure": "If Messengers reach Dhuum, he gains stacks that increase raid damage.",
-          "common_mistakes": "Players ignoring Messenger spawns; chasing them too far from the group."
+          "when": "Spawn periodically and move toward the Reapers.",
+          "watch_for": "Messenger adds approaching the Reapers. The designated Messenger Kiter watches for their spawn.",
+          "what_to_do": "The Messenger Kiter attacks each Messenger immediately to gain fixation. Messengers die 15 seconds after fixation. Keep them away from the Reapers for their full duration. If a Messenger reaches a Reaper unattended, it deals heavy damage to that Reaper.",
+          "failure": "Messengers that reach a Reaper deal heavy damage. Multiple unmanaged Messengers can kill a Reaper.",
+          "common_mistakes": "No dedicated kiter assigned; kiter dying and leaving Messengers unfixated."
+        },
+        {
+          "name": "Final Phase (10% HP — Seven Seals)",
+          "when": "Triggers when Dhuum reaches 10% HP. Timer resets to 1:45.",
+          "watch_for": "All players launched airborne (identical to green mechanic — collect five orbs). After landing, players respawn in a protective dome. Seven seals appear around the room.",
+          "what_to_do": "Collect five airborne orbs to land safely (avoid the central light beam). Pre-load boons (Protection, Aegis, Regeneration) before leaving the dome — exiting deals heavy damage. Position at dome edge near your assigned seal. All seven seals must be channeled within 10 seconds of each other. After channeling, kill Dhuum within 20 seconds before enrage. If Dhuum survives 20 seconds, the seal process repeats.",
+          "failure": "Failing to channel all seven seals simultaneously resets the seal phase. Failing to kill Dhuum within 20 seconds triggers enrage and wipes the squad.",
+          "common_mistakes": "Players not pre-loading boons before leaving the dome; poor seal assignments leaving some seals unreachable; insufficient DPS causing enrage."
         }
       ],
       "minor_mechanics": [
         {
-          "name": "Greater Death Mark",
-          "summary": "A larger version of Death Mark that requires careful placement."
+          "name": "Cracks",
+          "summary": "After five auto-attacks, Dhuum strikes his scythe into the floor creating ground cracks. Sidestep out of the cracks before they detonate."
+        },
+        {
+          "name": "Slash (30%)",
+          "summary": "Starting at 30% HP, Dhuum performs a cone attack that pulls players and strips boons. Sidestep to avoid it."
+        },
+        {
+          "name": "Tanking",
+          "summary": "The toughness tank receives a damage reduction buff. Position Dhuum away from the stack. Rotate Dhuum's position to facilitate green coverage and Death Mark baiting."
         }
       ]
     }

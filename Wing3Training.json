@@ -1,91 +1,222 @@
 {
   "Wing 3 – Stronghold of the Faithful": {
-    "Escort (McLeod, Glenna, Towers)": {
+    "Escort (McLeod the Silent)": {
       "major_mechanics": [
         {
-          "name": "Bridge Defense",
-          "when": "Occurs throughout the event as Glenna moves across the bridge.",
-          "watch_for": "Warg spawns, snipers on ledges, and Glenna calling for help.",
-          "what_to_do": "Stay near Glenna, kill incoming enemies quickly, and prevent her from being overwhelmed.",
-          "failure": "If Glenna is downed or killed, the event fails.",
-          "common_mistakes": "Players running too far ahead; ignoring snipers; leaving Glenna unprotected."
+          "name": "Surveilled (Glenna Stacks)",
+          "when": "Active from the start; stacks deplete whenever no player remains within 1,000 range of Glenna.",
+          "watch_for": "A stack counter visible on Glenna counting down toward zero.",
+          "what_to_do": "Keep at least one player (typically the Druid) within 1,000 range of Glenna at all times. Use the special action key while near Glenna to call her toward you and guide her onto Ley Lines for safe passage.",
+          "failure": "Glenna's stacks reach 0 and she dies, instantly failing the encounter.",
+          "common_mistakes": "Entire squad rushing ahead to clear enemies and leaving Glenna unattended; forgetting to use the special action key to redirect Glenna onto white Ley Line circles."
+        },
+        {
+          "name": "Warg Fixates",
+          "when": "After all four towers along the route are captured, two Wargs spawn—one at the front and one at the rear of the group.",
+          "watch_for": "Large wolf enemies sprinting directly toward Glenna with high movement speed.",
+          "what_to_do": "Immediately apply crowd control (immobilize, chill, cripple, float, or blind) to both Wargs. Assign one player to handle the rear Warg so it does not reach Glenna from behind. Burn them down as quickly as possible.",
+          "failure": "Wargs reach Glenna and deal massive damage, killing her and failing the event.",
+          "common_mistakes": "Ignoring the rear Warg; not saving crowd control abilities for after tower capture; trying to kill Wargs with no slows applied."
+        },
+        {
+          "name": "Mines",
+          "when": "Present along the escort route; red one-shot circles surround non-targetable mines.",
+          "watch_for": "A small mine object inside a large red circle (instant death) bordered by a thinner white circle (activation ring).",
+          "what_to_do": "Skim the outer edge of the white activation ring to make the mine targetable, then destroy it with ranged attacks before it resets. Never step into the red circle. Mines respawn, so check behind you after clearing them.",
+          "failure": "Stepping into the red circle kills the player or Glenna instantly.",
+          "common_mistakes": "Walking straight through the red circle; forgetting that mines respawn and getting hit on the return path."
+        },
+        {
+          "name": "McLeod the Silent – Split Phase",
+          "when": "Triggered at 75%, 50%, and 25% of McLeod’s health.",
+          "watch_for": "McLeod splits into two copies; each copy displays a red or white marker above it; players also receive matching red or white markers.",
+          "what_to_do": "Check your marker color. Deal damage only to the copy whose marker matches yours. Stay stacked between both copies so McLeod does not teleport to a distant player. A Warg also spawns during splits—cleave it down.",
+          "failure": "Damaging the wrong copy is wasted DPS and prolongs the encounter. McLeod teleports to the furthest player (up to 5,000 range) if the group spreads out, making positioning chaotic.",
+          "common_mistakes": "Hitting the wrong-colored copy; spreading out and causing McLeod to teleport away from the stack; ignoring the Warg that spawns during splits."
         },
         {
           "name": "Tower Captures",
-          "when": "Triggered when players reach each tower along the path.",
-          "watch_for": "A champion enemy guarding the tower and Glenna stopping at the base.",
-          "what_to_do": "Split into assigned groups, kill the champion, and capture the tower to progress.",
-          "failure": "If towers are not captured, Glenna cannot proceed and the event stalls.",
-          "common_mistakes": "Groups not splitting correctly; failing to CC champions; leaving towers uncleared."
+          "when": "Four towers must be captured sequentially along the escort route.",
+          "watch_for": "A capture circle on each tower platform; enemies inside the circle contest the capture.",
+          "what_to_do": "Enter the capture circle with more players than enemies. Clear enemies inside the circle, push them out, or use Mass Invisibility to bypass the contest entirely. Do not let Glenna fall out of range while the squad is at a tower.",
+          "failure": "Uncontested enemies inside the circle prevent capture, stalling the event.",
+          "common_mistakes": "Splitting the group unevenly across towers; leaving enemies alive inside the circle; letting Glenna’s stacks drain while the squad is distracted at a tower."
         }
       ],
       "minor_mechanics": [
         {
-          "name": "Warg Ambushes",
-          "summary": "Wargs periodically attack Glenna and must be killed quickly."
+          "name": "Tunnel of Respite (Cave)",
+          "summary": "The cave contains Toxic Spores that deal damage. Players with the Forsaken Thicket Waters mastery can use healing water pools to cleanse stacks. Run between pools and avoid mushroom mobs that knock players around."
+        },
+        {
+          "name": "Final Ley Line Call",
+          "summary": "After McLeod is defeated, use the special action key to call Glenna to the final white Ley Line circle at the door. She will plant a bomb to open the gate and complete the encounter."
         }
       ]
     },
     "Keep Construct": {
       "major_mechanics": [
         {
-          "name": "Core Push",
-          "when": "Occurs during each burn phase transition when the core becomes active.",
-          "watch_for": "A glowing orb (the core) appears and begins moving slowly.",
-          "what_to_do": "Push the core into Keep Construct by attacking it while avoiding stray hits that knock it off course.",
-          "failure": "If the core is not pushed in time, the phase resets and the fight is prolonged.",
-          "common_mistakes": "Players hitting the core from the wrong angle; pushing too early; failing to stack for control."
+          "name": "Projections and Fixates",
+          "when": "Triggered at the start of each burn-phase cycle. Two arena statues light up, one on each half of the arena.",
+          "watch_for": "Two statues glowing; two Projections spawning and immediately fixating on two random players.",
+          "what_to_do": "Fixated players lure their Projection on top of Keep Construct so it is cleaved down near the boss. Do NOT let the two Projections touch each other—they will merge. The close-fixate player stands opposite their Projection’s spawn statue. Both Projections must die near the boss to remove two stacks of the boss’s vulnerability debuff and trigger the defiance bar.",
+          "failure": "If the Projections merge they become an Insidious Projection with more health and a frontal smash that strips boons. Killing the merged Projection away from the boss does not remove the debuff stacks, effectively wasting the phase.",
+          "common_mistakes": "Fixated players panicking and running to the squad instead of luring onto the boss; letting both Projections converge and merge; killing a Projection far from the boss hitbox."
         },
         {
-          "name": "Orb Collection",
-          "when": "Happens during the split phases when Keep Construct becomes invulnerable.",
-          "watch_for": "Small orbs spawning around the arena with glowing trails.",
-          "what_to_do": "Collect orbs and deliver them to the center to charge the core.",
-          "failure": "Insufficient orbs collected results in a weak burn phase or phase failure.",
-          "common_mistakes": "Players collecting orbs inefficiently; missing orbs; not coordinating routes."
+          "name": "Exposed Core Phase (Green Circles)",
+          "when": "Triggered when the boss’s defiance bar is broken after both Projections are dead near the boss.",
+          "watch_for": "Three large green circles appearing simultaneously on the arena floor.",
+          "what_to_do": "Each green circle must have at least two players standing inside it before it detonates. Assign supports to hold two of the circles; all DPS stack on the third. If a support has been fixated, a DPS must swap to cover their circle immediately.",
+          "failure": "Any circle that detonates with fewer than two players inside causes an instant squad wipe.",
+          "common_mistakes": "Supports getting fixated without a DPS covering their circle; players not noticing which circles are unfilled and failing to reposition in time."
         },
         {
-          "name": "Phantasmal Blades",
-          "when": "Occurs regularly throughout the fight, especially during burn phases.",
-          "watch_for": "Blades materializing around the arena and sweeping in straight lines.",
-          "what_to_do": "Dodge or sidestep the blades while maintaining DPS.",
-          "failure": "Being hit by multiple blades can down or kill players.",
-          "common_mistakes": "Players tunneling on DPS; standing in predictable blade paths."
-        }
-      ],
-      "minor_mechanics": []
-    },
-    "Xera": {
-      "major_mechanics": [
-        {
-          "name": "Button Phases",
-          "when": "Triggered at the start of each platform phase and during transitions.",
-          "watch_for": "Buttons glowing on platforms and Xera becoming invulnerable.",
-          "what_to_do": "Assign players to stand on buttons simultaneously to progress the encounter.",
-          "failure": "If buttons are not activated in time, the phase stalls and adds overwhelm the group.",
-          "common_mistakes": "Players standing on the wrong button; stepping off too early; poor coordination."
+          "name": "Core Push (Ley Rifts)",
+          "when": "Follows immediately after the Exposed Core Phase. A pink Construct Core appears in the arena center surrounded by a pink border containing five Ley Rifts along the edges.",
+          "watch_for": "A glowing pink orb in the center; five Ley Rift portals around the arena perimeter.",
+          "what_to_do": "Use crowd control pushes, pulls, and launches to move the Construct Core through as many Ley Rifts as possible. Each Rift the Core passes through adds 75% bonus incoming damage to Keep Construct in the next burn phase. Aiming for five Rifts is safest; three is viable with high DPS. Disable pet auto-attacks to avoid accidentally pushing the Core off course.",
+          "failure": "Passing through zero Rifts means the next burn phase has no damage bonus, severely extending the fight. Missing the 66%/33% phase thresholds forces an additional repetition of the entire cycle.",
+          "common_mistakes": "Players randomly hitting the Core from inconsistent angles; pet auto-attacks nudging the Core into walls; not assigning a dedicated pusher."
         },
         {
-          "name": "Platform Breaks",
-          "when": "Occurs during the final phase and periodically during transitions.",
-          "watch_for": "Platforms glowing red and beginning to crumble.",
-          "what_to_do": "Move quickly to intact platforms before the current one collapses.",
-          "failure": "Falling results in instant death and can cause a wipe if too many players fall.",
-          "common_mistakes": "Players waiting too long; misjudging jump distances; not following the group."
+          "name": "Xera’s Fury (Spread)",
+          "when": "Occurs randomly between burst phases while Projections are active.",
+          "watch_for": "Light orange AoE circles appearing under every player’s feet simultaneously.",
+          "what_to_do": "Spread out immediately. Each circle deals 20% of maximum health to any player standing inside another player’s circle. Fixated players and the tank must hold their positions on the boss; all other players spread to empty space.",
+          "failure": "Players stacking causes rapid coordinated damage that can down multiple players at once.",
+          "common_mistakes": "Fixated players abandoning their Projection positions to spread; DPS stacking on the tank and taking shared damage."
         },
         {
-          "name": "Mirror Images",
-          "when": "Spawn during each split phase and periodically during the fight.",
-          "watch_for": "Illusions of Xera appearing around the arena.",
-          "what_to_do": "Kill mirror images quickly to reduce pressure and prevent arena clutter.",
-          "failure": "Too many illusions overwhelm the group with damage and mechanics.",
-          "common_mistakes": "Players ignoring illusions; splitting damage inefficiently."
+          "name": "Attuned Phantasms (Matching Markers)",
+          "when": "Occurs randomly between burst phases. A large number of Phantasms spawn throughout the arena.",
+          "watch_for": "Many Phantasms appearing with red or white markers above them; all players simultaneously receive matching red or white markers.",
+          "what_to_do": "Each player can only damage Phantasms that match their marker color. Focus fire on Phantasms of your color and burn them down quickly.",
+          "failure": "If any Phantasms are still alive when the timer expires, Keep Construct performs a massive attack that typically wipes the entire squad.",
+          "common_mistakes": "Players attacking the wrong-colored Phantasms and wasting DPS; not coordinating to ensure each color is covered evenly."
+        },
+        {
+          "name": "Magic Blast (66% and 33%)",
+          "when": "Triggered when the boss reaches 66% and 33% HP. Keep Construct becomes invulnerable and channels a massive explosion.",
+          "watch_for": "Red and white energy balls moving toward the boss; all players receive matching red or white markers.",
+          "what_to_do": "Block or intercept balls that match your marker color before they reach the boss. Spread by marker color to avoid blocking the wrong balls. Do not cross to help teammates—trust your group.",
+          "failure": "Each ball that reaches the boss grants one stack of Magic Blast Intensity, increasing its damage. Fifteen or more stacks becomes dangerous; twenty or more typically wipes the squad.",
+          "common_mistakes": "Players crossing to intercept the other color’s balls and missing their own; low-health players not staying near supports to survive the chip damage from interceptions."
         }
       ],
       "minor_mechanics": [
         {
-          "name": "Bloodstone Shards",
-          "summary": "Shards fall from above and must be avoided."
+          "name": "Phantasmal Blades",
+          "summary": "A glowing pink pool forms under the boss and cone attacks radiate outward. Sidestep the cones and avoid standing in the pool, which applies heavy damage and conditions. The number of cones increases as the encounter progresses."
+        },
+        {
+          "name": "Hail of Fury",
+          "summary": "Below 33% HP the boss floats skyward and drops rubble across the arena. Projections killed at the correct location still remove debuff stacks during this phase. Continue the normal cycle."
+        },
+        {
+          "name": "Enrage Timer",
+          "summary": "10 minutes. After enrage Keep Construct deals 200% increased damage."
+        }
+      ]
+    },
+    "Twisted Castle": {
+      "major_mechanics": [
+        {
+          "name": "Madness Stacks",
+          "when": "Active from the moment players enter the castle. Stacks accumulate continuously.",
+          "watch_for": "A stacking debuff counter on your buff bar. Stacks build at 1 per 3 seconds normally, or 2 per 3 seconds when facing toward the center of the castle.",
+          "what_to_do": "Keep moving and avoid looking toward the center. Use nearby Fountains to cleanse 10 stacks at a time by interacting with them. Manage stacks actively throughout navigation.",
+          "failure": "At 99 stacks players are instantly killed with no exception. Every 10 stacks triggers a debilitating effect that compounds the difficulty.",
+          "common_mistakes": "Ignoring Fountains and letting stacks climb; standing still in the center-facing direction; not cleansing before attempting difficult jumps."
+        },
+        {
+          "name": "Button Activation",
+          "when": "Throughout the traversal encounter. Five of seven available buttons must be activated to open the path to the bell.",
+          "watch_for": "Interactive buttons/levers on platforms throughout the castle. The bell rings when five buttons are activated, signaling completion.",
+          "what_to_do": "Navigate through the castle using designated routes, activate five buttons, and reach the bell. Assign players to different button paths to cover the required five quickly. Use mobility skills (e.g., Druid’s Ancestral Grace) to reach the skip button and save time.",
+          "failure": "Failing to activate five buttons means the bell never rings and the encounter does not complete.",
+          "common_mistakes": "Multiple players taking the same path and leaving other buttons unactivated; running out of time due to Madness stack management; falling from platforms (no gliding allowed)."
+        },
+        {
+          "name": "Haunting Statues",
+          "when": "Positioned at specific points along the traversal route, particularly near Button 5.",
+          "watch_for": "Stone statue enemies that begin moving toward players who are not staring directly at them.",
+          "what_to_do": "Maintain eye contact with the statue (face toward it) to freeze it in place. Players can knock down, pull, or push statues but cannot damage them. Walk past them while a teammate holds eye contact. If a statue reaches you, it teleports you back to the start of the route.",
+          "failure": "Being touched by a Haunting Statue sends the player back to the route’s beginning, wasting significant time and allowing Madness stacks to accumulate.",
+          "common_mistakes": "All players turning away from the statue simultaneously; trying to damage statues instead of using mechanics to bypass them."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "White Mantle Enemies",
+          "summary": "Enemies scattered throughout the castle use knockbacks and knockdowns that can send players off platforms to their deaths. Clear or avoid them carefully, as falls from height are typically fatal without the ability to glide."
+        },
+        {
+          "name": "Archway Drop Skip",
+          "summary": "From the u-shaped platform, players can dodge off the inner corner to land on a lower archway without taking lethal fall damage, but only at full health. This shortcut saves significant time on the traversal route."
+        }
+      ]
+    },
+    "Xera": {
+      "major_mechanics": [
+        {
+          "name": "Forsaken Magic Stacks",
+          "when": "Applied continuously by multiple mechanics throughout both phases of the encounter.",
+          "watch_for": "A stacking debuff on your buff bar. Effects trigger at 90 stacks (5-second Fear) and 99 stacks (instant death).",
+          "what_to_do": "Avoid standing in Bloodstone Fragment AoEs and Gravity Wells. Players with the Forsaken Thicket Waters mastery can destroy Bloodstone Shards during the intermission phase to cleanse stacks. Standing inside a successful Spatial Manipulation green circle during Phase 2 also removes stacks.",
+          "failure": "Reaching 99 stacks kills the player instantly. Reaching 90 stacks triggers a 5-second Fear that prevents all actions.",
+          "common_mistakes": "Standing in Bloodstone Fragment AoEs to deal damage; getting caught in Gravity Well; not cleansing during the intermission glide phase."
+        },
+        {
+          "name": "Bloodstone Fragments",
+          "when": "Spawn every 10 seconds in one of 12 arena segments throughout the fight.",
+          "watch_for": "Orange AoE circles appearing in an arena segment around a glowing fragment.",
+          "what_to_do": "DPS players must destroy each Fragment in their designated arena segment. Do NOT stand under the Fragment as it emits damage outward. If Xera passes through a Fragment’s AoE she deals double damage and converts conditions into boons.",
+          "failure": "Uncleared Fragments stack Forsaken Magic on all players who walk through their AoE. Xera inside a Fragment AoE gains a massive offensive buff and condition immunity.",
+          "common_mistakes": "Standing directly under the Fragment to DPS it and taking unnecessary damage; allowing multiple Fragments to persist simultaneously and flooding the arena with AoEs."
+        },
+        {
+          "name": "Defiance Bar",
+          "when": "Appears at 90% HP and recurs on a 60-second cooldown.",
+          "watch_for": "A yellow break bar above Xera’s health bar.",
+          "what_to_do": "Break the bar as quickly as possible using crowd control abilities. While the bar is active Xera takes 80% reduced incoming damage and Bloodstone Fragments spawn at double speed.",
+          "failure": "Leaving the bar unbroken slashes your effective DPS to 20% and floods the arena with Fragments much faster than normal.",
+          "common_mistakes": "Saving CC for other purposes; forgetting to switch targets to break the bar; not coordinating CC cooldowns."
+        },
+        {
+          "name": "Gravity Well",
+          "when": "Spawns at 30-second intervals in Phase 1 and 25-second intervals in Phase 2. Not present during the intermission Ambient Magic event.",
+          "watch_for": "A large pink AoE covering approximately half of the current platform.",
+          "what_to_do": "Move immediately to the unaffected half of the platform. If caught inside, the Well floats you, applies heavy conditions, and inflicts 25 Forsaken Magic stacks.",
+          "failure": "Being inside the Gravity Well applies 25 Forsaken Magic stacks instantly and significant damage, putting players dangerously close to the 99-stack death threshold.",
+          "common_mistakes": "Not repositioning fast enough when the Well spawns; standing near the boundary and getting clipped by its edge."
+        },
+        {
+          "name": "Ambient Magic (Intervention SAK)",
+          "when": "Triggers at specific HP thresholds: 75% in Phase 1; 35%, 15%, and 10% in Phase 2.",
+          "watch_for": "A message announcing a player has been selected; Phantasms channeling an attack around the entire arena.",
+          "what_to_do": "The randomly selected player must wait for the Phantasms to reach the back of the arena, then activate the Intervention special action key to create a protective barrier over the squad. Time the activation carefully—too early and the barrier expires before the attack lands; too late is also fatal. The skill can be used while downed.",
+          "failure": "If the barrier is not deployed the Phantasm attack instantly kills the entire squad. Using the skill too early causes the barrier to disappear before the attack, resulting in the same wipe.",
+          "common_mistakes": "The selected player activating the SAK the moment they receive it instead of waiting for the correct timing; panicking and using it while the Phantasms are still on the far side of the arena."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Intermission Phase (50% HP)",
+          "summary": "At 50% the squad glides clockwise together along Ley Lines around the entire arena. Stay together, destroy Bloodstone Shards on each platform to cleanse Forsaken Magic stacks, and dodge exploding orange circles that spawn across the platforms. Moving too fast or too slow wraps damaging ribbons around the platforms."
+        },
+        {
+          "name": "Phase 2 Teleport Minigames (40% and 20%)",
+          "summary": "Five random non-tank players are teleported to Push or Button minigames in Phase 2. Push players must guide three Coalescences through Ley Rifts by pushing them clockwise and avoiding orange circles. Button players stand on three buttons simultaneously, rotating clockwise at 9-10 stacks of the button debuff. Returning players gain temporary immunity to most mechanics."
+        },
+        {
+          "name": "Laser Beam",
+          "summary": "Spawns 30 seconds after the first Bloodstone Fragment and repeats roughly every minute. A beam fires from the center with energy orbs radiating outward. Move the tank and squad away from the center in advance and dodge the expanding orbs."
+        },
+        {
+          "name": "Blurred Frenzy",
+          "summary": "Xera occasionally roots in place and performs a high-damage frontal cone attack. Stand behind or outside her hitbox. The tank should step away or use blocks and invulnerability to survive."
         }
       ]
     }

@@ -3,97 +3,252 @@
     "Cardinal Adina": {
       "major_mechanics": [
         {
-          "name": "Pillar Breaks",
-          "when": "Occurs during each damage cycle when Adina becomes invulnerable.",
-          "watch_for": "Adina retreats to the center and protective pillars rise around the arena.",
-          "what_to_do": "Break the correct pillars in the assigned order to expose Adina again.",
-          "failure": "Breaking the wrong pillar or failing to break pillars in time causes arena-wide damage and resets the phase.",
-          "common_mistakes": "Players attacking the wrong pillar; poor split assignments; ignoring add pressure during breaks."
+          "name": "Tectonic Upheaval",
+          "when": "Occurs repeatedly throughout the fight during the main damage phase.",
+          "watch_for": "An orange circle appears beneath each of the five furthest players from Adina. The circle locks onto a hexagon shape on the ground, then a pillar rises there.",
+          "what_to_do": "The five designated baiter players step away from the stack to be the furthest targets. When the circle locks onto the ground, move away immediately before the pillar rises. Return to the stack quickly. Place pillars far enough apart that they do not overlap, and not on top of Adina.",
+          "failure": "Any player still standing on their circle when the pillar rises is instantly defeated. If a rising pillar overlaps another pillar, it destroys it — reducing the number of pillars available to block Boulder Barrage.",
+          "common_mistakes": "Standing too far from the boss at all times (only step out when targeted); not returning to stack after baiting; placing pillars too close together or near Adina."
         },
         {
-          "name": "Sand Walls",
-          "when": "Triggered during each major attack cycle and during transitions.",
-          "watch_for": "Large walls of sand rising from the ground and sweeping across the arena.",
-          "what_to_do": "Move to safe zones or rotate around the arena to avoid being trapped or damaged.",
-          "failure": "Being hit by sand walls deals heavy damage and can trap players in lethal zones.",
-          "common_mistakes": "Players rotating too slowly; running into walls; splitting from the group."
+          "name": "Diamond Palisade",
+          "when": "Immediately before each Boulder Barrage — also at the very start of the fight.",
+          "watch_for": "Adina performs a rippling attack animation. This is the signal to move to your assigned pillar.",
+          "what_to_do": "Move immediately to your assigned pillar. At the very start of the encounter, you can negate the opening Diamond Palisade damage by remaining mounted.",
+          "failure": "Players caught in the open take heavy damage and are left exposed for the incoming Boulder Barrage.",
+          "common_mistakes": "Not moving to a pillar fast enough; forgetting this precedes Boulder Barrage every time."
         },
         {
-          "name": "Hand Crush",
-          "when": "Occurs periodically throughout the fight.",
-          "watch_for": "Giant stone hands emerging from the ground beneath players.",
-          "what_to_do": "Move out of the telegraphed zones immediately to avoid being grabbed.",
-          "failure": "Being hit results in massive damage and immobilization.",
-          "common_mistakes": "Players standing still too long; dodging into another hand zone."
+          "name": "Boulder Barrage",
+          "when": "Immediately after Diamond Palisade, recurring throughout the fight.",
+          "watch_for": "An expanding orange circle erupts from Adina across the arena.",
+          "what_to_do": "Hide behind a pillar. Maximum two players per pillar. Each pillar absorbs two hits from the barrage. Stay behind the pillar until the attack fully resolves.",
+          "failure": "Any player hit by Boulder Barrage goes downstate. Pillars that absorb their maximum hits break — if pillars break without being destroyed by Tectonic Upheaval, Adina gains stacks of a buff that increases her damage output and reduces damage taken by 20% per stack.",
+          "common_mistakes": "More than two players sharing one pillar; players hiding behind the wrong pillar or forgetting their assignment; pillars breaking from the barrage instead of from Tectonic Upheaval (granting Adina stacks)."
+        },
+        {
+          "name": "Radiant Blindness",
+          "when": "After Tectonic Upheaval and before the Boulder Barrage combo resolves.",
+          "watch_for": "Adina raises her arms, speaks a voice line, and gains a glowing Eye icon above her head.",
+          "what_to_do": "Run to your assigned pillar immediately and do NOT face toward Adina. Turn your camera away from her. Maintain position behind the pillar.",
+          "failure": "Looking at Adina while she has the Eye applies a 20-second uncleansable blind to your character, severely reducing your effectiveness.",
+          "common_mistakes": "Continuing to DPS and looking at Adina too long; forgetting to look away while navigating to the pillar."
+        },
+        {
+          "name": "Sand Wall",
+          "when": "At 75%, 50%, and 25% HP — Adina becomes invulnerable and a split phase begins.",
+          "watch_for": "A massive wall of sand rises from the south side of the arena and rotates counterclockwise. It will kill anyone it touches instantly.",
+          "what_to_do": "As soon as the split phase begins, run counterclockwise around the arena, staying ahead of the wall. Stop at the northwest position and hold there for the rest of the phase.",
+          "failure": "Instant death for any player touched by the Sand Wall.",
+          "common_mistakes": "Running clockwise (into the wall); hesitating at the start; stopping too early before reaching the northwest position."
+        },
+        {
+          "name": "Hands of Erosion and Eruption",
+          "when": "After the Sand Wall completes its rotation — at 75% two hands spawn; at 50% and 25% four hands spawn (two of each type).",
+          "watch_for": "Giant stone hands emerge from the ground. Hand of Erosion pulls players toward quicksand edges; Hand of Eruption fires projectiles at the group.",
+          "what_to_do": "Prioritize destroying the Hand of Erosion first. Use blocks, reflects, or projectile mitigation skills to handle Hand of Eruption projectiles. Dodge or use invulnerability if you cannot block the projectiles.",
+          "failure": "Being knocked into the quicksand around the arena edge is lethal. Unblocked Eruption projectiles apply heavy vulnerability stacks. At 25% four hands spawn simultaneously, greatly increasing pressure.",
+          "common_mistakes": "Ignoring the Hand of Erosion; standing near the arena edge when hands appear; lacking projectile mitigation for Hand of Eruption."
+        },
+        {
+          "name": "Perilous Pulse",
+          "when": "Throughout the fight — a standard tank mechanic.",
+          "watch_for": "An orange cone appears in front of Adina aimed at the tank.",
+          "what_to_do": "Tank faces Adina away from the group and absorbs or blocks the knockback. All other players avoid standing in front of the boss.",
+          "failure": "Players hit by the cone are knocked back, potentially into quicksand or mine hazards.",
+          "common_mistakes": "DPS players standing in front of Adina; tank not positioning correctly to face the cone away from the group."
+        },
+        {
+          "name": "Stalagmites",
+          "when": "Throughout the fight — tied to the tank position.",
+          "watch_for": "Mines spawn in blocks behind where the tank is standing.",
+          "what_to_do": "Tank stands within Adina's hitbox and uses invulnerability skills or blocks to avoid being knocked backward into the mines. The group should never stand in the mine field.",
+          "failure": "Mines that detonate deal heavy damage to nearby players and destroy the ground terrain in that area.",
+          "common_mistakes": "Tank walking backward into their own mine field; group members standing near mine locations."
         }
       ],
-      "minor_mechanics": []
+      "minor_mechanics": [
+        {
+          "name": "Pillar Pandemonium (Adina Stacks)",
+          "summary": "Each pillar that is destroyed by Boulder Barrage rather than by a player properly baiting Tectonic Upheaval grants Adina a stack of a buff increasing her outgoing damage and reducing incoming damage by 20% per stack. Ensure all pillars absorb hits cleanly. If a baiter dies, surviving baiters should merge pillar positions to prevent unprotected slots."
+        },
+        {
+          "name": "Quicksand Edges",
+          "summary": "The outer edge of the arena is covered in quicksand. Falling into it causes rapid death. Knockbacks from hands and explosions can throw players in — maintain central positioning and prioritize stability or blocks during split phases."
+        }
+      ]
     },
     "Cardinal Sabir": {
       "major_mechanics": [
         {
-          "name": "Electric Storm",
-          "when": "Occurs at fixed intervals throughout the fight.",
-          "watch_for": "Sabir channels energy and a large storm aura forms around him.",
-          "what_to_do": "Stack tightly inside the safe zone and use defensive cooldowns to survive the blast.",
-          "failure": "Being outside the stack zone results in instant death.",
-          "common_mistakes": "Players standing too far away; dodging out of the stack; late stacking."
+          "name": "Violent Currents / Flash Discharge (SAK)",
+          "when": "Active continuously throughout all damage phases whenever players are in melee range of Sabir.",
+          "watch_for": "Stacks of Violent Currents build up as Sabir's auto-attacks hit players stacking in front of him. At 5 stacks, the Flash Discharge special action key becomes available on your skill bar.",
+          "what_to_do": "Stack tightly in melee in front of Sabir to accumulate Violent Currents stacks as fast as possible. Use Flash Discharge when commanded by the group leader — it deals heavy breakbar damage and is essential for breaking defiance bars. Do not waste Flash Discharge off-cooldown; save it for coordinated breakbar breaks.",
+          "failure": "Spreading out prevents stacks from building, removing the group's primary breakbar tool and a significant DPS modifier. Wasting Flash Discharge at random means the bar cannot be broken when it matters.",
+          "common_mistakes": "Spreading away from the group and losing stack buildup; using Flash Discharge independently instead of on commander's call."
         },
         {
-          "name": "Tornado Pushes",
-          "when": "Active throughout the fight, especially during storm phases.",
-          "watch_for": "Tornadoes forming around the arena and drifting toward players.",
-          "what_to_do": "Avoid tornado paths and reposition quickly if pushed.",
-          "failure": "Being pushed into storms or off the platform results in death.",
-          "common_mistakes": "Players standing near tornado spawn points; ignoring tornado movement patterns."
+          "name": "Electrical Repulsion",
+          "when": "At 90% HP — Sabir's first defiance bar appears.",
+          "watch_for": "A continuous pushback force radiates from Sabir, and orange line telegraphs (Dynamic Deterrent) spawn on the ground around players.",
+          "what_to_do": "Walk into Sabir continuously to fight the pushback, and spam Flash Discharge along with all other crowd control skills to break the defiance bar quickly. After breaking, avoid standing on any orange lines when they detonate.",
+          "failure": "Failing to break the bar allows the pushback to shove players off the platform or into lethal zones. The orange lines detonate and deal heavy burst damage.",
+          "common_mistakes": "Not coordinating crowd control; failing to use all available CC instantly; standing in orange line detonation patterns."
         },
         {
-          "name": "Jade Explosions",
-          "when": "Triggered during add phases and storm transitions.",
-          "watch_for": "Jade orbs glowing brightly before detonating.",
-          "what_to_do": "Move away from or destroy jade orbs before they explode.",
-          "failure": "Explosions deal heavy AoE damage and can chain into lethal hits.",
-          "common_mistakes": "Players ignoring orb timers; stacking too close to multiple orbs."
+          "name": "Unbridled Tempest",
+          "when": "First occurs at 75% HP and repeats throughout the fight.",
+          "watch_for": "Pulsing orange circles expand outward from Sabir, telegraphing a massive wind attack.",
+          "what_to_do": "Use one of three methods: (1) Enter a tornado — the tornado protects you from the wind wall; glide over the wall from inside the tornado. (2) Use Flash Discharge SAK — it teleports you through the wall. (3) Use a death-prevention skill such as Rebound or Rite of the Great Dwarf.",
+          "failure": "Players who are hit by Unbridled Tempest without protection go downstate.",
+          "common_mistakes": "Trying to tank through the attack without protection; not recognizing the telegraph in time; burning Flash Discharge on breakbars immediately before this mechanic fires without having an alternative escape."
+        },
+        {
+          "name": "Tornadoes",
+          "when": "Present in the arena throughout phases 3 and 5 (80%-60% and 60%-0%).",
+          "watch_for": "Tornadoes rotate clockwise around the arena. They are required during Unbridled Tempest but dangerous at all other times.",
+          "what_to_do": "Avoid touching tornadoes during normal DPS phases — contact removes all Violent Currents stacks from your character. Only enter a tornado intentionally to survive Unbridled Tempest by gliding over the wind wall.",
+          "failure": "Accidentally touching a tornado removes your Violent Currents stacks, resetting your contribution to breakbar damage and DPS buff. During the 80% intermission platform navigation phase, one orange death tornado on the path will instantly kill any player who contacts it.",
+          "common_mistakes": "Accidentally walking into a tornado while focusing DPS on Sabir; gliding into the death tornado during the 80% intermission."
+        },
+        {
+          "name": "Ion Shield",
+          "when": "Occurs multiple times during Phase 5 (60%-0%). This is the primary phase 5 breakbar.",
+          "watch_for": "A large defiance bar appears on Sabir that refills very quickly if not broken in a single coordinated burst. The bar has no pushback — it is purely a synchronized CC check.",
+          "what_to_do": "The commander waits until approximately 6 or more players have accumulated Flash Discharge charges (watch for the light yellow border appearing in the squad UI). On the commander's signal, all ready players use Flash Discharge simultaneously to break the bar in one burst.",
+          "failure": "If players use Flash Discharge at different times the bar resets and the group must wait through another full Violent Currents buildup cycle.",
+          "common_mistakes": "Players using Flash Discharge off-cooldown without waiting for the coordinated call; not watching for the visual cue that charges are ready."
+        },
+        {
+          "name": "Titanic Twister",
+          "when": "Spawns at 50% HP and persists throughout the remainder of the fight.",
+          "watch_for": "A very large orange tornado spawns on the west side of the arena and rotates clockwise around the boss.",
+          "what_to_do": "Continuously track this tornado's position and adjust your positioning to avoid it at all times for the rest of the fight. It does not despawn.",
+          "failure": "Contact downs or kills players and prevents resurrection attempts in its area.",
+          "common_mistakes": "Tunnel-visioning DPS on Sabir and drifting into the tornado path; not planning group positioning around the tornado's rotation."
+        },
+        {
+          "name": "Fury of the Storm",
+          "when": "First occurs at 50% HP and repeats periodically thereafter.",
+          "watch_for": "An expanding orange square telegraph originates from the arena center and pushes outward toward the platform edges.",
+          "what_to_do": "Immediately move to one of the two protective bubble zones located in arena corners before the square reaches you.",
+          "failure": "Players who are not inside a protective bubble when the square resolves are downed.",
+          "common_mistakes": "Not reacting the moment the telegraph appears; misjudging the timing and arriving at the bubble too late."
+        },
+        {
+          "name": "Paralyzing Wisps",
+          "when": "Spawn on a side platform to the west at 40% HP. Additional wisp platforms appear every 10% HP thereafter.",
+          "watch_for": "Wisps appear on an adjacent platform and continuously fire projectile damage at the main group. They have a defiance bar and respawn 40 seconds after being killed.",
+          "what_to_do": "A designated player (typically a Banner Warrior or player with updraft-capable gliding) uses Flash Discharge to teleport to the wisp platform, breaks the defiance bar, kills the wisps quickly, then glides back to the main platform using updrafts. Alternatively, if your group has strong projectile mitigation (e.g., Protective Solace walls), the wisps can be ignored.",
+          "failure": "If wisps are left alive they continuously bombard the main group with projectiles. The wisp handler must also avoid being caught by Fury of the Storm or Unbridled Tempest during the round trip.",
+          "common_mistakes": "The wisp handler not accounting for main platform mechanics timing while off-platform; returning too late and getting hit by Unbridled Tempest."
         }
       ],
-      "minor_mechanics": []
+      "minor_mechanics": [
+        {
+          "name": "Platform Intermissions (80% and 60%)",
+          "summary": "At 80% HP Sabir stuns the group and leaps to the next platform. Players must navigate bounce pads and tornadoes to follow. At 80% one orange death tornado on the path instantly kills on contact. At 60% two death tornadoes are present. Do not glide through or into these death tornadoes."
+        },
+        {
+          "name": "Enrage Timer",
+          "summary": "Sabir enrages at 9 minutes total fight time, gaining 200% increased damage. Keep stack discipline and breakbar coordination tight to maintain DPS efficiency."
+        }
+      ]
     },
     "Qadim the Peerless": {
       "major_mechanics": [
         {
-          "name": "Pylon Attunement",
-          "when": "Occurs during each pylon phase as players attune to beams.",
-          "watch_for": "Beams connecting pylons to Qadim and attunement icons appearing on players.",
-          "what_to_do": "Stand in the correct beam to maintain attunement and control pylon energy flow.",
-          "failure": "Losing attunement causes beams to destabilize and increases arena pressure.",
-          "common_mistakes": "Players standing in the wrong beam; leaving beams unattended; poor rotation timing."
+          "name": "Ruinous Nova (Fight Opener)",
+          "when": "Immediately at the start of the fight, before any damage can be dealt.",
+          "watch_for": "Qadim channels with all three pylons glowing. Each pylon has a breakbar that must be broken.",
+          "what_to_do": "Split the squad into three groups — one group per pylon. Each group uses crowd control skills to break their assigned pylon's defiance bar simultaneously. The Pylon Kiters and any CC-capable players coordinate to break all three bars before Ruinous Nova completes.",
+          "failure": "If any pylon's breakbar is not broken in time, Ruinous Nova resolves and wipes the entire squad instantly.",
+          "common_mistakes": "Uneven CC distribution leaving one pylon unbroken; players not knowing their pylon assignment before the pull."
+        },
+        {
+          "name": "Flux Disruptor (Tether Setup)",
+          "when": "Must be activated before the fight starts. Reassignment occurs throughout the fight at phase transitions.",
+          "watch_for": "A special action skill is available in the arena before engaging. The tank and three designated Pylon Kiters must activate it. Pylon tethers apply Erratic Energy, a 5% increased damage taken debuff.",
+          "what_to_do": "Only the tank and three Pylon Kiters activate Flux Disruptor initially. All other players must NOT activate it. The tank tethers to Qadim (closest player with active Flux Disruptor). Each Pylon Kiter tethers to their assigned pylon. At Phase 4 through Phase 6 additional players activate or deactivate as directed by the strategy.",
+          "failure": "Wrong players activating Flux Disruptor breaks pylon tether assignments, preventing shield strip and causing squad-wide damage.",
+          "common_mistakes": "Non-designated players activating Flux Disruptor at fight start; failing to manage activation/deactivation at later phase transitions."
+        },
+        {
+          "name": "Orb Collection and Good Tether",
+          "when": "Starting at 95% HP, an orb fires every 5% HP from 95% to 40% (skipping the 80% and 60% fire phases).",
+          "watch_for": "A red arrow points from Qadim toward one of three landing zones around the arena. Orbs travel toward the landing zone and must be intercepted by a Pylon Kiter.",
+          "what_to_do": "The appropriate Pylon Kiter intercepts the orb before it lands and immediately returns it to their pylon. Use teleport skills to move quickly. Each caught orb adds a Secondary Good Tether stack to that pylon — Good Tethers increase Qadim's damage taken by 5% per stack (maximum 10 stacks = 50% increased damage taken).",
+          "failure": "If an orb lands without being caught or is grabbed by an Anomaly, the squad takes heavy damage. Failing to build Good Tether stacks significantly increases the time required to kill Qadim.",
+          "common_mistakes": "Hesitating on pickup; not returning to the pylon immediately after catching; kiters being too far from the orb landing zone."
+        },
+        {
+          "name": "Force of Havoc (Carpet)",
+          "when": "After Force of Retaliation in each main phase. The tank is selected as the placement anchor.",
+          "watch_for": "Qadim creates a long rectangular AoE path on the ground that persists for 20 seconds. It may visually disappear due to a known bug — the area remains deadly regardless.",
+          "what_to_do": "The tank alternates carpet placement between two pre-defined safe locations away from the pylons and the squad stack. All other players avoid the carpet zone. Do not let the carpet touch a pylon — if it does, that pylon is reclaimed by Qadim and its breakbar must be re-broken.",
+          "failure": "Anyone standing in the carpet takes massive damage. A pylon caught in the carpet is reclaimed, adding an additional pylon break to the phase.",
+          "common_mistakes": "Tank placing carpet on the same spot twice (must alternate); carpet clipping a pylon; group standing in the carpet path."
         },
         {
           "name": "Anomalies",
-          "when": "Spawn during each pylon phase and during transitions.",
-          "watch_for": "Small glowing anomalies drifting toward pylons or Qadim.",
-          "what_to_do": "Kill anomalies quickly before they reach their targets.",
-          "failure": "Anomalies empower Qadim or destabilize pylons, causing massive damage.",
-          "common_mistakes": "Players tunneling the boss; ignoring anomaly spawns; poor add focus."
+          "when": "First spawn at 75% HP, then every 40 seconds. During Phases 4 and 5 spawn rate increases to every 30 seconds.",
+          "watch_for": "A purple-black void telegraph appears at orb spawn points. An Anomaly creature then walks toward Qadim.",
+          "what_to_do": "Break the Anomaly's defiance bar and kill it before it reaches Qadim. Anomalies that walk through active fire zones on the ground are automatically destroyed — use fire placement to cover their paths. If an Anomaly cannot be guided into fire, the squad must manually focus and kill it. During pylon rebreak phases all living Anomalies walk directly toward Qadim — kill them before breaking pylons.",
+          "failure": "Any Anomaly that reaches Qadim powers him up, increasing difficulty. Multiple Anomalies reaching him can cause a wipe.",
+          "common_mistakes": "No assigned player responsible for Anomalies; breaking Anomaly CC bars too early before fire placement is ready; leaving Anomalies alive when entering a pylon break phase."
         },
         {
-          "name": "Unstable Magic",
-          "when": "Occurs throughout the fight, especially during burn phases.",
-          "watch_for": "Magic eruptions forming on the ground with bright telegraphs.",
-          "what_to_do": "Move out of marked zones immediately to avoid heavy damage.",
-          "failure": "Standing in eruptions deals lethal damage and can chain into group wipes.",
-          "common_mistakes": "Players stacking too tightly; dodging into other eruptions; ignoring telegraphs."
+          "name": "Skyhammer",
+          "when": "Starting in Phase 1 at approximately 90% HP. Repeats periodically. The tank is immune.",
+          "watch_for": "A random player is targeted by a barrage of lightning. Three orange circles appear and grow progressively larger around that player's position.",
+          "what_to_do": "Immediately run away from the group toward the arena edge. The circles do not move with you — they stay at the location where you were when targeted. Keep running until you are clear. On the final (largest) circle, be prepared to dodge or use swiftness to escape cleanly.",
+          "failure": "Heavy damage from each circle. If you remain in the group the circles hit multiple players. The final large circle requires active avoidance.",
+          "common_mistakes": "Not moving away from the group fast enough; using dodge too early before the final circle; standing still thinking it will follow you."
         },
         {
-          "name": "Tail Swipes",
-          "when": "Triggered when players stand behind Qadim for too long.",
-          "watch_for": "Qadim shifting his weight and sweeping his tail behind him.",
-          "what_to_do": "Avoid standing directly behind Qadim; reposition to his sides.",
-          "failure": "Tail swipes deal heavy damage and knock players away.",
-          "common_mistakes": "Players tunneling DPS behind the boss; ignoring tail animations."
+          "name": "Force of Retaliation",
+          "when": "After all pylons are broken at 100%, 80%, and 60% HP; and after Qadim flies to each pylon at 40%, 30%, and 20% HP.",
+          "watch_for": "A shockwave radiates outward from Qadim immediately after pylon events.",
+          "what_to_do": "Dodge the shockwave or use blocking abilities. Groups often pre-stack at the edge of a fire zone and use shared stability or blocks (such as Stand Your Ground) to ride through it safely.",
+          "failure": "Being hit knocks players backward, potentially into fire zones or off safe areas.",
+          "common_mistakes": "Not dodging; poor positioning that leaves no safe direction to be knocked toward."
+        },
+        {
+          "name": "Poisoned Power",
+          "when": "Occurs occasionally during Phase 2 (80%-60%) when Qadim targets a pylon.",
+          "watch_for": "Qadim channels a purple beam directly at one of the pylons. A defiance bar appears on that pylon.",
+          "what_to_do": "The Pylon Kiter assigned to that pylon must immediately break its defiance bar within 10 seconds using all available CC skills.",
+          "failure": "Failing to break the bar in time applies Enfeebled Force to the kiter (inflicting weakness, vulnerability, cripple, and bleeding repeatedly). Qadim may reclaim the pylon if the bar is not broken.",
+          "common_mistakes": "Pylon Kiter not being near their pylon when Poisoned Power triggers; not having CC skills ready."
+        },
+        {
+          "name": "Bad Tether System (Phases 4-6)",
+          "when": "Phase 4 begins at 40% HP when Qadim destroys the north pylon. Continues through Phases 5 and 6.",
+          "watch_for": "Players with active Flux Disruptors receive Primary or Secondary Bad Tether debuffs from Qadim. Primary Bad Tethers fix directly to Qadim; Secondary Bad Tethers spread from Primary Tether players (up to 3 Secondary per Primary).",
+          "what_to_do": "Designated tether players keep their Flux Disruptors active and separate from the DPS group. Tethered players stand at the tank's side at the inner circle edge and stay at range. All non-designated players deactivate Flux Disruptor before Phase 6 lockup to limit how many players receive Bad Tethers.",
+          "failure": "Bad Tethers spreading to damage dealers reduces the squad's overall damage output, extending the fight dangerously toward enrage.",
+          "common_mistakes": "Non-designated players forgetting to deactivate Flux Disruptor; tethered players mixing with the DPS group and spreading Bad Tethers."
         }
       ],
-      "minor_mechanics": []
+      "minor_mechanics": [
+        {
+          "name": "Chaos Currents",
+          "summary": "Throughout the fight, electric currents flow along white lines on the arena floor. Avoid standing on the moving current paths — contact deals heavy damage, weakness, and burning."
+        },
+        {
+          "name": "Fire Phase (80% and 60% HP)",
+          "summary": "At 80% Qadim lifts all players and an expanding white circle appears. The squad must immediately move to the designated fire stack location (left side at 80%, right side at 60% for standard groups). Standing in the wrong location drops deadly fire circles. After the fire phase pylons regain breakbars and must be re-broken. Fire zones placed correctly also serve as Anomaly destruction paths."
+        },
+        {
+          "name": "Buff Stripping (Phase 6)",
+          "summary": "In Phase 6 (20%-0%) Qadim gains protective buffs at regular intervals. Assign dedicated strip players (Chronomancer Mind Spike, Scourge Feast of Corruption, or Renegade Banish Enchantment) to remove these buffs continuously. Failure to strip reduces incoming damage significantly."
+        },
+        {
+          "name": "Good Tether Stack Optimization",
+          "summary": "Building maximum Good Tether stacks (10 stacks = 50% damage increase on Qadim) allows high-DPS groups to skip Phases 4 and 5 entirely by burning Qadim past 40% and 30% before the pylon destruction mechanics trigger. Each pylon supports up to 3 Secondary Good Tethers via orb catches in addition to its Primary Tether."
+        }
+      ]
     }
   }
 }

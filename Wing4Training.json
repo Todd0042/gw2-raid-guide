@@ -3,127 +3,228 @@
     "Cairn the Indomitable": {
       "major_mechanics": [
         {
-          "name": "Displacement",
-          "when": "Occurs regularly throughout the fight, especially after Cairn teleports.",
-          "watch_for": "Cairn raises his arm and a glowing line appears indicating the direction of the teleport.",
-          "what_to_do": "Quickly reposition after each teleport to maintain stack and avoid being caught out of range.",
-          "failure": "Players left behind take heavy damage or die from subsequent mechanics.",
-          "common_mistakes": "Players not reacting to teleports; running in the wrong direction; losing uptime."
+          "name": "Spatial Manipulation (Greens)",
+          "when": "Triggered throughout the fight; always preceded by either Energy Surge or Orbital Sweep.",
+          "watch_for": "Multiple green circles appearing across the arena, each displaying a number of golden orbs above it indicating how many players are required.",
+          "what_to_do": "Every player must enter a green circle. Match the number of players in each circle to the golden orb count above it—no more, no fewer. Quickly count nearby circles and coordinate with the squad to fill each one correctly before detonation.",
+          "failure": "Any player not inside a valid green circle takes heavy damage and gains 25 Unseen Burden stacks and a 2-second Float. Successfully standing in a circle removes 25 Unseen Burden stacks.",
+          "common_mistakes": "Too many players piling into one circle and leaving another empty; panicking and moving out of a circle before detonation; ignoring the orb count and filling circles wrong."
         },
         {
           "name": "Shared Agony",
-          "when": "Applied periodically to a random player.",
-          "watch_for": "A tether appears linking the afflicted player to the group.",
-          "what_to_do": "The tethered player should stand slightly away from the group but not too far to avoid lethal damage.",
-          "failure": "If the tether is stretched too far, the afflicted player dies instantly.",
-          "common_mistakes": "Players running too far away; stacking too close and causing unnecessary damage."
+          "when": "First triggers at 7 minutes 37 seconds remaining, then every 20 seconds. Targets the furthest unafflicted player.",
+          "watch_for": "A red pulsing aura appearing on the targeted player. Up to three players can be simultaneously afflicted.",
+          "what_to_do": "Afflicted players must immediately move away from the squad and maintain distance. The red aura deals heavy damage to up to three nearby players within its area of effect. Healers and supports typically volunteer for early casts to control placement. Non-afflicted players must not approach afflicted teammates.",
+          "failure": "Afflicted players standing in the squad cause the aura to deal significant damage to up to three nearby players, quickly overwhelming healer output.",
+          "common_mistakes": "Afflicted players drifting back toward the stack out of habit; non-afflicted players running toward an afflicted teammate; forgetting that up to three simultaneous afflictions can occur late in the fight."
+        },
+        {
+          "name": "Displacement",
+          "when": "Occurs at regular intervals throughout the fight.",
+          "watch_for": "Three red circles appearing around the arena. Affected players see their screen border glow yellow.",
+          "what_to_do": "Step out of any red circle immediately. Use Celestial Dash to reposition if needed. If teleported, use Celestial Dash to quickly return to the squad before the next mechanic.",
+          "failure": "Players inside a circle when it detonates take damage and are teleported to a random arena location, potentially into the path of other mechanics.",
+          "common_mistakes": "Not noticing the yellow screen border warning; getting teleported and then being caught by Spatial Manipulation away from the squad."
+        },
+        {
+          "name": "Celestial Dash (Special Action Key)",
+          "when": "Available from the start of the encounter; central to surviving Displacement and Unseen Burden accumulation.",
+          "watch_for": "The special action key icon on your UI. Unseen Burden stacks reducing movement speed (1% per stack).",
+          "what_to_do": "Use Celestial Dash as a ground-targeted movement skill to reposition after Displacement teleports, to dodge Energy Surge or Orbital Sweep knockbacks, and to reach Spatial Manipulation circles. It functions as an evasion. Use it proactively to maintain stack with the squad.",
+          "failure": "Not using Celestial Dash when slowed by Unseen Burden stacks leaves players isolated and unable to reach green circles in time.",
+          "common_mistakes": "Hoarding Celestial Dash instead of using it to keep up with the group; using it into dangerous zones instead of toward the squad."
+        },
+        {
+          "name": "Unseen Burden",
+          "when": "Stacks are applied by Meteor Swarm (standing outside the compass pattern) and by failing Spatial Manipulation.",
+          "watch_for": "The compass pattern on the arena floor (requires Shaders set to Medium or higher). Stacks accumulating on your debuff bar, each reducing movement speed by 1%.",
+          "what_to_do": "Stay as close to Cairn as possible to remain within the compass safe zone and avoid Meteor Swarm stacks. Do NOT use reflect skills—reflected shards will hit other players. Rely on Celestial Dash to compensate for speed loss.",
+          "failure": "At 99 stacks of Unseen Burden players cannot move. In normal mode this is effectively fatal; in Challenge Mode players are fully petrified and locked out of all skills except Celestial Dash.",
+          "common_mistakes": "Using reflection skills that hit other players with reflected shards; standing outside the compass and accumulating stacks unnecessarily; not setting Shaders to Medium to see the compass pattern."
         }
       ],
       "minor_mechanics": [
         {
-          "name": "Orb Spawns",
-          "summary": "Orbs appear and must be avoided to prevent damage."
+          "name": "Energy Surge",
+          "summary": "Cairn teleports around the arena leaving green circles behind (always followed by Spatial Manipulation). An arrow at Cairn's feet indicates the direction. Sidestep or dodge the knockback path."
+        },
+        {
+          "name": "Orbital Sweep",
+          "summary": "Later in the fight Cairn extends one arm and sweeps counterclockwise. Position on the clockwise side of the arm and time a dodge or Celestial Dash to avoid the knockback. Always followed by Spatial Manipulation."
+        },
+        {
+          "name": "Gravity Wave",
+          "summary": "Active below 25% HP. Three large energy waves radiate outward after Orbital Sweep. Players stacked close to Cairn are in the safe zone and unaffected."
         }
       ]
     },
     "Mursaat Overseer": {
       "major_mechanics": [
         {
-          "name": "Mosaic Tiles",
-          "when": "Active throughout the fight as safe and unsafe tiles rotate.",
-          "watch_for": "Tiles glow with shifting patterns indicating safe zones.",
-          "what_to_do": "Move to safe tiles as they appear while maintaining DPS on the boss.",
-          "failure": "Standing on unsafe tiles deals heavy damage and can quickly down players.",
-          "common_mistakes": "Players tunneling on DPS; moving too late; misreading tile patterns."
+          "name": "Claim / Protect / Dispel (SAK System)",
+          "when": "Active from the start of the encounter. Three specific players are assigned each SAK role at the beginning of the pull.",
+          "watch_for": "The three special action key icons assigned to three different players. Orange tiles covering roughly half the board at fight start. Green tiles charging with a 5-second warning before spiking.",
+          "what_to_do": "Claim player: use the ground-targeted Claim skill on orange (boss-claimed) tiles to flip them safe, keeping the central four squares clear. Protect player: kite Jade Soldiers (which fixate on you) away from the squad; use the Protect dome to block their explosion on death and to save the squad from Spike charges if needed. Dispel player: use the single-target Dispel skill to remove the orange shield from shielded Jade Scouts and Soldiers before the squad damages them.",
+          "failure": "Without Claim the squad has no safe tiles to stand on and takes continuous heavy damage. Without Dispel, shielded Scouts/Soldiers regenerate health whenever damaged. Without Protect, Jade Soldiers explode on the squad and the Protect player cannot kite them.",
+          "common_mistakes": "Claim player letting orange tiles encroach on the central four safe squares; Dispel player removing shields from Scouts while Soldiers are also shielded; Protect player kiting Soldiers through the squad."
         },
         {
-          "name": "Jade Soldiers",
-          "when": "Spawn at regular intervals and march across the arena.",
-          "watch_for": "Jade constructs emerging from portals and walking in straight lines.",
-          "what_to_do": "Avoid their paths entirely; do not attempt to tank or kill them.",
-          "failure": "Being touched by a Jade Soldier results in instant death.",
-          "common_mistakes": "Players dodging into soldier paths; standing too close to spawn points."
+          "name": "Mosaic Tiles (Green Spike Tiles)",
+          "when": "Cycles on a 10-second loop; first spike pattern appears 5 seconds into the encounter.",
+          "watch_for": "Tiles turning green with a 5-second charge period. Spikes erupt from green tiles at full charge.",
+          "what_to_do": "Move off any tile that turns green before the 5-second charge expires. The Protect dome can mitigate the spike damage if a player cannot move in time.",
+          "failure": "Standing on a green tile when it detonates causes instant death. The Protect dome is the only way to survive without moving.",
+          "common_mistakes": "Assuming green tiles are safe zones—they are not, they are the danger; staying on a tile while tunneling DPS on the boss; not noticing the charge timer."
+        },
+        {
+          "name": "Jade Scouts and Jade Soldiers",
+          "when": "Four Jade Scouts spawn at fight start and slowly advance across the board. If any Scout reaches the opposite edge it upgrades into a Jade Soldier.",
+          "watch_for": "Jade Scouts flipping safe tiles as they walk. Jade Soldiers fixating on the Protect player, gaining a damage-applying aura, and empowering the boss.",
+          "what_to_do": "Dispel shields from Scouts immediately—damaged Scouts without Dispel go invulnerable and regenerate. Kill Scouts before they reach the far edge. If Soldiers spawn the Protect player kites them; Dispel removes their shields; kill Soldiers when their shields are down. Avoid standing near Soldiers when they die as they explode.",
+          "failure": "Active Soldiers empower the boss, increasing aura damage and orange-tile damage. Multiple Soldiers simultaneously makes positioning extremely difficult.",
+          "common_mistakes": "Damaging shielded Scouts or Soldiers and triggering their invulnerability; letting Scouts reach the far edge because of distraction with boss DPS; Protect player not leading Soldiers away from the squad before they die."
         }
       ],
       "minor_mechanics": [
         {
-          "name": "Overhead Slam",
-          "summary": "A large slam attack requires players to dodge or block."
+          "name": "Orange Tiles (Boss-Claimed)",
+          "summary": "Tiles claimed by the boss deal heavy continuous ticking damage to any player standing on them. Use the Claim SAK to flip orange tiles safe. The Claim skill is disabled after the 6-minute enrage timer."
+        },
+        {
+          "name": "Enrage",
+          "summary": "6-minute enrage timer. After enrage the Claim SAK is disabled, making the ever-expanding orange tile coverage fatal. The encounter must be completed before enrage."
         }
       ]
     },
     "Samarog": {
       "major_mechanics": [
         {
-          "name": "Guldhem and Rigom",
-          "when": "Triggered at 66% and 33% health thresholds.",
-          "watch_for": "Samarog becomes invulnerable and the two adds spawn on opposite sides.",
-          "what_to_do": "CC Guldhem, kite Rigom into him, and kill them in the correct sequence.",
-          "failure": "If Rigom dies too far from Guldhem, the phase resets.",
-          "common_mistakes": "Players killing Rigom too early; poor CC timing; failing to kite properly."
+          "name": "Brutal Aura",
+          "when": "Passive; active for the entire encounter from the moment the fight starts.",
+          "watch_for": "Continuous damage ticks to all players approximately every 3 seconds.",
+          "what_to_do": "Maintain constant healing support. There is no way to avoid this damage—it must be healed through. Ensure healers have enough healing output to sustain the squad on top of all other mechanics.",
+          "failure": "Without consistent healing the passive damage will gradually down the squad even without any other mechanic being failed.",
+          "common_mistakes": "Underestimating the healing requirement for this fight; taking a healing setup that is tuned for mechanics only and forgetting about the baseline passive damage."
         },
         {
-          "name": "Impaling Stab",
-          "when": "Occurs periodically throughout the fight.",
-          "watch_for": "Samarog targets a player and performs a long, telegraphed thrust.",
-          "what_to_do": "The targeted player must dodge or block the attack; allies should avoid standing in the line.",
-          "failure": "Being hit results in a stun and heavy damage, often leading to death.",
-          "common_mistakes": "Players not noticing the targeting animation; standing behind the targeted player."
+          "name": "Brutalize",
+          "when": "Triggers at every 10% HP threshold throughout the fight.",
+          "watch_for": "Samarog leaping onto the current tank; the boss becoming immune to damage and gaining a defiance bar; the tank taking continuous heavy damage.",
+          "what_to_do": "Immediately break the defiance bar using crowd control abilities. The healer should spam heals on the tank to extend the time before the tank dies. All CC must be coordinated and deployed instantly—do not hold CC for other purposes.",
+          "failure": "If the CC bar is not broken, the tank dies. Extended Brutalize also prevents any damage to the boss.",
+          "common_mistakes": "Players saving CC for Prisoner Sweep instead of prioritizing the Brutalize bar; healer not immediately focusing the tank; slow CC response due to players not watching HP thresholds."
         },
         {
-          "name": "Shockwaves",
-          "when": "Triggered after Samarog performs a large slam attack.",
-          "watch_for": "Circular shockwaves radiating outward from Samarog.",
-          "what_to_do": "Jump or dodge each shockwave to avoid damage.",
-          "failure": "Taking multiple shockwaves can down or kill players.",
-          "common_mistakes": "Players mistiming jumps; dodging too early; standing too close to Samarog."
-        }
-      ],
-      "minor_mechanics": []
-    },
-    "Deimos": {
-      "major_mechanics": [
-        {
-          "name": "Black Oil",
-          "when": "Spawns periodically throughout the fight, especially during later phases.",
-          "watch_for": "Black puddles forming beneath players or at random locations.",
-          "what_to_do": "Place oil away from the group and avoid standing in it.",
-          "failure": "Oil expands and deals heavy damage, overwhelming the arena.",
-          "common_mistakes": "Players dropping oil in the stack; placing oil near Saul or key positions."
+          "name": "Inevitable Betrayal",
+          "when": "Every 25 seconds in Phase 2. Identified by the chat message 'Choose your allies wisely…'",
+          "watch_for": "One player receiving a large orange circle and another player receiving a small green circle.",
+          "what_to_do": "The player with the large orange circle must leave the squad and stop moving. The player with the small green circle must immediately stack on top of the orange-circle player. Both players absorb the damage together. All other players remain in the stack.",
+          "failure": "The orange-circle player takes lethal damage if they remain isolated without the green-circle player stacking on them. Both players taking the hit together distributes the damage to survivable levels.",
+          "common_mistakes": "The green-circle player not noticing their marker and failing to stack on their partner; the orange-circle player continuing to move and making the green-circle player chase them; the squad not recognizing the mechanic and everyone spreading."
         },
         {
-          "name": "Hand Kiting",
-          "when": "Hands spawn regularly and fixate on a designated player.",
-          "watch_for": "Shadowy hands emerging from the ground and moving toward the kiter.",
-          "what_to_do": "The kiter must move in a controlled path away from the group while avoiding oil.",
-          "failure": "Hands reaching the group cause massive damage and chaos.",
-          "common_mistakes": "Kiter running through the group; hands being dragged into oil or mechanics."
+          "name": "Prisoner Sweep and Perimeter Spears",
+          "when": "Part of Samarog's regular attack pattern throughout all phases.",
+          "watch_for": "Samarog swinging both spears in two consecutive arcing knockback attacks; the ring of permanently placed spears around the outer edge of the arena.",
+          "what_to_do": "Stand behind Samarog inside his hitbox or block and dodge both swings. Use knockback-prevention skills such as Stand Your Ground or Inspiring Reinforcement. Never let a knockback push you toward the arena perimeter—spears at the edge deal instant death on contact.",
+          "failure": "Being knocked into the perimeter spears is instant death with no recovery.",
+          "common_mistakes": "Standing at the outer edge of the arena during any knockback attack; dodging backward (toward the perimeter) instead of sideways; not using stability or knockback prevention."
         },
         {
-          "name": "Mind Crush",
-          "when": "Occurs at fixed intervals throughout the fight.",
-          "watch_for": "Deimos raises his arms and a large red AoE appears on the ground.",
-          "what_to_do": "Stack tightly to share the damage and use defensive cooldowns.",
-          "failure": "Unstacked players are instantly killed.",
-          "common_mistakes": "Players standing too far away; dodging out of the stack; late stacking."
-        },
-        {
-          "name": "Saul Phases",
-          "when": "Triggered at 75%, 50%, and 25% health thresholds.",
-          "watch_for": "Saul gaining new behaviors such as gambling, drinking, or summoning adds.",
-          "what_to_do": "Manage adds, interrupt Saul’s dangerous abilities, and maintain control of the arena.",
-          "failure": "Unmanaged adds overwhelm the group or Saul dies prematurely.",
-          "common_mistakes": "Players ignoring adds; failing to interrupt; poor positioning during transitions."
+          "name": "Guldhem and Rigom (Split Phases)",
+          "when": "At 66% and 33% HP Samarog leaves the arena and two adds spawn: Guldhem (large) and Rigom (small).",
+          "watch_for": "Guldhem applying a damage-sharing shield to himself every 33% of his HP. Rigom needing to be positioned under Samarog's original location. Guldhem targeting the furthest player with a stunning AoE every 20 seconds.",
+          "what_to_do": "Use pushes, immobilizes, and displacement abilities to move Rigom under Samarog. When Guldhem gains his shield, damage to Guldhem transfers to Rigom—let Rigom's explosion detonate near Guldhem to strip the shield. Kill Guldhem after his shield is removed. Dodge or heal through Guldhem's distant-target stun. Do not stand near Rigom when he explodes.",
+          "failure": "If Rigom's explosion does not hit Guldhem, Guldhem's shield never breaks and he cannot be killed. Adds remaining alive for too long deal increasing pressure on the squad.",
+          "common_mistakes": "Killing Rigom before he can position under Guldhem; failing to push Rigom close enough with movement abilities; the squad standing near Rigom during the explosion and taking heavy damage."
         }
       ],
       "minor_mechanics": [
         {
-          "name": "Greater Death Mark",
-          "summary": "A large AoE requires coordinated movement to avoid group damage."
+          "name": "Shockwave",
+          "summary": "Samarog rears up and slams his spears, sending a ground shockwave outward. Jump or dodge the wave. The tank can step into the boss hitbox and dodge backward. Being knocked by the Shockwave into perimeter spears is instant death."
         },
         {
-          "name": "Shackles",
-          "summary": "Players are tethered together and must coordinate movement to break the link."
+          "name": "Spear Impact",
+          "summary": "Every 20 seconds a red circle charges and a spear lands dealing heavy damage with a persistent condition AoE. Stay out of the impact zone. Spears can be destroyed or cleared when breaking defiance bars. Cleave them while hitting the boss when possible."
+        },
+        {
+          "name": "Fixation System",
+          "summary": "Initial fixation goes to the closest player. Subsequent fixations go to the furthest player. A new fixate target is chosen after each defiance bar break, each split phase, or if the current target dies. Tank should hold Samarog in the arena center while the squad stacks behind."
+        }
+      ]
+    },
+    "Deimos": {
+      "major_mechanics": [
+        {
+          "name": "Mind Crush",
+          "when": "Occurs approximately every 40 seconds.",
+          "watch_for": "Deimos channels with his flails; Saul shouts 'Stand in the ward! Quickly!'; a protective dome appears around Saul.",
+          "what_to_do": "Move into Saul's protective dome immediately. Players inside the dome are protected. Players outside take 70% of maximum HP as damage over 10 seconds and can be instantly downed. Personal blocks and death-prevention skills (e.g., Rebound!) are valid alternatives if caught outside.",
+          "failure": "Any player outside Saul's dome takes lethal damage. Ghost explosions that occur simultaneously strip Protection from players and can combine lethally with Mind Crush.",
+          "common_mistakes": "Stacking to share damage instead of standing in Saul's dome—this is wrong; the dome is the correct action. Running away from the dome out of panic. Being in the wrong position when the cast starts."
+        },
+        {
+          "name": "Rapid Decay (Black Oil)",
+          "when": "Starts at 60% HP. Spawns every 15 seconds under the closest non-tank player to the boss.",
+          "watch_for": "A bright orange circle appearing on a non-tank player's position.",
+          "what_to_do": "Move away from the group immediately when you see the orange indicator. Place oil toward the arena edge, not in the center (the center is needed for Saul's dome). Leave the oil placement spot quickly—each step taken inside expanding oil makes it larger. The tank should not hold the boss in the center of the arena to keep oil away from the dome.",
+          "failure": "Oil expands with every step taken through it. Fully expanded oil in the center of the arena blocks access to Saul's dome and is frequently responsible for squad wipes.",
+          "common_mistakes": "Dropping oil in the center of the arena near Saul's dome; running through existing oil to place new oil; the tank holding the boss at the center and forcing oil into the dome area."
+        },
+        {
+          "name": "Hand Kiting",
+          "when": "Every 10 seconds from fight start. Hands spawn at the furthest player from Deimos.",
+          "watch_for": "Five shadowy hands appearing at 1-second intervals at the location of the furthest player.",
+          "what_to_do": "Designate one player as the Hand Kiter. That player must stay at maximum distance from Deimos at all times. Keep approximately five hands stacked in one area away from the squad. At each 25% HP threshold all existing hands are pulled to Deimos—each hand that reaches him grants +2% damage to the boss, so minimize accumulated hands before threshold transitions.",
+          "failure": "Hands reaching the squad cause massive damage. Hands reaching Deimos during threshold transitions grant permanent damage stacks.",
+          "common_mistakes": "The kiter running through the squad and depositing hands on the group; allowing more than five hands to accumulate before a threshold transition; the kiter not being the furthest player at all times."
+        },
+        {
+          "name": "Annihilate (Pizza)",
+          "when": "Approximately every 20 seconds.",
+          "watch_for": "A large orange AoE split into segments fanning out in front of Deimos.",
+          "what_to_do": "Dodge toward Deimos's front center or step into the gap between two segments. Blocks and invulnerability skills also work. Avoid standing between two segment boundaries—hits there count as two separate hits. The attack cascades from front to back.",
+          "failure": "Being hit by Annihilate deals heavy damage. Being struck between segments takes double damage.",
+          "common_mistakes": "Dodging backward away from Deimos (into the full cascade); misjudging the segment boundaries; not using blocks or invuln when caught in the AoE."
+        },
+        {
+          "name": "Saul Clone Phases (Green Portals)",
+          "when": "Green portal phases trigger at 75% (Thief Saul), 50% (Gambler Saul), and 25% (Drunkard Saul). A random non-tank player is targeted with a green circle at each threshold.",
+          "watch_for": "A green circle appearing on a random non-tank player at each threshold. Different clone behaviors in the Demonic Realm.",
+          "what_to_do": "Thief Saul (75%): Enter the green portal, fight the clone to 50% HP, then return. If his defiance bar is not broken the Thief steals all group boons. Gambler Saul (50%): Enter the portal, identify the real Saul by his White Mantle Staff among four copies, stand outside all four to avoid damage, then kill him quickly. Drunkard Saul (25%): Enter the portal, break his defiance bar quickly, kill him fast. An unbroken bar triggers random player teleports on the main platform, potentially into Oils.",
+          "failure": "Thief Saul unbroken: squad loses all boons. Gambler Saul: standing inside the four copies deals lethal damage. Drunkard Saul: unbroken bars cause chaos on the main platform. If Saul dies on the main platform, the encounter fails.",
+          "common_mistakes": "Identifying the wrong Gambler clone and attacking it; not breaking Drunkard's bar before delayed teleports catch the main-platform players in Oil; the same player always entering portals and leaving the main platform undefended."
+        },
+        {
+          "name": "Demonic Tears",
+          "when": "Spawn at 75% HP and continue spawning every 15 seconds after that.",
+          "watch_for": "Tear portals appearing around the platform perimeter.",
+          "what_to_do": "Walk over tears to close them. Each player has a 60-second cooldown before they can close another tear. Assign multiple players to patrol tears so no single player is overwhelmed. Tears are not dangerous to walk through.",
+          "failure": "Open Demonic Tears spam unblockable projectiles at the squad, applying significant pressure on top of all other mechanics.",
+          "common_mistakes": "Ignoring tears after 75% because the squad is focused on Oil and clones; one player burning their cooldown early and being unable to close subsequent tears."
+        },
+        {
+          "name": "10% Demonic Realm Phase",
+          "when": "Triggered when Deimos reaches 10% HP. He becomes invulnerable and all players are teleported to the Demonic Realm.",
+          "watch_for": "Deimos reaching 10%; the entire squad being teleported simultaneously.",
+          "what_to_do": "In the Demonic Realm: dodge right for the first attack, dodge left for the second, then dodge when Deimos slams both hands for the third. Hands and Oils continue to spawn—the hand kiter resumes far positioning and one player can bait Oils to the side. Maintain all normal mechanics until Deimos is defeated.",
+          "failure": "Deimos pushes players off the platform in the Demonic Realm if they fail to dodge correctly. Oils and Hands in the Demonic Realm can kill players the same as in the main phase.",
+          "common_mistakes": "Forgetting the dodge directions for the first three attacks; the hand kiter not resuming far position immediately on arrival; dropping Oil in the center of the Demonic Realm platform."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Ghosts (Greeds and Prides)",
+          "summary": "Spawn at fight start and again at 40% HP. Small ghosts (Greeds) and large ghosts (Prides) advance toward Saul. Kill all ghosts before they reach Saul. Use immobilizes and cripples on large Prides. If Saul is killed by ghost detonations the encounter fails."
+        },
+        {
+          "name": "Chain Breaking (Demonic Realm Portals)",
+          "summary": "A random player is targeted with a green circle. Enter the circle to teleport to the Demonic Realm side, destroy four statues, and avoid Deimos's flail swings. Being knocked off the platform by the flail is fatal."
+        },
+        {
+          "name": "Unnatural Signet",
+          "summary": "Applied 5 seconds into the boss phase and roughly every minute. Deimos takes 200% increased damage for 10 seconds. Time burst damage windows to coincide with this buff for maximum phase efficiency."
         }
       ]
     }

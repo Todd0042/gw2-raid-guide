@@ -1,5 +1,6 @@
 #include "RaidGuide.h"
 #include "../data/WingData.h"
+#include "../data/QuickPlayData.h"
 #include "../Shared.h"
 #include "imgui.h"
 
@@ -65,6 +66,33 @@ static const ImVec4 kFldSummary       = { 0.65f, 0.68f, 0.72f, 1.0f }; // cool g
 static const ImVec4 kNodeText         = { 0.92f, 0.92f, 0.92f, 1.0f };
 static const ImVec4 kValueText        = { 0.84f, 0.84f, 0.84f, 1.0f };
 
+// Quick Play encounter headers (teal)
+static const ImVec4 kQPEncBg          = { 0.06f, 0.22f, 0.22f, 1.0f };
+static const ImVec4 kQPEncBgHover     = { 0.09f, 0.30f, 0.30f, 1.0f };
+static const ImVec4 kQPEncBgActive    = { 0.12f, 0.38f, 0.38f, 1.0f };
+static const ImVec4 kQPEncText        = { 0.40f, 0.92f, 0.88f, 1.0f };
+
+// Quick Play mechanic nodes (slate-blue, matches major)
+static const ImVec4 kQPMechBg         = { 0.13f, 0.15f, 0.26f, 1.0f };
+static const ImVec4 kQPMechBgHover    = { 0.18f, 0.20f, 0.34f, 1.0f };
+static const ImVec4 kQPMechBgActive   = { 0.22f, 0.25f, 0.42f, 1.0f };
+
+// Quick Play section labels
+static const ImVec4 kQPLblMechanics   = { 0.40f, 0.92f, 0.88f, 1.0f }; // teal
+static const ImVec4 kQPLblMistakes    = { 0.92f, 0.42f, 0.28f, 1.0f }; // orange-red
+static const ImVec4 kQPLblCallouts    = { 0.34f, 0.82f, 0.46f, 1.0f }; // green
+static const ImVec4 kQPLblTraining    = { 0.72f, 0.58f, 0.88f, 1.0f }; // lavender
+static const ImVec4 kQPSepTeal        = { 0.12f, 0.48f, 0.46f, 1.0f };
+static const ImVec4 kQPSepRed         = { 0.55f, 0.22f, 0.14f, 1.0f };
+static const ImVec4 kQPSepGreen       = { 0.18f, 0.48f, 0.24f, 1.0f };
+static const ImVec4 kQPSepPurple      = { 0.38f, 0.28f, 0.52f, 1.0f };
+
+// Quick Play field label colors
+static const ImVec4 kQPFldCategory    = { 0.40f, 0.92f, 0.88f, 1.0f };
+static const ImVec4 kQPFldHandling    = { 0.34f, 0.76f, 0.42f, 1.0f };
+static const ImVec4 kQPFldFail        = { 0.92f, 0.28f, 0.28f, 1.0f };
+static const ImVec4 kQPFldDesc        = { 0.92f, 0.76f, 0.26f, 1.0f };
+
 
 // ── Forward declarations ───────────────────────────────────────────────────────
 static void DrawContent();
@@ -74,6 +102,11 @@ static void DrawMajorMechanic(const MajorMechanic& mech);
 static void DrawMinorMechanic(const MinorMechanic& mech);
 static void DrawField(const char* label, const std::string& value, ImVec4 labelColor);
 static void SectionHeader(const char* label, ImVec4 textColor, ImVec4 lineColor);
+static void DrawQuickPlayTab();
+static void DrawStrikeMissionsTab();
+static void DrawQPEncounter(const QPEncounter& enc);
+static void DrawQPMechanic(const QPMechanic& mech);
+static void DrawBulletList(const std::vector<std::string>& items);
 
 
 // ── Public API ─────────────────────────────────────────────────────────────────
@@ -140,6 +173,24 @@ static void DrawContent()
     if (ImGui::BeginTabBar("##Wings", ImGuiTabBarFlags_FittingPolicyScroll
                                     | ImGuiTabBarFlags_TabListPopupButton))
     {
+        // Quick Play tab — always first
+        if (ImGui::BeginTabItem("Quick Play"))
+        {
+            ImGui::BeginChild("##QPScroll", { 0.0f, 0.0f }, false, 0);
+            DrawQuickPlayTab();
+            ImGui::EndChild();
+            ImGui::EndTabItem();
+        }
+
+        // Strike Missions tab (non-quick-play strikes)
+        if (ImGui::BeginTabItem("Strike Missions"))
+        {
+            ImGui::BeginChild("##SMScroll", { 0.0f, 0.0f }, false, 0);
+            DrawStrikeMissionsTab();
+            ImGui::EndChild();
+            ImGui::EndTabItem();
+        }
+
         for (const Wing& wing : g_Wings)
         {
             if (ImGui::BeginTabItem(wing.tab_name.c_str()))
@@ -305,6 +356,183 @@ static void SectionHeader(const char* label, ImVec4 textColor, ImVec4 lineColor)
     ImGui::PushStyleColor(ImGuiCol_Separator, lineColor);
     ImGui::Separator();
     ImGui::PopStyleColor();
+}
+
+// ── Quick Play rendering ───────────────────────────────────────────────────────
+
+static void DrawBulletList(const std::vector<std::string>& items)
+{
+    ImGui::Indent(6.0f);
+    for (const auto& item : items)
+    {
+        if (item.empty()) continue;
+        float wrapX = ImGui::GetCursorPosX() + ImGui::GetContentRegionAvail().x;
+        ImGui::PushStyleColor(ImGuiCol_Text, kValueText);
+        ImGui::PushTextWrapPos(wrapX);
+        ImGui::TextUnformatted(("• " + item).c_str());
+        ImGui::PopTextWrapPos();
+        ImGui::PopStyleColor();
+    }
+    ImGui::Unindent(6.0f);
+}
+
+static void DrawQPMechanic(const QPMechanic& mech)
+{
+    ImGui::PushStyleColor(ImGuiCol_Header,        kQPMechBg);
+    ImGui::PushStyleColor(ImGuiCol_HeaderHovered, kQPMechBgHover);
+    ImGui::PushStyleColor(ImGuiCol_HeaderActive,  kQPMechBgActive);
+    ImGui::PushStyleColor(ImGuiCol_Text,          kNodeText);
+    ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, { 6.0f, 5.0f });
+
+    bool open = ImGui::TreeNodeEx(mech.name.c_str(),
+        ImGuiTreeNodeFlags_SpanAvailWidth | ImGuiTreeNodeFlags_FramePadding);
+
+    ImGui::PopStyleVar();
+    ImGui::PopStyleColor(4);
+
+    if (open)
+    {
+        ImGui::Spacing();
+        DrawField("CATEGORY",    mech.category,      kQPFldCategory);
+        DrawField("DESCRIPTION", mech.description,   kQPFldDesc);
+        DrawField("HOW TO HANDLE", mech.handling,    kQPFldHandling);
+        DrawField("IF YOU FAIL", mech.effect_on_fail, kQPFldFail);
+        ImGui::TreePop();
+    }
+    ImGui::Spacing();
+}
+
+static void DrawQPEncounter(const QPEncounter& enc)
+{
+    ImGui::PushStyleColor(ImGuiCol_Header,        kQPEncBg);
+    ImGui::PushStyleColor(ImGuiCol_HeaderHovered, kQPEncBgHover);
+    ImGui::PushStyleColor(ImGuiCol_HeaderActive,  kQPEncBgActive);
+    ImGui::PushStyleColor(ImGuiCol_Text,          kQPEncText);
+    ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, { 10.0f, 7.0f });
+
+    bool open = ImGui::CollapsingHeader(enc.name.c_str(),
+                                        ImGuiTreeNodeFlags_SpanAvailWidth);
+    ImGui::PopStyleVar();
+    ImGui::PopStyleColor(4);
+
+    if (!open)
+    {
+        ImGui::Spacing();
+        return;
+    }
+
+    ImGui::Indent(12.0f);
+    ImGui::Spacing();
+
+    // Wing label + overview
+    ImGui::PushStyleColor(ImGuiCol_Text, kQPLblTraining);
+    ImGui::TextUnformatted(enc.wing.c_str());
+    ImGui::PopStyleColor();
+    ImGui::Spacing();
+
+    DrawField("OVERVIEW",    enc.summary, kQPFldDesc);
+    DrawField("GOAL",        enc.goal,    kQPFldHandling);
+
+    // Mechanics
+    if (!enc.mechanics.empty())
+    {
+        ImGui::Spacing();
+        SectionHeader("  Mechanics", kQPLblMechanics, kQPSepTeal);
+        ImGui::Spacing();
+        for (const auto& m : enc.mechanics)
+            DrawQPMechanic(m);
+    }
+
+    // Common Mistakes
+    if (!enc.common_mistakes.empty())
+    {
+        ImGui::Spacing();
+        SectionHeader("  Common Mistakes", kQPLblMistakes, kQPSepRed);
+        ImGui::Spacing();
+        DrawBulletList(enc.common_mistakes);
+    }
+
+    // Callouts
+    if (!enc.callouts.empty())
+    {
+        ImGui::Spacing();
+        SectionHeader("  Callouts", kQPLblCallouts, kQPSepGreen);
+        ImGui::Spacing();
+        DrawBulletList(enc.callouts);
+    }
+
+    // Training Notes
+    bool hasTraining = !enc.pre_pull.empty() || !enc.phase_walk.empty()
+                    || !enc.recovery.empty() || !enc.timeline.empty();
+    if (hasTraining)
+    {
+        ImGui::Spacing();
+        SectionHeader("  Training Notes", kQPLblTraining, kQPSepPurple);
+        ImGui::Spacing();
+
+        if (!enc.pre_pull.empty())
+        {
+            ImGui::PushStyleColor(ImGuiCol_Text, kQPLblTraining);
+            ImGui::TextUnformatted("Pre-Pull");
+            ImGui::PopStyleColor();
+            DrawBulletList(enc.pre_pull);
+            ImGui::Spacing();
+        }
+        if (!enc.phase_walk.empty())
+        {
+            ImGui::PushStyleColor(ImGuiCol_Text, kQPLblTraining);
+            ImGui::TextUnformatted("Phase Walkthrough");
+            ImGui::PopStyleColor();
+            DrawBulletList(enc.phase_walk);
+            ImGui::Spacing();
+        }
+        if (!enc.recovery.empty())
+        {
+            ImGui::PushStyleColor(ImGuiCol_Text, kQPLblTraining);
+            ImGui::TextUnformatted("Recovery Plans");
+            ImGui::PopStyleColor();
+            DrawBulletList(enc.recovery);
+        }
+    }
+
+    ImGui::Unindent(12.0f);
+    ImGui::Spacing();
+    ImGui::Spacing();
+}
+
+static void DrawStrikeMissionsTab()
+{
+    ImGui::Spacing();
+
+    // Icebrood Saga section heading
+    ImGui::PushStyleColor(ImGuiCol_Text, kQPLblTraining);
+    ImGui::TextUnformatted("  Icebrood Saga");
+    ImGui::PopStyleColor();
+    ImGui::PushStyleColor(ImGuiCol_Separator, kQPSepPurple);
+    ImGui::Separator();
+    ImGui::PopStyleColor();
+    ImGui::Spacing();
+    ImGui::Spacing();
+
+    for (const QPEncounter& enc : g_IcebroodStrikes)
+        DrawQPEncounter(enc);
+}
+
+static void DrawQuickPlayTab()
+{
+    ImGui::Spacing();
+
+    ImGui::PushStyleColor(ImGuiCol_Text, kQPEncText);
+    ImGui::TextUnformatted("  Quick Play Raids");
+    ImGui::PopStyleColor();
+    ImGui::PushStyleColor(ImGuiCol_Separator, kQPSepTeal);
+    ImGui::Separator();
+    ImGui::PopStyleColor();
+    ImGui::Spacing();
+    ImGui::Spacing();
+
+    for (const QPEncounter& enc : g_QuickPlay)
+        DrawQPEncounter(enc);
 }
 
 } // namespace RaidGuide

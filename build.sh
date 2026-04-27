@@ -10,6 +10,10 @@ BUILD_DIR="$SCRIPT_DIR/build"
 TOOLCHAIN="$SCRIPT_DIR/toolchain-mingw.cmake"
 ICON_SRC="$SCRIPT_DIR/icon.png"
 ICON_HDR="$SCRIPT_DIR/src/icon_png.h"
+QP_JSON="$SCRIPT_DIR/QuickPlayRaids.json"
+QP_CPP="$SCRIPT_DIR/src/data/QuickPlayData.cpp"
+IB_JSON="$SCRIPT_DIR/IcebroodStrikes.json"
+IB_CPP="$SCRIPT_DIR/src/data/IcebroodData.cpp"
 DLL="$BUILD_DIR/RaidGuide.dll"
 
 # ── Flags ──────────────────────────────────────────────────────────────────────
@@ -40,6 +44,18 @@ fi
 if [ ! -f "$ICON_HDR" ] || [ "$ICON_SRC" -nt "$ICON_HDR" ]; then
     echo "Regenerating icon header ..."
     python3 "$SCRIPT_DIR/gen_icon.py"
+fi
+
+# ── Quick Play data ────────────────────────────────────────────────────────────
+if [ ! -f "$QP_CPP" ] || [ "$QP_JSON" -nt "$QP_CPP" ]; then
+    echo "Regenerating QuickPlayData.cpp ..."
+    python3 "$SCRIPT_DIR/gen_quickplaydata.py"
+fi
+
+# ── Icebrood Strike data ───────────────────────────────────────────────────────
+if [ ! -f "$IB_CPP" ] || [ "$IB_JSON" -nt "$IB_CPP" ]; then
+    echo "Regenerating IcebroodData.cpp ..."
+    python3 "$SCRIPT_DIR/gen_icebrooddata.py"
 fi
 
 # ── Configure ─────────────────────────────────────────────────────────────────

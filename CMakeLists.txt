@@ -15,6 +15,8 @@ add_library(RaidGuide SHARED
     src/dllmain.cpp
     src/ui/RaidGuide.cpp
     src/data/WingData.cpp
+    src/data/QuickPlayData.cpp
+    src/data/IcebroodData.cpp
     # ImGui sources compiled directly into the DLL (§16).
     # Cross-compilation has no Nexus import library, so we include these here.
     # At runtime we still call SetCurrentContext + SetAllocatorFunctions (§1)

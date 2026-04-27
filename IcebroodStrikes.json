@@ -1,0 +1,525 @@
+[
+  {
+    "id": "shiverpeaks_pass",
+    "name": "Shiverpeaks Pass",
+    "type": "Strike Mission",
+    "wing": "Icebrood Saga",
+    "difficulty": 1,
+    "overview": {
+      "summary": "An introductory strike mission against the Icebrood Construct featuring basic movement mechanics across two phases. The first half teaches dodging, jumping, and sidestepping; the second half introduces standing on platforms to avoid ice projectiles.",
+      "goal": "Defeat the Icebrood Construct by dodging shockwaves, avoiding the whirlwind, and adapting to platform mechanics in the second phase.",
+      "wipe_conditions": [
+        "Group fails to dodge repeated shockwaves and takes sustained knockdown damage.",
+        "Players ignore the whirlwind and get knocked far out of healing range.",
+        "Second phase players stand on the boss instead of on platforms, getting hit by ice projectiles."
+      ],
+      "soft_enrage": [
+        "Attrition from repeated knockdowns and uncleansed conditions."
+      ],
+      "hard_enrage": "12-minute enrage timer causes squad wipe."
+    },
+    "phases": [
+      {
+        "id": "p1_full_health",
+        "name": "Phase 1 – Full Health",
+        "trigger": "Encounter start until the boss reaches 50% health.",
+        "description": "The Icebrood Construct uses Slam shockwaves, Boulder Rush, and a Whirlwind arm sweep. Players learn to jump over shockwaves, stack close during boulder spin, and regroup after the whirlwind."
+      },
+      {
+        "id": "p2_half_health",
+        "name": "Phase 2 – 50% Transition",
+        "trigger": "Boss loses an arm at 50% health and becomes briefly invulnerable.",
+        "description": "Boulder Rush is replaced by Ice Shatter, which creates platforms that shoot ice projectiles. Players must stand on platforms to avoid being hit. Slam now applies a debuff instead of a knockdown and destroys the ice platforms."
+      }
+    ],
+    "roles": {
+      "dps": "Stay close to the boss to avoid boulder and whirlwind AoEs. Jump over Slam shockwaves and move onto ice platforms in phase 2.",
+      "support": "Provide stability and protection to reduce knockdown and whirlwind impact. Keep boons up while the group repositions.",
+      "heal": "Heal through chip damage from shockwaves and ice projectiles. Be ready to top players who miss jumps.",
+      "tank": "No dedicated tank mechanic — target closest player. Keep the group near the boss and call shockwave timing."
+    },
+    "mechanics": [
+      {
+        "id": "m1_slam",
+        "name": "Slam",
+        "phase": "p1_full_health",
+        "category": "Shockwave / Knockdown",
+        "description": "The boss slams the ground, releasing a shockwave that knocks down players. In phase 2, the shockwave applies a debuff instead and destroys ice platforms.",
+        "trigger": "Used regularly throughout both phases.",
+        "telegraph": "Quick red circle appears before the shockwave travels outward.",
+        "effect_on_fail": "Players are knocked down and may be hit by follow-up attacks while prone.",
+        "effect_on_success": "Players jump, dodge, or block the shockwave and continue attacking.",
+        "handling": "Jump over the shockwave, dodge, or use a block. Crowd control immunity skills also work.",
+        "role_tips": {
+          "dps": "Jump over the shockwave — it is the core skill this encounter teaches.",
+          "support": "Stability prevents the knockdown but is not required. Save it for emergencies.",
+          "heal": "Heal anyone who fails the jump before the next mechanic arrives.",
+          "tank": "Call out slam timing so the group can prepare jumps."
+        }
+      },
+      {
+        "id": "m2_boulder_rush",
+        "name": "Boulder Rush",
+        "phase": "p1_full_health",
+        "category": "AoE / Proximity",
+        "description": "Boulders spin around the boss, dealing light damage to players who are too far from the Construct.",
+        "trigger": "Used periodically in phase 1.",
+        "telegraph": "Boulders visibly orbit the boss at mid-range.",
+        "effect_on_fail": "Players at distance take repeated hits from spinning boulders.",
+        "effect_on_success": "Players stacked close to the boss are inside the spin radius and take no damage.",
+        "handling": "Stack close to the Icebrood Construct whenever boulders appear.",
+        "role_tips": {
+          "dps": "Move in tight to the boss during Boulder Rush.",
+          "support": "Maintain boon coverage while the group compresses.",
+          "heal": "Use the stacked moment for efficient AoE healing.",
+          "tank": "Keep the boss stationary so the group knows where to stack."
+        }
+      },
+      {
+        "id": "m3_whirlwind",
+        "name": "Whirlwind",
+        "phase": "p1_full_health",
+        "category": "Knockback / Arena Control",
+        "description": "The boss sweeps its arm across half the arena, knocking back players and creating a brief forced spin. In phase 2 it occasionally knocks players down instead.",
+        "trigger": "Used periodically, affects half the arena.",
+        "telegraph": "Boss arm visibly swings in a wide horizontal arc.",
+        "effect_on_fail": "Players are knocked back to the arena edge and must regroup, losing DPS uptime.",
+        "effect_on_success": "Players continue attacking through or regroup quickly after the wind dissipates.",
+        "handling": "Continue attacking during the spin and regroup after. Stability or CC immunity prevents the knockback.",
+        "role_tips": {
+          "dps": "Regroup on the boss quickly after the whirlwind ends.",
+          "support": "Provide stability if available to keep the group in melee.",
+          "heal": "Be ready to heal the group once they return from knockback.",
+          "tank": "Hold position after the sweep to anchor the regroup point."
+        }
+      },
+      {
+        "id": "m4_ice_shatter",
+        "name": "Ice Shatter",
+        "phase": "p2_half_health",
+        "category": "Platform Mechanic / Projectiles",
+        "description": "Replaces Boulder Rush in phase 2. Ice platforms appear around the boss that shoot projectiles at players not standing on them.",
+        "trigger": "Replaces Boulder Rush after the 50% transition.",
+        "telegraph": "Ice platforms visibly form around the boss.",
+        "effect_on_fail": "Players standing on the boss or on the ground take repeated ice projectile hits.",
+        "effect_on_success": "Players on platforms take no projectile damage.",
+        "handling": "Move onto an ice platform when they appear. Note that Slam destroys platforms, so be ready to reposition.",
+        "role_tips": {
+          "dps": "Step onto the nearest platform immediately when it forms.",
+          "support": "Maintain boons from atop a platform.",
+          "heal": "Heal from a platform; be aware that platforms are destroyed by Slam.",
+          "tank": "Call which platform the group should use to keep coverage tight."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "Phase 1 is a straightforward DPS check while learning to jump shockwaves and stack during Boulder Rush.",
+      "The 50% transition is brief — the boss becomes invulnerable momentarily, then resumes with modified mechanics.",
+      "Phase 2 introduces platform positioning. Ice Shatter and Slam interact, so players must be ready to replatform after each shockwave."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "This is the easiest strike mission — use it to practice jumping over shockwaves.",
+        "When the boss raises its arm and a red ring appears, jump over the wave.",
+        "Stack close to the boss during boulder spin to avoid damage.",
+        "In phase 2, move onto the ice platforms to avoid projectiles."
+      ],
+      "phase_walkthrough": [
+        "Phase 1: Attack the boss. Jump over every Slam shockwave. Stack in tight during Boulder Rush. Regroup fast after Whirlwind.",
+        "Phase 2 (50%): Platforms replace boulders. Stand on platforms. Slam now destroys platforms, so be ready to move to a new one after each shockwave."
+      ],
+      "recovery_plans": [
+        "If players are knocked to the edge by Whirlwind, regroup on the boss immediately.",
+        "If several players go down, stabilize with heals and revive during a safe window between mechanics."
+      ]
+    },
+    "common_mistakes": [
+      "Not jumping over the Slam shockwave and getting knocked down repeatedly.",
+      "Standing at mid-range during Boulder Rush and taking unnecessary chip damage.",
+      "Not moving onto ice platforms in phase 2 and getting peppered by projectiles.",
+      "Chasing the boss around the arena during Whirlwind instead of regrouping in place."
+    ],
+    "callouts": [
+      "Shockwave — jump!",
+      "Stack in tight — boulders!",
+      "Whirlwind — regroup after!",
+      "Phase 2 — get on the platforms!",
+      "Platforms are gone — move to new one!"
+    ]
+  },
+  {
+    "id": "voice_and_claw",
+    "name": "Voice of the Fallen and Claw of the Fallen",
+    "type": "Strike Mission",
+    "wing": "Icebrood Saga",
+    "difficulty": 2,
+    "overview": {
+      "summary": "A dual-boss encounter against two Kodan — Voice of the Fallen (ranged bow) and Claw of the Fallen (melee hammer). Both bosses must be brought to low health simultaneously; killing one early causes the survivor to use more dangerous attacks. The arena features lit and unlit zones that must be avoided.",
+      "goal": "Burn both bosses down evenly to sub-20%, trigger the shared defiance bar phase, break it, then finish both.",
+      "wipe_conditions": [
+        "One boss dies far ahead of the other, causing the survivor to gain a deadlier attack pattern.",
+        "Players stand in red or yellow arena zones and take heavy damage.",
+        "Immobilization shots land on the group without reflects, preventing movement during dangerous mechanics.",
+        "The shared defiance bar at sub-20% is not broken and the large combo attack kills the group."
+      ],
+      "soft_enrage": [
+        "Arena lighting zones shrink safe space over time if mechanics are mishandled."
+      ],
+      "hard_enrage": "10-minute enrage timer causes squad wipe."
+    },
+    "phases": [
+      {
+        "id": "p1_dual_boss",
+        "name": "Phase 1 – Dual Boss",
+        "trigger": "Encounter start.",
+        "description": "Both Kodan are active simultaneously. Keep damage even across both. Avoid lit arena zones and reflect immobilization shots from Voice."
+      },
+      {
+        "id": "p2_breakbar",
+        "name": "Phase 2 – Sub-20% Defiance Bar",
+        "trigger": "Both bosses fall below 20% health.",
+        "description": "Both Kodan teleport to the arena center and channel a large shared combo attack while gaining a shared defiance bar. Breaking it cancels the attack."
+      },
+      {
+        "id": "p3_solo_survivor",
+        "name": "Phase 3 – Solo Survivor (if triggered)",
+        "trigger": "One Kodan dies significantly before the other.",
+        "description": "The surviving Kodan jumps to center and begins slamming quarter-arena sections with AoEs. Players must rotate clockwise to evade."
+      }
+    ],
+    "roles": {
+      "dps": "Balance damage evenly between both bosses. Avoid standing in red or yellow arena zones. Help reflect immobilization shots if possible.",
+      "support": "Maintain reflects for Voice's immobilization arrows. Provide stability for Claw's stun combos. Keep boons up while the group moves between bosses.",
+      "heal": "Manage sustained damage from arena zones and the stun combo. Be ready for a spike when the shared defiance bar fires if not broken in time.",
+      "tank": "No dedicated tank — both bosses target the closest player. Position one subgroup on each boss and adjust as health levels diverge."
+    },
+    "mechanics": [
+      {
+        "id": "m1_immobilization_shots",
+        "name": "Immobilization Shots",
+        "phase": "p1_dual_boss",
+        "category": "Ranged / Condition",
+        "description": "Voice of the Fallen fires a scatter of ranged arrows that apply Immobilize on hit.",
+        "trigger": "Used periodically by Voice throughout phase 1.",
+        "telegraph": "A scatter of red arrows visible traveling toward the group.",
+        "effect_on_fail": "Immobilized players cannot dodge or reposition during subsequent mechanics.",
+        "effect_on_success": "Projectiles are reflected or blocked; no Immobilize is applied.",
+        "handling": "Use projectile reflect or block skills (e.g., Feedback, Druid Staff 5 Sublime Conversion) to negate the volley.",
+        "role_tips": {
+          "dps": "Stay in range of reflect bubbles when Voice fires.",
+          "support": "Time reflects for arrow volleys. Coordinate with other supports to avoid overlap.",
+          "heal": "Cleanse Immobilize quickly if reflects are missed.",
+          "tank": "Keep Voice positioned so reflects can cover the group."
+        }
+      },
+      {
+        "id": "m2_hammer_slam_combo",
+        "name": "Hammer Slam Combo",
+        "phase": "p1_dual_boss",
+        "category": "Melee / Stun",
+        "description": "Claw of the Fallen chains melee attacks culminating in a hammer slam that stuns players.",
+        "trigger": "Used regularly by Claw throughout the encounter.",
+        "telegraph": "Claw winds up a large hammer slam visible in its animation.",
+        "effect_on_fail": "Stunned players cannot act and may take follow-up damage before recovering.",
+        "effect_on_success": "Players stunbreak or are protected by shared boons and resume fighting.",
+        "handling": "Keep a stunbreak ready. Shared stability from supports prevents the stun entirely.",
+        "role_tips": {
+          "dps": "Keep a stunbreak equipped for this encounter.",
+          "support": "Provide Stability to prevent stuns on the group.",
+          "heal": "Cleanse the stun or top players up quickly after they break it.",
+          "tank": "Position Claw so its forward swing does not hit ranged players on Voice."
+        }
+      },
+      {
+        "id": "m3_arena_zones",
+        "name": "Arena Danger Zones",
+        "phase": "p1_dual_boss",
+        "category": "Ground Hazard",
+        "description": "Yellow and red lit zones appear dynamically across the arena. Standing in them deals heavy damage.",
+        "trigger": "Active throughout the encounter; zones shift position over time.",
+        "telegraph": "Visible yellow or red illuminated floor sections.",
+        "effect_on_fail": "Standing in zones causes sustained heavy damage and likely downs.",
+        "effect_on_success": "Players stay in unlit safe areas and take no zone damage.",
+        "handling": "Constantly watch the floor. Move to unlit ground whenever a zone appears under you.",
+        "role_tips": {
+          "dps": "Reposition to unlit ground before committing to a long cast.",
+          "support": "Maintain boons from safe zones — do not stand in lit areas for boon convenience.",
+          "heal": "Be ready for spikes when players clip zones during transitions.",
+          "tank": "Position bosses on unlit ground so the group's stack remains safe."
+        }
+      },
+      {
+        "id": "m4_shared_defiance_bar",
+        "name": "Shared Defiance Bar",
+        "phase": "p2_breakbar",
+        "category": "Breakbar / Control",
+        "description": "When both bosses drop below 20%, they teleport to the arena center, gain a shared defiance bar, and begin channeling a large combined attack.",
+        "trigger": "Both bosses reach sub-20% health.",
+        "telegraph": "Both Kodan move to center; a shared defiance bar appears.",
+        "effect_on_fail": "The combo attack fires and deals massive squad-wide damage, likely causing a wipe.",
+        "effect_on_success": "The bar is broken, the combo is canceled, and both bosses are vulnerable for the final burn.",
+        "handling": "Save crowd control skills for this moment. Dump all CC the instant the bar appears.",
+        "role_tips": {
+          "dps": "Hold major CC skills from phase 1 for this bar. Use them all immediately.",
+          "support": "Call the CC window and use any CC utility skills available.",
+          "heal": "Pre-cast heals and barriers in case the bar breaks late.",
+          "tank": "Move to center with the group to stay in boon and heal range for the bar phase."
+        }
+      },
+      {
+        "id": "m5_solo_survivor_quarter_slams",
+        "name": "Quarter-Arena Slams (Solo Survivor)",
+        "phase": "p3_solo_survivor",
+        "category": "Arena-wide AoE / Rotation",
+        "description": "If one Kodan dies far ahead of the other, the survivor jumps to center and repeatedly slams quarter-sections of the arena.",
+        "trigger": "One boss dies while the other still has significant health remaining.",
+        "telegraph": "The surviving Kodan jumps to the arena center and begins slam animations targeting a quarter of the arena.",
+        "effect_on_fail": "Players caught in the slammed quarter take heavy damage and likely go down.",
+        "effect_on_success": "Players rotate clockwise ahead of the slams and avoid all damage.",
+        "handling": "Rotate clockwise around the boss, staying just ahead of each slam. Keep moving continuously.",
+        "role_tips": {
+          "dps": "Rotate clockwise and attack from the safe quarter.",
+          "support": "Maintain boons while rotating. Swiftness helps keep everyone moving.",
+          "heal": "Heal while moving in the rotation — do not stop to cast long skills in a slam zone.",
+          "tank": "Stay at the center of the rotation so the group has a fixed reference point."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "Keep DPS even on both bosses from the start. Check health percentages frequently.",
+      "Reflect Immobilization Shots from Voice as a priority — Immobilize at the wrong moment causes chain deaths.",
+      "Around 20% on both bosses, be prepared to stop DPS temporarily to synchronize health levels.",
+      "The shared defiance bar is the fight's climax — hold CC for it."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "Assign one subgroup to each boss to make even damage easier to manage.",
+        "Remind everyone: do not kill one boss before the other reaches 20%.",
+        "Assign at least one player with a reflect skill to cover Voice's arrows.",
+        "Everyone save a CC skill for the shared defiance bar at sub-20%.",
+        "Call out arena zones — do not stand in lit yellow or red floor sections."
+      ],
+      "phase_walkthrough": [
+        "Phase 1: Both bosses active. Keep damage even. Reflect Voice's arrows. Break Claw's stun with stunbreaks. Stay out of arena zones.",
+        "Sub-20%: Both teleport to center. Shared defiance bar appears. Dump all CC immediately to cancel the combo attack.",
+        "Finish both bosses. If one dies early, the survivor uses quarter-arena slams — rotate clockwise."
+      ],
+      "recovery_plans": [
+        "If one boss dies early, switch the full squad to the survivor and rotate clockwise to avoid quarter slams.",
+        "If the defiance bar is missed, use every defensive cooldown to survive the combo, then finish the fight.",
+        "If Immobilize lands on key players during a dangerous moment, cleanse immediately and reposition."
+      ]
+    },
+    "common_mistakes": [
+      "Killing one boss far ahead of the other, triggering the dangerous solo survivor phase.",
+      "Standing in red or yellow arena zones and taking avoidable damage.",
+      "Failing to reflect Immobilization Shots and getting locked in place during other mechanics.",
+      "Not saving CC skills for the shared defiance bar at sub-20%.",
+      "Losing track of both boss health bars and not equalizing before the bar phase."
+    ],
+    "callouts": [
+      "Check health — keep damage even on both bosses!",
+      "Reflect up — Voice is shooting arrows!",
+      "Stunbreak — Claw just slammed!",
+      "Get off the yellow zone!",
+      "Both under 20% — CC now, break the bar!",
+      "Survivor phase — rotate clockwise!"
+    ]
+  },
+  {
+    "id": "fraenir_of_jormag",
+    "name": "Fraenir of Jormag",
+    "type": "Strike Mission",
+    "wing": "Icebrood Saga",
+    "difficulty": 2,
+    "overview": {
+      "summary": "A two-stage encounter against the Fraenir of Jormag and an Icebrood Construct. The Fraenir phase focuses on avoiding freezing AoEs and repositioning to escape ice shards. The Construct phase introduces a defiance bar that experienced groups deliberately leave unbroken, plus multiple knockdown mechanics.",
+      "goal": "Burn Fraenir to 75%, defeat the Icebrood Construct, then finish Fraenir from 25% to zero.",
+      "wipe_conditions": [
+        "Players are frozen by Torrent of Ice and cannot escape in time.",
+        "Players dodge during Torrent of Ice and become permanently stuck.",
+        "Repeated knockdowns from Construct mechanics prevent the group from sustaining DPS.",
+        "Breaking the Construct defiance bar too frequently causes faster invulnerability cycling and extends the fight."
+      ],
+      "soft_enrage": [
+        "Repeated Construct invulnerability phases from breaking its defiance bar too often slow progress significantly."
+      ],
+      "hard_enrage": "12-minute enrage timer causes squad wipe."
+    },
+    "phases": [
+      {
+        "id": "p1_fraenir",
+        "name": "Phase 1 – Fraenir (100%–75%)",
+        "trigger": "Encounter start.",
+        "description": "Fight Fraenir while avoiding Torrent of Ice AoEs, repositioning for Frozen Missile, and dodging Icequake shockwaves. Move to arena center at the start to avoid the initial Torrent of Ice."
+      },
+      {
+        "id": "p2_construct",
+        "name": "Phase 2 – Icebrood Construct",
+        "trigger": "Fraenir reaches 75% health and disappears.",
+        "description": "The Icebrood Construct appears and must be defeated. It has knockdown mechanics, bomb AoEs, and a defiance bar. Do not break the defiance bar in most group strategies — breaking it causes the Construct to phase faster, cycling invulnerability more often."
+      },
+      {
+        "id": "p3_fraenir_final",
+        "name": "Phase 3 – Fraenir (25%–0%)",
+        "trigger": "Icebrood Construct is defeated.",
+        "description": "Fraenir returns at 25% health and immediately opens with Icequake, Torrent of Ice, and Frozen Missile. Burn quickly."
+      }
+    ],
+    "roles": {
+      "dps": "Stay in arena center at the fight start to avoid the opening Torrent of Ice. Do not dodge during Torrent. Do not use CC on the Construct unless your group has decided to break the bar.",
+      "support": "Provide stability for Icequake knockdowns. Do not use CC skills on the Construct unless your group strategy calls for it.",
+      "heal": "Manage sustained damage from Construct knockdowns and ice shard fields. Pre-cast heals before Icequake.",
+      "tank": "No dedicated tank. Keep the group centered and call freeze warnings immediately."
+    },
+    "mechanics": [
+      {
+        "id": "m1_torrent_of_ice",
+        "name": "Torrent of Ice",
+        "phase": "p1_fraenir",
+        "category": "Freeze / AoE",
+        "description": "Fraenir leaps and sends ice across the arena. Orange circles mark the impact zones. Players caught in the AoEs are frozen inside an ice shard, losing all skill access until they use the Struggle to Escape action.",
+        "trigger": "Used at encounter start and again in phase 3 immediately.",
+        "telegraph": "Orange circles appear around the arena and near Fraenir before impact.",
+        "effect_on_fail": "Players are frozen and cannot act until they break free. If they were dodging when hit, they become stuck indefinitely.",
+        "effect_on_success": "Players outside the orange circles take no damage and remain free to act.",
+        "handling": "Move to the arena center at fight start to avoid the opening cast. NEVER dodge during Torrent of Ice — being in the evade animation when it hits causes permanent stuck state. If frozen, use the Struggle to Escape action skill immediately.",
+        "role_tips": {
+          "dps": "Start the fight by running to arena center. Do not dodge when orange circles appear.",
+          "support": "Stay center. Provide Stability only before the cast, not during.",
+          "heal": "Be ready to heal recently unfrozen players who took chip damage.",
+          "tank": "Call out Torrent of Ice as soon as the telegraph appears."
+        }
+      },
+      {
+        "id": "m2_frozen_missile",
+        "name": "Frozen Missile",
+        "phase": "p1_fraenir",
+        "category": "Targeted Projectile",
+        "description": "Fraenir targets a specific player with a red arrow and a circular timer. After the timer fills, a missile fires dealing light damage to players in its path.",
+        "trigger": "Fraenir targets a player indicated by a large red arrow and timer above their head.",
+        "telegraph": "Large red arrow pointing at the targeted player; circular timer fills above their head.",
+        "effect_on_fail": "The missile hits the stack, dealing damage to multiple players in its path.",
+        "effect_on_success": "The targeted player moves away from the squad and dodges or blocks the missile.",
+        "handling": "If you have the red arrow, move away from the group. Dodge or block the missile when it fires.",
+        "role_tips": {
+          "dps": "If targeted, step out of the group immediately. Return after the missile fires.",
+          "support": "Watch for the arrow indicator. Call out the targeted player.",
+          "heal": "Heal the targeted player as they return to the stack.",
+          "tank": "Do not chase the targeted player — hold position for the group."
+        }
+      },
+      {
+        "id": "m3_icequake",
+        "name": "Icequake",
+        "phase": "p1_fraenir",
+        "category": "Knockdown / Shockwave",
+        "description": "Fraenir jumps and slams the ground, releasing a knockdown shockwave. Ice shards on the field explode when the shockwave reaches them.",
+        "trigger": "Fraenir jumps and slams the ground.",
+        "telegraph": "Jump animation followed by a visible shockwave spreading outward.",
+        "effect_on_fail": "Players are knocked down by the shockwave and may be hit by exploding ice shards.",
+        "effect_on_success": "Players jump over or dodge the shockwave and take no knockdown.",
+        "handling": "Jump over the shockwave or dodge it. Stability also prevents the knockdown. Stay near the arena center rather than chasing Fraenir during the hopping phase.",
+        "role_tips": {
+          "dps": "Jump when the ground shockwave approaches.",
+          "support": "Stability prevents knockdown — time it for the slam.",
+          "heal": "Top off downed players quickly after the shockwave.",
+          "tank": "Hold center position so the group knows where to stack after the jump."
+        }
+      },
+      {
+        "id": "m4_construct_knockdowns",
+        "name": "Ice Flail and Seismic Crush",
+        "phase": "p2_construct",
+        "category": "Knockdown / Shockwave",
+        "description": "The Icebrood Construct uses arm swings (Ice Flail) and ground slams (Seismic Crush) that knock down players and occasionally shower them with ice shards.",
+        "trigger": "Used regularly throughout the Construct phase.",
+        "telegraph": "Visible arm swing telegraph for Ice Flail; shockwave indicator for Seismic Crush.",
+        "effect_on_fail": "Players are knocked down, interrupting DPS and making them vulnerable to follow-up hits.",
+        "effect_on_success": "Players sidestep Ice Flail or jump over Seismic Crush and maintain attack uptime.",
+        "handling": "Sidestep the Ice Flail telegraph. Jump over the Seismic Crush shockwave or dodge it.",
+        "role_tips": {
+          "dps": "Use jump and dodge to avoid knockdowns. Do not tunnel on DPS at the cost of constant downs.",
+          "support": "Stability is valuable here. Use it proactively during Construct attacks.",
+          "heal": "Heal through chip damage from shards. Keep the group topped for the next knockdown.",
+          "tank": "No dedicated tank — position the group to maximize cleave on the Construct."
+        }
+      },
+      {
+        "id": "m5_frigid_fusillade",
+        "name": "Frigid Fusillade",
+        "phase": "p2_construct",
+        "category": "Timed Bombs / AoE",
+        "description": "Orange circles appear under players, indicating timed bomb AoEs that detonate after a delay.",
+        "trigger": "Used during the Construct phase.",
+        "telegraph": "Orange circles appear under affected players with a fill timer.",
+        "effect_on_fail": "Players standing in the circle when it detonates take heavy damage.",
+        "effect_on_success": "Players dodge, block, or move out before detonation.",
+        "handling": "Dodge when the circle appears, or use a block or projectile reflect to negate the hit. Moving out of the circle also works.",
+        "role_tips": {
+          "dps": "Step out of your orange circle or dodge when it appears.",
+          "support": "Projectile destruction or reflects can negate Frigid Fusillade.",
+          "heal": "Watch for players who take the hit and need an emergency top-off.",
+          "tank": "Call out Frigid Fusillade when circles appear so the group reacts."
+        }
+      },
+      {
+        "id": "m6_construct_defiance_bar",
+        "name": "Construct Defiance Bar",
+        "phase": "p2_construct",
+        "category": "Breakbar — Do Not Break",
+        "description": "The Icebrood Construct periodically gains a defiance bar. Breaking it increases incoming damage but causes faster invulnerability transitions, which most groups want to avoid.",
+        "trigger": "The Construct gains a defiance bar periodically throughout phase 2.",
+        "telegraph": "A blue defiance bar appears under the Construct's health.",
+        "effect_on_fail": "Breaking the bar causes the Construct to phase into invulnerability faster, extending the fight.",
+        "effect_on_success": "Leaving the bar unbroken keeps the DPS window open longer.",
+        "handling": "Do NOT use crowd control on the Construct — including the special action skill. Most experienced groups ignore the defiance bar entirely to maximize DPS window duration.",
+        "role_tips": {
+          "dps": "Remove CC skills from your bar if you tend to use them reflexively.",
+          "support": "Do not use CC utilities on the Construct.",
+          "heal": "No action needed on the bar — focus on healing.",
+          "tank": "Remind the group before the pull not to break the Construct bar."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "Start at arena center to dodge the opening Torrent of Ice.",
+      "Burn Fraenir to 75% — Construct appears. Focus Construct while managing knockdowns.",
+      "Leave the Construct defiance bar alone — breaking it slows the fight.",
+      "Construct dies — Fraenir returns at 25% and immediately opens with Torrent + Icequake. Be ready."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "Everyone start the fight by running to the arena center — do not stand at the edge when Torrent of Ice opens.",
+        "Do NOT dodge when you see the orange Torrent of Ice circles. Dodging while it hits freezes you permanently.",
+        "If you get the red arrow, move away from the group and dodge or block the missile.",
+        "Do NOT use CC on the Icebrood Construct. Leave its defiance bar alone.",
+        "Jump over ground shockwaves from Icequake and Seismic Crush."
+      ],
+      "phase_walkthrough": [
+        "Phase 1 – Fraenir: Run to center. Avoid Torrent AoEs without dodging. Move out if you have the red arrow. Jump over Icequake shockwaves. Burn to 75%.",
+        "Phase 2 – Construct: Kill it. Sidestep Ice Flail, jump Seismic Crush, dodge Frigid Fusillade circles. Never touch the defiance bar.",
+        "Phase 3 – Fraenir returns at 25%: Immediate Torrent + Icequake. Stay center, don't dodge Torrent. Burn fast."
+      ],
+      "recovery_plans": [
+        "If players are frozen, use Struggle to Escape immediately and rejoin the group.",
+        "If the group breaks the Construct bar accidentally, accept the faster phase cycling and burn harder.",
+        "If Fraenir's phase 3 opener downs several players, stabilize with heals and revive once mechanics end."
+      ]
+    },
+    "common_mistakes": [
+      "Dodging during Torrent of Ice and becoming permanently stuck — never dodge when the orange circles appear.",
+      "Using CC on the Icebrood Construct, breaking the defiance bar and causing faster phase cycling.",
+      "Standing at the arena edge during the fight start and getting frozen by the opening Torrent of Ice.",
+      "Chasing Fraenir across the arena during Icequake instead of staying near center.",
+      "Not having Struggle to Escape ready when frozen."
+    ],
+    "callouts": [
+      "Run to center — Torrent of Ice incoming, do not dodge!",
+      "Red arrow on you — step out of the group!",
+      "Icequake — jump!",
+      "Do NOT CC the Construct — leave the bar alone!",
+      "Fraenir back at 25% — Torrent coming immediately, stay center!"
+    ]
+  }
+]

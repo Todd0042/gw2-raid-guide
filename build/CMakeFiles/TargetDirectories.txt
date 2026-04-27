@@ -1,0 +1,3 @@
+/home/todd/gw2-raid-training/build/CMakeFiles/RaidGuide.dir
+/home/todd/gw2-raid-training/build/CMakeFiles/edit_cache.dir
+/home/todd/gw2-raid-training/build/CMakeFiles/rebuild_cache.dir

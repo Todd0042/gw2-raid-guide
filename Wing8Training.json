@@ -1,6 +1,104 @@
 {
   "Wing 8 – Mount Balrior": {
-    "Decima": {
+    "Decima the Stormsinger": {
+      "major_mechanics": [
+        {
+          "name": "Conduit Charging System",
+          "when": "Active throughout all phases. Uncharged conduit pylons ring the arena; each can hold up to 3 charge stacks.",
+          "watch_for": "Conduits gain charge whenever a beam or arrow attack passes through them. A conduit at 3 stacks (triple-charged) is the most dangerous state. Track charge levels at all times.",
+          "what_to_do": "Coordinate kiter positioning so that arrow and beam attacks charge the minimum number of conduits. Never let multiple conduits reach triple charge simultaneously. Going into an intermission phase with multiple triple-charged conduits is the primary wipe condition.",
+          "failure": "Triple-charged conduits at intermission create massive Fulminate and Flux Nova damage and add excessive Discord stacks to Phase 3, making the phase nearly unmanageable.",
+          "common_mistakes": "Careless positioning allowing unintended conduit charges; losing track of charge levels mid-fight; kiter placing arrows over already-charged conduits."
+        },
+        {
+          "name": "Fluxlance – Orange Arrow (Kiter Mechanic)",
+          "when": "Phase 1: fires once after auto-attacks. Phase 2: fires as 5x Fusillade (Fluxlance Fusillade), then 4x later in the cycle. Phase 3: 5x fires simultaneously rather than sequentially.",
+          "watch_for": "An orange arrow indicator appears beneath the furthest player(s) from Decima. A 5-second cast plays before the beam fires. In Phase 2+, numbers 1–5 appear above the five furthest players indicating firing order. Standing inside the boss's red proximity ring applies Harmonic Sensitivity, which amplifies the first arrow hit by ~25%.",
+          "what_to_do": "Arrow baiters (the 5 furthest players in Phase 2+) stand just outside the boss's red AoE ring. Position each arrow so its beam path runs between two conduits without hitting either. In Phase 2 beams fire sequentially with 5-second intervals — you can outheale them. In Phase 3 all five fire simultaneously — Barrier and Protection are critical. If you are unexpectedly targeted, quickly find the nearest pair of uncharged conduits and stand between them; you will gain Galvanic Sensitivity and cannot soak Sparks for 30 seconds.",
+          "failure": "Any conduit in the beam path gains a charge. Baiters hit outside their intended position take excessive damage. Non-baiters hit by arrows gain Galvanic Sensitivity and cannot soak Sparks.",
+          "common_mistakes": "Baiters stepping into the boss red ring (Harmonic Sensitivity); poorly angled arrows charging conduits; non-baiters drifting into beam paths."
+        },
+        {
+          "name": "Red Arrow (Kiter Instant-Kill Beam)",
+          "when": "After both jumping attacks (Seismic Crash and Earthrend) each cycle — targets the same furthest player as the Orange Arrow.",
+          "watch_for": "A deep red arrow indicator appears at the targeted player's feet. That player's screen border turns deep red and they hear the voice line 'Need cover.' The beam fires in 5 seconds and is instant-kill to anyone in its path. Note: this beam can de-render on low Character Model Limit settings.",
+          "what_to_do": "The kiter must immediately teleport or move to place an uncharged conduit directly between themselves and Decima before the beam fires. Use teleport skills (Sand Swell, Shadowstep, Mimic+Blink). Do not move excessively horizontally after placement — this can cause the beam to clip other players. The beam applies a barrier to the targeted player as a reward for surviving correctly.",
+          "failure": "Instant death to the targeted player and anyone in the beam path. The conduit used for cover gains a charge.",
+          "common_mistakes": "Kiter reacting too slowly; selecting a charged conduit for cover; moving horizontally after placement and exposing other players to the beam path."
+        },
+        {
+          "name": "Seismic Crash",
+          "when": "After the Orange Arrow each cycle.",
+          "watch_for": "Decima leaps into the air and crashes down. Standing directly under her landing point is an instant kill. After landing, a knockback wave pushes all players outward until they hit a fence or natural stop.",
+          "what_to_do": "Do not stand under Decima during the jump. Be inside her hitbox but not touching the central impact point to avoid lethal proximity damage. Dodge sideways or have Protection boons active to reduce the knockback. Seismic Crash is always immediately followed by Sparks releasing from powered conduits.",
+          "failure": "Instant death from direct landing impact. Players knocked into fences take ricochet damage. Poor positioning from the knockback misplaces the squad for the subsequent Spark collection.",
+          "common_mistakes": "Standing directly under Decima; not having Protection boons ready; being out of position for Sparks after the knockback."
+        },
+        {
+          "name": "Sparks (Green Circles)",
+          "when": "Released from powered conduits immediately after Seismic Crash each cycle. Also generated continuously during intermission phases.",
+          "watch_for": "Green orb circles travel from powered conduits toward Decima. Each Spark requires a minimum number of players to absorb it (indicated by a number on the circle). In Phase 2 and 3 players with Galvanic Sensitivity debuff take lethal damage from Sparks and cannot soak them.",
+          "what_to_do": "Phase 1: All players except the kiter soak Sparks. Phase 2–3: Only the boss group (melee stack) can safely soak — sensitized players must stay clear. Multiple players absorbing a Spark dissipate it faster; never solo-soak unless necessary. Players can 'wiggle in and out' of a Spark to slow its movement without taking damage if needed to stall until more players are available.",
+          "failure": "If a Spark reaches Decima she gains one stack of Charge. At 10 stacks of Charge the squad wipes instantly.",
+          "common_mistakes": "Sensitized players attempting to soak; allowing Sparks to reach the boss; too few players assigned to soak in Phase 2–3 because sensitized players outnumber safe players."
+        },
+        {
+          "name": "Fulgent Fences",
+          "when": "After conduit summoning each phase. Fence pattern changes after each Arrow attack cycle.",
+          "watch_for": "Glowing barriers link conduits and partition the arena into sections. Walking into a fence causes knockback and ricochet damage. In Phase 3 a pattern can appear with no ground-level openings at all.",
+          "what_to_do": "The kiter must use teleport skills (Sand Swell, Shadowstep, Mimic+Blink) to cross fence barriers — they cannot be walked through. The main squad avoids fence knockback zones during repositioning. In Phase 3 with no openings the kiter must teleport entirely.",
+          "failure": "Kiter trapped outside the arena by fences misplaces arrows and cannot cover the Red Arrow beam. Players knocked into fences take additional ricochet damage.",
+          "common_mistakes": "Kiter attempting to walk through fences without a teleport ready; not recognizing the no-opening Phase 3 pattern; running backward into a fence while avoiding spreads."
+        },
+        {
+          "name": "Intermission Phases (75% and 40% HP)",
+          "when": "Occurs at 75% and 40% HP. Lasts approximately 20 seconds regardless of defiance bar status.",
+          "watch_for": "Decima becomes damage-immune and channels while her defiance bar appears. Sparks generate continuously from all powered conduits. Galvanic Sensitivity is removed from all players during this window.",
+          "what_to_do": "The entire squad focuses on collecting Sparks to contribute to breaking Decima's defiance bar — since Galvanic Sensitivity is cleared all players can soak safely. Do not let any Spark reach Decima, as it fully regenerates the defiance bar. Stack centrally for healing.",
+          "failure": "A Spark reaching Decima resets the defiance bar completely. Multiple triple-charged conduits surviving into the intermission dramatically increases the Fulminate and Flux Nova explosion damage that follows.",
+          "common_mistakes": "Players spreading to avoid Sparks instead of soaking; letting even one Spark reach Decima during the defiance bar phase."
+        },
+        {
+          "name": "Fulminate and Flux Nova (Intermission End)",
+          "when": "Immediately when the intermission concludes — either after 20 seconds or when the defiance bar is broken.",
+          "watch_for": "Decima's orb and all conduits explode simultaneously in a massive raid-wide damage event.",
+          "what_to_do": "Stack tightly for coordinated burst healing and barrier coverage. Ensure no triple-charged conduits remain entering this moment. Each triple-charged conduit that is destroyed applies an unnamed debuff to the squad and gives Decima 5 stacks each of Peal of Harmony and Discord — multiple triple-charge stacks make Phase 3 near-unwinnable.",
+          "failure": "Multiple triple-charged conduits cause wipe-level damage and/or unmanageable Discord stacks going into Phase 3.",
+          "common_mistakes": "Spreading instead of stacking for burst healing; allowing multiple triple-charged conduits to carry into the explosion."
+        },
+        {
+          "name": "Focused Fluxlance – Green Arrow (Phase 3)",
+          "when": "Phase 3 only (40%-0% HP). Fires as the first arrow in each attack cycle, preceding the 5x Orange Arrows.",
+          "watch_for": "A sixth, green-colored arrow indicator appears, targeting the uncharged conduit closest to the opposite side of Decima from the furthest player. A Spread mechanic (Discordant Thunder) overlaps with this mechanic as Discord stacks increase — Protection boon negates the Spread damage.",
+          "what_to_do": "The kiter stands on the opposite side of Decima from the main group to angle the Green Arrow near the melee stack. A minimum of 5 players must be standing inside the Green Arrow's AoE when it detonates. Run through the boss hitbox if needed — Decima will not perform lethal jumping attacks during the Green Arrow window. Use Sand Swell for mobility if available. Do not dodge inside the arrow as it prevents being counted.",
+          "failure": "Fewer than 5 players inside the Green Arrow applies an Exposed debuff to the entire squad AND the targeted conduit gains extra charge equal to the number of missing players (2 missing = triple-charge). In the final 10% of the fight this is a likely wipe condition.",
+          "common_mistakes": "Kiter poor positioning that places the Green Arrow too far from the melee group; players over-spreading during the overlapping Spread mechanic and failing to reach the arrow; hesitation when the arrow appears far away."
+        }
+      ],
+      "minor_mechanics": [
+        {
+          "name": "Discordant Thunder (Spreads)",
+          "summary": "Whenever Arrow mechanics fire and Discord stacks are available, lightning strikes the five closest players. Spread moderately — up to 3 players can stack with mitigation. Can be evaded, blocked, or invulned. Protection boon entirely negates the damage and is the primary mitigation tool. Do not over-spread backward into conduits."
+        },
+        {
+          "name": "Harmonious Thunder (Lightning Strikes)",
+          "summary": "Decima gains one stack of Peal of Harmony for every 3% HP lost. Each stack triggers lightning strikes on the closest uncharged conduits relative to the furthest player. Kiter must anticipate which conduits will be struck based on current arrow positioning and Harmony stacks to avoid overcharging conduits."
+        },
+        {
+          "name": "Earthrend",
+          "summary": "Accompanies Seismic Crash — an outside-arena AoE that is an instant kill to anyone struck. Fires as part of the jumping attack sequence. Avoid the telegraph zone."
+        },
+        {
+          "name": "Kiter Role Requirements",
+          "summary": "The dedicated kiter must have at least one teleport skill (Sand Swell, Shadowstep, or Mimic+Blink) to cross Fulgent Fences and reach Red Arrow cover conduits in time. The kiter is isolated from normal healing — squad must provide boon support (Protection, Regeneration) to keep them alive through Galvanic Sensitivity stacks and arrow hits."
+        },
+        {
+          "name": "Enrage and Composition",
+          "summary": "Decima enrages at 10 minutes. Run 2–3 healers (Scourge, Druid, Firebrand, or Chronomancer) with dual sources of Protection and Stability. No hard ranged DPS requirement exists despite Arrow bait roles."
+        }
+      ]
+    },
+    "Greer the Blightbringer": {
       "major_mechanics": [
         {
           "name": "Coming Soon...",
@@ -18,25 +116,7 @@
         }
       ]
     },
-    "Greer": {
-      "major_mechanics": [
-        {
-          "name": "Coming Soon...",
-          "when": "",
-          "watch_for": "",
-          "what_to_do": "",
-          "failure": "",
-          "common_mistakes": ""
-        }
-      ],
-      "minor_mechanics": [
-        {
-          "name": "Coming Soon...",
-          "summary": ""
-        }
-      ]
-    },
-    "Ura": {
+    "Ura the Steamshrieker": {
       "major_mechanics": [
         {
           "name": "Coming Soon...",

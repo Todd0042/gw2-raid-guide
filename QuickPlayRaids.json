@@ -1,0 +1,1877 @@
+[
+  {
+    "id": "boneskinner",
+    "name": "Boneskinner",
+    "type": "Strike Mission",
+    "wing": "Icebrood Saga",
+    "difficulty": 3,
+    "overview": {
+      "summary": "A high-pressure single-boss encounter built around the Grasp mechanic — a near-instant-kill AoE that spawns under every player simultaneously. The squad must stack tightly and move as a unit when the boss raises its arm. Six torches ring the arena; the boss extinguishes them over time, increasing incoming damage. The boss periodically gains a defiance bar and summons Veteran Wisps that extinguish remaining torches and must be cleared quickly.",
+      "goal": "Defeat Boneskinner by surviving Grasp through tight stacking and coordinated movement, breaking the defiance bar quickly during Wisp phases, and managing increasing damage pressure as torches go out.",
+      "wipe_conditions": [
+        "Players scatter from the stack, spreading Grasp pools across the arena and eliminating safe ground.",
+        "The defiance bar is not broken quickly, allowing Wisps to extinguish torches and compound damage pressure.",
+        "Cascade stun lands on the group during Grasp, causing players to move into their own pools.",
+        "Jump AoE is not dodged and wipes the group on top of a Grasp."
+      ],
+      "soft_enrage": [
+        "As torches are extinguished, the tormenting pool's protection diminishes and all incoming damage increases progressively."
+      ],
+      "hard_enrage": "10-minute enrage timer causes squad wipe."
+    },
+    "phases": [
+      {
+        "id": "p1_main",
+        "name": "Main Phase – Continuous Combat",
+        "trigger": "Encounter start.",
+        "description": "Boneskinner attacks continuously with Grasp, Cascade, Jump, and periodic Wisp breakbar phases. There are no fixed health-gated phases — mechanics layer throughout the fight."
+      },
+      {
+        "id": "p2_wisp_breakbar",
+        "name": "Wisp Phase – Defiance Bar",
+        "trigger": "Boss gains a defiance bar and stands upright, summoning Veteran Aberrant Wisps.",
+        "description": "Wisps spawn and begin extinguishing torches and firing projectiles. The squad must break the defiance bar immediately using CC and the special action skill, then cleave the Wisps before they put out more torches."
+      }
+    ],
+    "roles": {
+      "dps": "Stay tightly stacked at all times. Move left as a unit when the boss raises its right arm (Grasp). Use CC on the defiance bar during Wisp phases. Do not use reflects against Wisps — they are ineffective.",
+      "support": "Provide stability before Cascade cones to prevent stuns. Maintain boons on the tightly stacked group. Use large AoE pulls (Temporal Curtain, Spectral Grasp) to collect Wisps during breakbar phases.",
+      "heal": "Heal Alacrity Scourge is ideal — Transfusion teleports downed players back to the stack. Keep the group topped before every Grasp. Pre-cast barriers before Jump AoE.",
+      "tank": "No traditional tank. A designated front-position player can stabilize boss facing. Keep the group stacked and centered."
+    },
+    "mechanics": [
+      {
+        "id": "m1_grasp",
+        "name": "Grasp",
+        "phase": "p1_main",
+        "category": "Near-Instant-Kill AoE / Stack Mechanic",
+        "description": "Orange circles spawn under every player simultaneously, rapidly converting into black pools that deal near-instant-kill damage. The boss telegraphs this by raising its right arm. The squad must move left together as a tight unit to step out of all pools at once.",
+        "trigger": "Boss raises its right arm.",
+        "telegraph": "Boss right arm raises; orange circles appear simultaneously under all players.",
+        "effect_on_fail": "Players who do not move in sync leave pools behind them and step into each other's pools, rapidly downing the group.",
+        "effect_on_success": "The squad moves left together as a unit, stepping cleanly out of all pools into fresh ground.",
+        "handling": "Watch the boss animation, not the ground indicators. When the arm raises, move left as one tight group. Minimize movement the rest of the time to preserve safe ground.",
+        "role_tips": {
+          "dps": "Keep eyes on the boss arm, not your health bar. Move left with the group immediately — do not hesitate.",
+          "support": "Move with the group. Do not lag behind providing boons — move first.",
+          "heal": "Move with the group. Pre-cast heals before the arm raise, then move.",
+          "tank": "Anchor the stack position. Call the arm raise so the group has a verbal cue."
+        }
+      },
+      {
+        "id": "m2_cascade",
+        "name": "Cascade",
+        "phase": "p1_main",
+        "category": "Cone / Stun",
+        "description": "Boneskinner performs a long cone attack that stuns affected players for a significant duration.",
+        "trigger": "Used periodically throughout the fight.",
+        "telegraph": "Orange cone indicator in front of the boss.",
+        "effect_on_fail": "Stunned players cannot move during the next Grasp, causing them to stand in pools and go down.",
+        "effect_on_success": "Players dodge or sidestep the cone, or use stunbreaks if caught. Stability prevents the stun.",
+        "handling": "Dodge or sidestep the cone indicator. If stunned, dodge immediately after the stun expires — this moves you out of the Grasp pool that likely spawned during the stun. Stability from supports prevents the stun entirely.",
+        "role_tips": {
+          "dps": "Dodge sideways out of the cone. Keep a stunbreak equipped.",
+          "support": "Time stability for Cascade so the group does not get locked in place for the next Grasp.",
+          "heal": "Watch for stunned players — they need priority healing since they cannot move during Grasp.",
+          "tank": "Face the boss away from the group so Cascade cones point away from the stack."
+        }
+      },
+      {
+        "id": "m3_jump",
+        "name": "Jump",
+        "phase": "p1_main",
+        "category": "AoE / Reposition",
+        "description": "Boneskinner jumps around the arena, pulling the squad toward the center. A dark red circle expands from the center and deals heavy damage when it fills.",
+        "trigger": "Used periodically throughout the fight.",
+        "telegraph": "Boss leaps; dark red expanding circle appears at the arena center.",
+        "effect_on_fail": "Players caught in the expanding circle take heavy damage. The jump also displaces the stack before the next Grasp.",
+        "effect_on_success": "Players dodge or use evades/invulnerabilities to avoid the circle, then immediately restack for the upcoming Grasp.",
+        "handling": "Dodge the expanding circle or use evade/invulnerability skills. After the jump resolves, restack immediately — a Grasp typically follows.",
+        "role_tips": {
+          "dps": "Dodge the circle, then move back onto the stack position immediately.",
+          "support": "Provide swiftness after the jump to help the group restack quickly.",
+          "heal": "Pre-cast barriers before the jump. Heal the group as they restack.",
+          "tank": "Call 'restack now' immediately after the jump so the group is tight before Grasp."
+        }
+      },
+      {
+        "id": "m4_wisp_breakbar",
+        "name": "Defiance Bar and Veteran Wisps",
+        "phase": "p2_wisp_breakbar",
+        "category": "Breakbar / Add Clear",
+        "description": "The boss stands upright and gains a defiance bar while summoning Veteran Aberrant Wisps. Wisps extinguish torches — each torch lost increases damage pressure on the squad. The Special Action Skill provides additional CC for breaking the bar.",
+        "trigger": "Boss gains a defiance bar and stands up, summoning Wisps.",
+        "telegraph": "Blue defiance bar appears; Wisps appear around the arena moving toward torches.",
+        "effect_on_fail": "The bar is broken slowly, allowing Wisps to extinguish more torches and ramp up incoming damage for the rest of the fight.",
+        "effect_on_success": "Bar is broken immediately, Wisps are pulled and cleaved quickly, torches remain lit.",
+        "handling": "Use all available CC and the Special Action Skill to break the bar immediately. Use large AoE pulls (Temporal Curtain, Spectral Grasp) to cluster Wisps for cleave. Do not use reflects — they do not help against Wisp attacks.",
+        "role_tips": {
+          "dps": "Use CC on the defiance bar immediately. Then switch to cleaving pulled Wisps.",
+          "support": "Use AoE pull skills to cluster Wisps. Mesmers and Necromancers with pull utilities are especially valuable here.",
+          "heal": "Continue healing through Wisp projectile fire. Be ready for increased damage if some torches go out.",
+          "tank": "Call the break bar and coordinate CC timing with the group."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "From the start, always move left together when the boss arm raises — this is the entire fight.",
+      "Between Grasps, minimize movement to preserve safe ground.",
+      "Cascade before Grasp is the most dangerous combination — stability and stunbreaks are essential.",
+      "Wisp phases interrupt the rhythm — break the bar fast and cleave Wisps, then return to Grasp management.",
+      "Damage pressure increases as torches go out — the fight becomes more healing-intensive over time."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "This fight is all about stacking tight and moving left together when the boss raises its right arm.",
+        "Watch the boss, not the ground. When the arm goes up, everyone moves left as one unit.",
+        "Do not wander from the stack — scattered players spread pools everywhere and wipe the group.",
+        "When the defiance bar appears, use all CC and the Special Action Skill immediately.",
+        "Do NOT use reflects on Wisps — they do not work."
+      ],
+      "phase_walkthrough": [
+        "Main phase: Stack tight. Watch the boss arm. When it raises — move left together. Dodge Cascade cones. Dodge the expanding circle after Jump, then restack immediately.",
+        "Wisp phase: Boss stands up, bar appears. Dump all CC and the Special Action Skill. Pull Wisps together and cleave them. Do not use reflects."
+      ],
+      "recovery_plans": [
+        "If the stack scatters during Grasp, call a new stack position clearly and have everyone converge immediately.",
+        "If several players go down during Grasp, only attempt revives between Grasps — reviving during Grasp puts the reviver in pools.",
+        "Heal Alacrity Scourge can Transfuse downed players back to the stack — use it.",
+        "If torches are mostly out, increase healing output and tighten boon coverage to compensate."
+      ]
+    },
+    "common_mistakes": [
+      "Players spreading away from the stack during Grasp, filling the arena with pools and eliminating safe ground.",
+      "Watching the ground circles instead of the boss arm — the arm animation is the real telegraph.",
+      "Getting stunned by Cascade and standing in Grasp pools unable to move.",
+      "Not breaking the defiance bar quickly, letting Wisps extinguish torches and ramp up damage.",
+      "Using reflects on Wisps — they are ineffective and waste skill cooldowns."
+    ],
+    "callouts": [
+      "Arm up — move left together, now!",
+      "Stack tight — stay on the group!",
+      "Cascade — dodge the cone!",
+      "Jump — dodge the circle, then restack!",
+      "Bar up — CC now, Special Action!",
+      "Pull Wisps in — cleave them!"
+    ]
+  },
+  {
+    "id": "whisper_of_jormag",
+    "name": "Whisper of Jormag",
+    "type": "Strike Mission",
+    "wing": "Icebrood Saga",
+    "difficulty": 3,
+    "overview": {
+      "summary": "A four-phase encounter against the Whisper of Jormag that alternates between open combat and individual doppelganger rooms. The fight features spread AoEs, stack mechanics, Chains of Frost tethers, and rolling orbs. Players must clearly distinguish between spread and stack telegraphs and manage chains without walking through them.",
+      "goal": "Survive two doppelganger phases and defeat the Whisper of Jormag by correctly handling spread, stack, chain, and orb mechanics.",
+      "wipe_conditions": [
+        "Players overlap spread AoEs, dramatically increasing damage taken.",
+        "Players walk back and forth through Chains of Frost, dealing continuous heavy damage to themselves and downed squadmates.",
+        "Multiple players detonate rolling orbs on the stack in phase 4.",
+        "Players fail to survive their doppelganger room and return to the arena with the clone still active."
+      ],
+      "soft_enrage": [
+        "Accumulated damage from chains, orbs, and missed mechanics creates unsustainable attrition."
+      ],
+      "hard_enrage": "10-minute enrage timer causes squad wipe."
+    },
+    "phases": [
+      {
+        "id": "p1_100_75",
+        "name": "Phase 1 – 100% to 75%",
+        "trigger": "Interacting with the ice block at the arena center.",
+        "description": "The boss opens by launching players into the air — stalagmites spawn where they stood, so glide slightly away on landing. Then alternates between Spread (orange circles, move apart) and Stack (green circle on closest player, everyone stacks). Learn to distinguish orange from green."
+      },
+      {
+        "id": "p2_doppelganger_1",
+        "name": "Phase 2 – First Doppelganger Rooms (75%)",
+        "trigger": "Boss reaches 75% health.",
+        "description": "All players are ported into individual small rooms to fight a clone of themselves. Kill your doppelganger. If you cannot, you return to the arena with it — the squad then helps kill it."
+      },
+      {
+        "id": "p3_75_25",
+        "name": "Phase 3 – 75% to 25%",
+        "trigger": "Doppelganger phase ends.",
+        "description": "Boss introduces Chains of Frost. Three random players gain a tether to the boss with a timer. When chains materialize they deal heavy damage to anyone standing in them. Players must hold still or move carefully — walking sideways through a chain kills squadmates."
+      },
+      {
+        "id": "p4_doppelganger_2",
+        "name": "Phase 4 – Second Doppelganger Rooms (25%)",
+        "trigger": "Boss reaches 25% health.",
+        "description": "Second doppelganger phase. After returning to the arena the boss casts a knockback — precast stability or movement skills. Then rolling orbs appear that must not be detonated on the stack."
+      },
+      {
+        "id": "p5_25_0",
+        "name": "Phase 5 – 25% to 0%",
+        "trigger": "Second doppelganger phase ends.",
+        "description": "Boss uses Spread, Stack, Chains, and now rolling Orbs. Manage all mechanics simultaneously and burn to zero."
+      }
+    ],
+    "roles": {
+      "dps": "Spread quickly on orange circles. Stack on the closest player when a green circle appears. Hold still or move carefully when you have chains. Sidestep or let a Flesh Wurm detonate orbs away from the group.",
+      "support": "Provide Stability before the phase 4 knockback. Maintain swiftness to help players spread quickly. Call spread vs stack clearly.",
+      "heal": "Manage sustained damage from chains, orb detonations, and missed spreads. Pre-cast barriers before the arena knockback in phase 4.",
+      "tank": "No dedicated tank. Position near the boss so the closest-player green circle mechanic is predictable."
+    },
+    "mechanics": [
+      {
+        "id": "m1_stalagmites",
+        "name": "Opening Stalagmites",
+        "phase": "p1_100_75",
+        "category": "Positional / Landing Damage",
+        "description": "At phase start the boss launches all players into the air. Stalagmites spawn where players were standing. Landing on a dense cluster of stalagmites deals damage and can down players.",
+        "trigger": "Start of phase 1.",
+        "telegraph": "Players are launched upward; stalagmites erupt from previous positions.",
+        "effect_on_fail": "Players land on top of stalagmites and take heavy damage.",
+        "effect_on_success": "Players glide slightly away from their launch point and land safely.",
+        "handling": "When launched, use gliding to drift a short distance from where you stood. Do not land on the stalagmite cluster.",
+        "role_tips": {
+          "dps": "Glide a short distance on launch — do not land where you started.",
+          "support": "Same as all roles — glide away. Provide heals for anyone who clips stalagmites on landing.",
+          "heal": "Be ready to heal players who land poorly.",
+          "tank": "Spread the group slightly before the pull so stalagmite clusters do not overlap."
+        }
+      },
+      {
+        "id": "m2_spread",
+        "name": "Spread (Demonic Fever / Orange Circles)",
+        "phase": "p1_100_75",
+        "category": "Spread AoE",
+        "description": "Orange circles appear on several random players and expand. Two or more overlapping circles instantly down the players inside them.",
+        "trigger": "Used occasionally during phases 1, 3, and 5.",
+        "telegraph": "Each affected player gains a large expanding orange circle.",
+        "effect_on_fail": "Players who stay clustered overlap circles, causing instant downs.",
+        "effect_on_success": "Players spread out quickly, circles detonate without overlap, moderate damage only.",
+        "handling": "Pick a spot and move immediately when you see your circle. Do not chase others — hold your position once separated.",
+        "role_tips": {
+          "dps": "Pick a direction and move. Do not cluster near others who also have circles.",
+          "support": "Move away from the group. Swiftness on the group helps everyone spread faster.",
+          "heal": "Move away even if it means missing a heal cast — overlapping kills you both.",
+          "tank": "Call 'spread' the instant orange circles appear."
+        }
+      },
+      {
+        "id": "m3_stack",
+        "name": "Stack (Green Circle)",
+        "phase": "p1_100_75",
+        "category": "Stack / Damage Share",
+        "description": "A green circle appears on the closest player to the boss. The circle is a damage-sharing mechanic — if only one player absorbs it the damage is fatal, but multiple players inside reduce individual damage to survivable levels.",
+        "trigger": "Closest player to the boss receives a green circle.",
+        "telegraph": "A green circle appears on one player and expands before detonating.",
+        "effect_on_fail": "The targeted player takes the full detonation alone and is likely downed.",
+        "effect_on_success": "The squad stacks on the green circle player, sharing damage to survivable levels.",
+        "handling": "When a green circle appears, everyone stacks immediately on the player who has it. The whole squad should move to that player — do not expect the circle player to come to you.",
+        "role_tips": {
+          "dps": "Move to the green circle player immediately.",
+          "support": "Call 'stack green' and move to the circle player.",
+          "heal": "Stack with the group. Pre-cast barriers before detonation.",
+          "tank": "Stay near the boss so the closest-player assignment is predictable."
+        }
+      },
+      {
+        "id": "m4_chains_of_frost",
+        "name": "Chains of Frost",
+        "phase": "p3_75_25",
+        "category": "Tether / Ground Hazard",
+        "description": "Three random players receive the Chains of Frost debuff and a visible tether to the boss. After about two seconds, the chains materialize as lines on the ground dealing heavy continuous damage to anyone standing in them — including downed players. Walking perpendicular through a chain kills squadmates.",
+        "trigger": "Three random players marked with a timer above their head and a tether indicator.",
+        "telegraph": "Timer icon above affected players; Chains of Frost debuff in buff bar; tether line visible (check buff bar if chain visuals are obscured).",
+        "effect_on_fail": "Players or squadmates walk through the materialized chains and take lethal continuous damage.",
+        "effect_on_success": "Chain holders keep their chains away from the group; everyone else avoids the chain lines.",
+        "handling": "If you have chains, move them away from the squad and hold still. If you need to adjust, walk directly away — never sideways through a chain. Chains also damage downed players, so move chains away from anyone who goes down.",
+        "role_tips": {
+          "dps": "If you have chains, move them out of the group calmly and hold still.",
+          "support": "Watch for squadmates who walk into chains. Call out chain positions.",
+          "heal": "Chains damage downed players — be cautious about rezzing someone with an active chain on them.",
+          "tank": "Position the group so chain holders can extend outward without crossing each other."
+        }
+      },
+      {
+        "id": "m5_arena_knockback",
+        "name": "Phase 4 Knockback",
+        "phase": "p4_doppelganger_2",
+        "category": "Knockback",
+        "description": "When players return from the second doppelganger rooms the boss immediately casts an arena-wide knockback.",
+        "trigger": "Players return to the arena after the second doppelganger phase.",
+        "telegraph": "Boss reappears and immediately casts the knockback on return.",
+        "effect_on_fail": "Players are knocked far apart before orbs spawn, making orb management harder.",
+        "effect_on_success": "Stability or movement skills prevent or minimize the knockback.",
+        "handling": "Precast Stability, Distortion, or other knockback-immunity skills before returning to the arena. Groups that coordinate this take no displacement.",
+        "role_tips": {
+          "dps": "Have a stunbreak or CC immunity ready when doppelganger rooms resolve.",
+          "support": "Precast Stability on the group just before everyone returns.",
+          "heal": "Precast barriers for the knockback impact.",
+          "tank": "Call the precast window — 'cast stability now' before rooms end."
+        }
+      },
+      {
+        "id": "m6_rolling_orbs",
+        "name": "Rolling Orbs",
+        "phase": "p5_25_0",
+        "category": "Collision Hazard",
+        "description": "The boss spawns orbs that roll outward toward the arena edge. Players hit by an orb detonate it, dealing heavy damage to everyone nearby. Multiple orb detonations on the stack is a common wipe cause.",
+        "trigger": "Boss spawns rolling orbs in phase 5.",
+        "telegraph": "Orbs visibly spawn near the boss and roll outward.",
+        "effect_on_fail": "Multiple players detonate orbs on the stack, causing chain damage and likely wiping the group.",
+        "effect_on_success": "Orbs are detonated safely away from the group, or a dedicated pet/minion absorbs them at the center.",
+        "handling": "Option 1 (recommended): A Necromancer with Summon Flesh Wurm or a Mechanist's Golem placed at the arena center detonates all orbs at spawn, containing explosions to the center away from the group. Option 2: Squad spreads away from the boss and sidesteps or dodges orbs as they pass. Restack after orbs finish rolling.",
+        "role_tips": {
+          "dps": "Sidestep orbs as they roll past. Do not run into them.",
+          "support": "If using Option 2, spread away from the boss to give orbs room to pass.",
+          "heal": "Heal through any orb clips. Be ready for staggered detonation damage.",
+          "tank": "Call the orb strategy before the pull so everyone uses the same approach."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "Phase 1: Glide away from stalagmites on start. Learn spread vs stack — orange means apart, green means together.",
+      "75%: Everyone enters doppelganger rooms. Kill your clone. If you fail, come back and ask the squad for help.",
+      "Phase 3: Chains of Frost — move chains out, hold still, never walk sideways through them.",
+      "25%: Second doppelganger rooms. Precast stability before returning. Rolling orbs begin — decide handling strategy before the fight.",
+      "Final burn: All mechanics active. Prioritize mechanic execution over DPS."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "Orange circles mean spread apart immediately. Green circle means everyone stacks on that player.",
+        "Chains of Frost: if you have the tether, move it away from the group and hold still — never walk sideways through it.",
+        "At 25%, precast stability or movement skills before coming out of the doppelganger rooms — there is an immediate knockback.",
+        "Decide on orb strategy now: Flesh Wurm at center, or spread and sidestep."
+      ],
+      "phase_walkthrough": [
+        "Phase 1 (100-75%): Glide away on the stalagmite launch. Spread on orange, stack on green. Burn to 75%.",
+        "Doppelganger rooms: Kill your clone. If you struggle, come back and get squad help.",
+        "Phase 3 (75-25%): Chains appear — move yours out, hold still. Continue spread and stack mechanics.",
+        "Phase 4 prep (25%): Precast stability. Return from rooms into knockback. Then manage orbs per agreed strategy.",
+        "Finish: All mechanics layered. Execute cleanly and burn."
+      ],
+      "recovery_plans": [
+        "If chains damage multiple players, call chain positions clearly and have holders move away from downed squadmates.",
+        "If orbs wipe the group, switch to a different orb strategy on the next pull.",
+        "If someone returns from doppelganger rooms with their clone, have the squad focus the clone first before resuming boss damage."
+      ]
+    },
+    "common_mistakes": [
+      "Standing in spread circles with nearby players, causing instant downs from overlap.",
+      "Soloing the green stack circle and dying to the full detonation.",
+      "Walking sideways through Chains of Frost, killing chained players or nearby squadmates.",
+      "Not precasting stability before returning from the second doppelganger phase and getting scattered by the knockback.",
+      "Multiple players detonating rolling orbs on the stack in phase 5."
+    ],
+    "callouts": [
+      "Orange — spread out now!",
+      "Green — stack on the circle player!",
+      "Chains — move yours out, hold still!",
+      "Never walk through someone else's chain!",
+      "Precast stability — doppelganger rooms ending!",
+      "Orbs rolling — sidestep, stay spread!"
+    ]
+  },
+  {
+    "id": "aetherblade_hideout",
+    "name": "Aetherblade Hideout",
+    "type": "Strike Mission",
+    "wing": "End of Dragons",
+    "difficulty": 3,
+    "overview": {
+      "summary": "A single-arena encounter against Captain Mai Trin followed by Echo of Scarlet Briar at 10% Mai Trin health. The fight features split phases where adds must be managed while the boss is untargetable, a lightning field mechanic that requires the marked player to move away from the group, and dangerous deathray phases during Scarlet's portion.",
+      "goal": "Burn Mai Trin to 10%, manage add split phases at 50% and 33%, then fight Echo of Scarlet Briar through split phases at 80% and 40% until defeated.",
+      "wipe_conditions": [
+        "NE phantom is not killed quickly enough during the 33% split, and the green stack circle kills the targeted player.",
+        "SW phantom breakbar is not broken at 33%, causing the tether mechanic to kill players.",
+        "The lightning column player does not move away from the group during Scarlet's phase.",
+        "Players stand in the deathray during Scarlet's 60% and 20% phases.",
+        "Group fails to coordinate CC priority between the two 33% adds."
+      ],
+      "soft_enrage": [
+        "Repeated failed split phases allow adds to apply sustained pressure alongside the boss."
+      ],
+      "hard_enrage": "No hard enrage in normal mode; sustained failures act as a de facto enrage."
+    },
+    "phases": [
+      {
+        "id": "p1_mai_trin",
+        "name": "Phase 1 – Captain Mai Trin (100%–10%)",
+        "trigger": "Encounter start.",
+        "description": "Fight Mai Trin while managing her attacks. At 50% she becomes untargetable and small phantoms spawn. At 33% a more complex split occurs with a NE phantom (green stacking circle) and SW phantom (enormous defiance bar)."
+      },
+      {
+        "id": "p1a_split_50",
+        "name": "Split Phase – 50%",
+        "trigger": "Mai Trin reaches 50% health.",
+        "description": "Mai Trin becomes untargetable. Small phantoms with rectangular AoEs spawn. Kill them to make Mai Trin targetable again. Mai Trin continues attacking during this phase."
+      },
+      {
+        "id": "p1b_split_33",
+        "name": "Split Phase – 33%",
+        "trigger": "Mai Trin reaches 33% health.",
+        "description": "Mai Trin becomes untargetable. NE phantom spawns with a large health pool and targets one player with a green stacking circle — at least 4 players must stack in the circle. SW phantom cannot be killed by damage; it has an enormous defiance bar and tethers to all players spawning area attacks. Recommended priority: CC the SW phantom first, DPS the NE phantom, finish the SW bar."
+      },
+      {
+        "id": "p2_scarlet",
+        "name": "Phase 2 – Echo of Scarlet Briar (spawns at 10% Mai Trin)",
+        "trigger": "Mai Trin reaches 10% health.",
+        "description": "Echo of Scarlet Briar spawns with a defiance bar. Breaking it interrupts her attacks and grants a damage boost. She uses spiral orbs, swipe attacks, and slam knockdown waves. Split phases at 80% and 40% mirror Mai Trin's 33% adds. At 60% and 20%, a deathray phase occurs — stand in a rotating safe circle."
+      },
+      {
+        "id": "p2a_deathray",
+        "name": "Deathray Phase – 60% and 20%",
+        "trigger": "Scarlet reaches 60% and 20% health.",
+        "description": "Scarlet disappears. A small version of Scarlet appears at the arena edge. Three rotating circles appear — these are safe zones. The deathray instantly kills anyone it hits and downs anyone outside a safe spot."
+      }
+    ],
+    "roles": {
+      "dps": "Burst the NE phantom quickly during the 33% split. Save at least one CC skill for the SW phantom bar. Help stack in the green circle if targeted or nearby.",
+      "support": "Coordinate CC for the SW phantom bar at the 33% split. Provide stability for Mai Trin's attacks. Call add priority during split phases.",
+      "heal": "Manage damage during split phases — adds hit the group while the boss is also attacking. Top off the green circle stack before detonation at 33%.",
+      "tank": "No dedicated tank mechanic. Focus on calling split phase priorities and keeping the group oriented."
+    },
+    "mechanics": [
+      {
+        "id": "m1_defiance_bar",
+        "name": "Defiance Bar (Mai Trin and Scarlet)",
+        "phase": "p1_mai_trin",
+        "category": "Breakbar / Damage Boost",
+        "description": "Both Mai Trin and Scarlet periodically gain defiance bars unconnected to specific timers. Breaking the bar interrupts their current attack and grants the group a significant damage boost.",
+        "trigger": "Appears randomly throughout the fight on both bosses.",
+        "telegraph": "A blue defiance bar appears under the boss health bar.",
+        "effect_on_fail": "The boss completes its current attack without interruption and the damage boost is lost.",
+        "effect_on_success": "The attack is interrupted and the group receives increased damage output.",
+        "handling": "Break defiance bars immediately when they appear. Prioritize bar breaks — the damage boost accelerates phase completion.",
+        "role_tips": {
+          "dps": "Always have at least one CC skill available for bar breaks.",
+          "support": "Coordinate CC with the group. Call the bar so everyone uses CC together.",
+          "heal": "Use any CC utility skills when the bar appears.",
+          "tank": "Call 'bar up, break it' as soon as you see the defiance bar."
+        }
+      },
+      {
+        "id": "m2_50_split_phantoms",
+        "name": "50% Split – Minor Phantoms",
+        "phase": "p1a_split_50",
+        "category": "Add Management / Split Phase",
+        "description": "Mai Trin becomes untargetable. Small phantoms spawn with rectangular AoE attacks and slow-moving orbs. Kill them to make Mai Trin targetable.",
+        "trigger": "Mai Trin reaches 50% health.",
+        "telegraph": "Mai Trin becomes untargetable; phantoms appear on the arena.",
+        "effect_on_fail": "Phantoms left alive deal sustained pressure while Mai Trin waits to re-engage.",
+        "effect_on_success": "Phantoms are cleaved quickly; Mai Trin returns to the fight.",
+        "handling": "Cleave phantoms while avoiding their rectangular AoEs and orbs. They have low health — prioritize killing them fast.",
+        "role_tips": {
+          "dps": "Switch to phantoms immediately. AoE cleave is ideal.",
+          "support": "Maintain boons and help cleave.",
+          "heal": "Manage sustained damage from phantom attacks.",
+          "tank": "Help cleave — no boss positioning needed during this window."
+        }
+      },
+      {
+        "id": "m3_33_split_ne_phantom",
+        "name": "33% Split – NE Phantom (Green Circle)",
+        "phase": "p1b_split_33",
+        "category": "Stack Mechanic / Add Kill",
+        "description": "The NE phantom has a large health pool and targets one player with a green stacking circle that deals high damage. At least 4 players must be inside the circle when it detonates. Killing the phantom cancels the mechanic.",
+        "trigger": "33% split phase — NE phantom spawns.",
+        "telegraph": "Green stacking circle appears on one player.",
+        "effect_on_fail": "Fewer than 4 players in the circle — the targeted player takes lethal damage.",
+        "effect_on_success": "4+ players stack in the circle; damage is shared to survivable levels. Phantom dies.",
+        "handling": "Assign the majority of the group to burn the NE phantom while the remainder handles the SW phantom bar. Stack 4 players minimum in the green circle whenever it detonates.",
+        "role_tips": {
+          "dps": "Most DPS focus NE phantom. Stack in the green circle when it appears on you or a nearby player.",
+          "support": "Call green circle and direct 4 players to stack in it.",
+          "heal": "Stack in the green circle. Barrier the group before detonation.",
+          "tank": "Stack in the green circle even if it means leaving the SW phantom temporarily."
+        }
+      },
+      {
+        "id": "m4_33_split_sw_phantom",
+        "name": "33% Split – SW Phantom (Defiance Bar)",
+        "phase": "p1b_split_33",
+        "category": "Breakbar / Tether",
+        "description": "The SW phantom cannot be killed by damage — it has an enormous defiance bar. It tethers to all players and spawns area attacks. The squad must split: use CC to break the SW bar while DPS kills the NE phantom.",
+        "trigger": "33% split phase — SW phantom spawns alongside the NE phantom.",
+        "telegraph": "SW phantom tethers to players; adds area attacks around all players.",
+        "effect_on_fail": "SW bar is not broken — tether mechanic continues to spawn area attacks, threatening a wipe.",
+        "effect_on_success": "SW bar is broken; the phantom despawns. Group returns to the NE phantom.",
+        "handling": "Recommended order: Use CC on the SW phantom first to start depleting its bar, then DPS the NE phantom, then return CC resources to the SW phantom to finish its bar. Minor Scarlet Phantasms also spawn — cleave them while moving.",
+        "role_tips": {
+          "dps": "Use CC on the SW phantom first, then DPS the NE phantom.",
+          "support": "Lead CC on the SW phantom. Coordinate the split group.",
+          "heal": "Heal through the tether AoE damage during the SW break phase.",
+          "tank": "Call the CC priority: SW bar first, then NE DPS, then finish SW bar."
+        }
+      },
+      {
+        "id": "m5_lightning_column",
+        "name": "Lightning Column (Scarlet Phase)",
+        "phase": "p2_scarlet",
+        "category": "Player Marker / Ground AoE",
+        "description": "A blue light column follows a random player, indicated by a blue screen border. After several seconds a large lightning field spawns under that player dealing massive damage to everyone nearby.",
+        "trigger": "Random player selection during Scarlet's phase, visible at the 80% and 40% split points.",
+        "telegraph": "Blue light column visible on a player; blue border on the targeted player's screen.",
+        "effect_on_fail": "The field spawns on the stack, dealing massive damage and likely wiping the squad.",
+        "effect_on_success": "The targeted player moves away from the group; the field spawns safely away.",
+        "handling": "If you see a blue border on your screen or a light column on a player, move away from the group immediately. Hold that position until the field spawns.",
+        "role_tips": {
+          "dps": "If you have the blue border, move out now — do not wait.",
+          "support": "Watch for the column on other players and call it out.",
+          "heal": "Heal the marked player as they move away. Be ready to top the group after the field resolves.",
+          "tank": "Call the marked player clearly so they know to move."
+        }
+      },
+      {
+        "id": "m6_slam_knockdown",
+        "name": "Slam (Scarlet)",
+        "phase": "p2_scarlet",
+        "category": "Knockdown / Wave",
+        "description": "Scarlet slams her fists into an orange ground target, emitting a knockdown wave. Available from 90% of Scarlet's health.",
+        "trigger": "Scarlet slams an orange ground-targeted area.",
+        "telegraph": "Orange ground target appears where Scarlet will slam.",
+        "effect_on_fail": "Players caught in the wave are knocked down.",
+        "effect_on_success": "Players jump, dodge, use invulnerability, or position away from the wave.",
+        "handling": "Jump over the wave, dodge it, use an invulnerability skill, or stand outside the slam zone.",
+        "role_tips": {
+          "dps": "Jump the wave when you see the orange indicator and the slam animation.",
+          "support": "Stability prevents the knockdown if available.",
+          "heal": "Top off anyone knocked down before the next mechanic.",
+          "tank": "Call the slam animation so the group can react."
+        }
+      },
+      {
+        "id": "m7_deathray",
+        "name": "Deathray Phase",
+        "phase": "p2a_deathray",
+        "category": "Instant-Kill / Safe Zone",
+        "description": "At 60% and 20% Scarlet's health, she disappears and a miniature Scarlet appears at the arena edge. Three rotating circles appear as safe zones. The deathray rotates and instantly kills anyone it touches; anyone outside a safe circle is downed.",
+        "trigger": "Scarlet reaches 60% and 20% health.",
+        "telegraph": "Scarlet disappears; arena edge begins glowing; three rotating circles appear.",
+        "effect_on_fail": "Players stand outside a safe circle or in the deathray and are instantly killed or downed.",
+        "effect_on_success": "All players stand inside a rotating safe circle and take no damage.",
+        "handling": "As soon as the deathray phase begins, move into one of the three rotating safe circles and stay inside it as it rotates. The safe spot is parallel to the deathray on the side with more space. At the 60% version, an untargetable Mai Trin also appears casting a wide cone — use invulnerability or out-heal it.",
+        "role_tips": {
+          "dps": "Move into a safe circle immediately — do not delay.",
+          "support": "Call 'deathray — get in the circles!' as soon as it triggers.",
+          "heal": "Stack in a safe circle with as many players as possible for efficient healing.",
+          "tank": "Anchor a safe circle position and call players to your location."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "Mai Trin phase: Break defiance bars for damage boosts. At 50%, cleave minor phantoms. At 33%, CC SW first, DPS NE, stack green circle.",
+      "Scarlet spawns at 10% Mai Trin. Break her bar immediately for another damage boost.",
+      "Scarlet at 80% and 40%: Same split mechanic as Mai Trin 33%. Lightning column player must move out.",
+      "Scarlet at 60% and 20%: Deathray — get into the rotating safe circles immediately."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "Break every defiance bar as soon as it appears — they give a damage boost and interrupt attacks.",
+        "At 50% Mai Trin, kill the minor phantoms to make her targetable again.",
+        "At 33% Mai Trin, CC the SW phantom first, burst the NE phantom, stack in the green circle.",
+        "In Scarlet's phase, if you see a blue border on your screen, move away from the group immediately.",
+        "Deathray at 60% and 20% Scarlet — move into one of the three rotating circles, stay inside it."
+      ],
+      "phase_walkthrough": [
+        "Mai Trin (100-10%): Break bars. 50% — kill minor phantoms. 33% — CC SW bar, kill NE phantom, stack green circle.",
+        "Scarlet spawns at 10%. Break her bar. 90%+ — dodge slam waves. 80% split — same adds as before, plus lightning column player moves out.",
+        "60% deathray: Get in rotating circles immediately. 40% split: repeat add handling. 20% deathray: circles again."
+      ],
+      "recovery_plans": [
+        "If the SW bar is not broken at the 33% split, use every CC skill available and accept longer add phase pressure.",
+        "If the green circle detonates with fewer than 4 players, heal the targeted player through the spike and re-evaluate stacking assignments.",
+        "If a player is caught in the deathray, they cannot be revived mid-phase — finish the deathray rotation and revive after."
+      ]
+    },
+    "common_mistakes": [
+      "Not stacking 4 players in the green circle during the 33% split, causing the targeted player to die.",
+      "Ignoring the SW phantom defiance bar and letting it tether uncontested.",
+      "The lightning column player not moving away from the group and wiping the squad with the field.",
+      "Standing in the deathray or outside safe circles during Scarlet's 60% and 20% phases.",
+      "Not breaking defiance bars on Mai Trin and Scarlet, missing the damage boost."
+    ],
+    "callouts": [
+      "Break the bar — damage boost!",
+      "50% — kill the phantoms!",
+      "33% — CC the SW phantom first!",
+      "Stack in the green circle — need four people!",
+      "Blue border on you — move away from the group!",
+      "Deathray — get in the rotating circles now!"
+    ]
+  },
+  {
+    "id": "xunlai_jade_junkyard",
+    "name": "Xunlai Jade Junkyard",
+    "type": "Strike Mission",
+    "wing": "End of Dragons",
+    "difficulty": 3,
+    "overview": {
+      "summary": "A three-arena encounter against Ankka across progressively smaller platforms. Ankka uses Death's Reach hand mechanics, rotating Hallucination attacks, a deadly central Pull, and Necrotic Ritual add phases in arenas 2 and 3. Heavy condition application requires dedicated cleanse. Her defiance bar should be broken whenever possible as it interrupts her current attack and skips it from her rotation.",
+      "goal": "Chase Ankka through three arenas, breaking her defiance bar, surviving her pull mechanic, managing Hallucinations, and clearing adds during Necrotic Ritual phases.",
+      "wipe_conditions": [
+        "Players are pulled into Ankka's central AoE and instantly downed.",
+        "The Necrotic Ritual adds are not killed, causing Ankka to gain a stacking damage and healing-reduction buff.",
+        "Lich Hallucination pulls the tethered player into its AoE and the group does not help kite it.",
+        "Conditions are not cleansed and healing reduction from Debilitating Void prevents recovery."
+      ],
+      "soft_enrage": [
+        "Surviving Power of the Void stacks from failed Necrotic Ritual make Ankka effectively immune while dealing massive damage."
+      ],
+      "hard_enrage": "No explicit timer, but arena size shrinks across phases, reducing recovery space."
+    },
+    "phases": [
+      {
+        "id": "p1_100_75",
+        "name": "Phase 1 – First Arena (100%–75%)",
+        "trigger": "Squad jumps or glides down to Ankka.",
+        "description": "Ankka opens with projectiles applying conditions. She rotates through Death's Reach hand mechanics, Hallucinations, and a Pull. Breaking her defiance bar skips her current attack. At 75% she teleports to the second arena."
+      },
+      {
+        "id": "p2_75_40",
+        "name": "Phase 2 – Second Arena (75%–40%)",
+        "trigger": "Ankka teleports after reaching 75% health.",
+        "description": "Same mechanics plus Necrotic Ritual: Ankka becomes invulnerable and spawns three Reanimated Spites with crossed-sword icons plus many spider adds. Kill or break the Spites' breakbars. Surviving Spites give Ankka a 25% damage increase and 25% damage reduction per add, plus 50% healing reduction. At 40% she teleports to the third (smaller) arena."
+      },
+      {
+        "id": "p3_40_0",
+        "name": "Phase 3 – Third Arena (40%–0%)",
+        "trigger": "Ankka teleports after reaching 40% health.",
+        "description": "Arena is smaller, reducing safe space. Necrotic Ritual now also spawns a Reanimated Hatred — a player-fixating wraith that deals heavy damage. Break its bar to despawn it or cleave it with the group. Phase 2 Snakeheads appear as three Krait are replaced by two."
+      }
+    ],
+    "roles": {
+      "dps": "Break Ankka's defiance bar every time it appears to interrupt her rotation. Split for Death's Hand timed AoEs. Break Spite breakbars during Necrotic Ritual. Kite the Lich Hallucination if tethered.",
+      "support": "Provide Stability to resist Krait pull. Coordinate Necrotic Ritual add management. Help with soft CC to immobilize Malice shadows (not used in this fight — focus on Spite breakbars).",
+      "heal": "Carry heavy condition cleanse — Ankka applies conditions constantly. Manage the Debilitating Void healing reduction debuff. Cleanse aggressively during and after add phases.",
+      "tank": "No dedicated tank. Position the group to minimize pull impact and give space for Death's Hand drops."
+    },
+    "mechanics": [
+      {
+        "id": "m1_defiance_bar",
+        "name": "Defiance Bar",
+        "phase": "p1_100_75",
+        "category": "Breakbar / Interrupt",
+        "description": "Ankka's defiance bar appears throughout the fight. Breaking it interrupts her current ability and causes her to skip that attack in her rotation, providing a significant advantage.",
+        "trigger": "Appears periodically throughout the fight on no fixed timer.",
+        "telegraph": "Blue defiance bar under Ankka's health bar.",
+        "effect_on_fail": "Ankka completes her current attack and continues her rotation normally.",
+        "effect_on_success": "Current attack is interrupted and skipped from rotation — especially valuable to skip the Pull.",
+        "handling": "Break the bar every time it appears. If it appears while she is about to use the Pull, breaking it prevents the Pull entirely.",
+        "role_tips": {
+          "dps": "Always have a CC skill slotted. Use it immediately when the bar appears.",
+          "support": "Coordinate CC usage and call bar breaks.",
+          "heal": "Use any CC utilities when the bar appears.",
+          "tank": "Call 'bar up' so all CC is used simultaneously."
+        }
+      },
+      {
+        "id": "m2_grasping_horror",
+        "name": "Grasping Horror (Small Hands)",
+        "phase": "p1_100_75",
+        "category": "Ground AoE / Condition",
+        "description": "Small AoEs spawn in a triangle pattern where pairs of hands reach from the ground, dealing low damage and applying Weakness, Vulnerability, and Poison. Additional circles spawn for players beyond the initial three if the group spreads.",
+        "trigger": "Part of Ankka's Death's Reach rotation — first use is always Small Hands.",
+        "telegraph": "Small circles appear on the ground in a triangle pattern.",
+        "effect_on_fail": "Standing in hand fields takes chip damage and accumulates conditions.",
+        "effect_on_success": "Players avoid the circles or stack on the boss to limit spawns to three circles.",
+        "handling": "Stack on the boss to minimize the number of circles that spawn — the initial three-triangle spawn occurs regardless, but additional circles are player-position dependent. Avoid standing in the fields.",
+        "role_tips": {
+          "dps": "Stay close to the boss to minimize additional circle spawns.",
+          "support": "Cleanse conditions after each Grasping Horror wave.",
+          "heal": "Cleanse Poison and Weakness quickly.",
+          "tank": "Keep the group tightly on the boss to minimize circle spread."
+        }
+      },
+      {
+        "id": "m3_deaths_hand",
+        "name": "Death's Hand (Timed Hands)",
+        "phase": "p1_100_75",
+        "category": "Spread AoE / High Damage",
+        "description": "Three medium-sized AoEs load over time on players. Each AoE spawns a single hand dealing significant damage and applying 6 stacks of Vulnerability and 6 stacks of Bleed.",
+        "trigger": "Second Death's Reach attack in Phase 1, then random thereafter.",
+        "telegraph": "Three medium circles that fill/load over time before detonating.",
+        "effect_on_fail": "AoEs stack on the group causing heavy damage and deep condition stacks.",
+        "effect_on_success": "Targeted players move away and ideally stack their AoEs together in one location away from the group.",
+        "handling": "If you have a loading circle, move away from the group. Ideally, players with circles should all converge in one spot away from the boss to stack the detonations efficiently.",
+        "role_tips": {
+          "dps": "Move out immediately with your circle. Drop it far from the stack.",
+          "support": "Call out who has circles. Cleanse Bleed and Vulnerability after detonation.",
+          "heal": "Cleanse conditions from anyone caught by Death's Hand detonations.",
+          "tank": "Point toward the designated drop zone before the pull."
+        }
+      },
+      {
+        "id": "m4_pull",
+        "name": "Pull Attack",
+        "phase": "p1_100_75",
+        "category": "Instant-Kill Pull / AoE",
+        "description": "Ankka raises her hand and summons a large AoE in the center of the arena. She teleports to it and pulls everyone inside, dealing heavy damage and applying conditions. Getting pulled in almost always means going down and dying. In phases 2 and 3, four AoEs appear instead of one — Ankka teleports between them, changing pull direction each time. The next location is indicated by a green light column.",
+        "trigger": "Fifth attack in Phase 1 rotation; returns in later phases. Defiance bar break can skip it.",
+        "telegraph": "Large AoE circle appears in the arena center; brief moment before Ankka teleports into it.",
+        "effect_on_fail": "Pulled players take lethal damage and are almost certainly downed and killed.",
+        "effect_on_success": "Players avoid the AoE entirely; Ankka pulls to an empty center.",
+        "handling": "Avoid at all cost. Do not stand in or near the center pull AoE. In phases 2 and 3, watch the green light column to know which direction Ankka will pull from next and stay out of all four AoEs. Breaking Ankka's defiance bar while she channels the Pull cancels it entirely.",
+        "role_tips": {
+          "dps": "Stay out of the center. If you have a CC skill, save it to cancel this attack.",
+          "support": "Call the pull AoE immediately when it appears.",
+          "heal": "Stay out of the AoE — no amount of healing survives the pull damage.",
+          "tank": "If the bar appears while the pull is active, CC immediately to cancel it."
+        }
+      },
+      {
+        "id": "m5_krait_hallucination",
+        "name": "Krait Hallucination",
+        "phase": "p2_75_40",
+        "category": "Moving AoE / Pull",
+        "description": "Three Krait hallucinations (two in the smaller third arena) spawn on one side of the arena and slowly move to the other. Each is surrounded by a damaging AoE that inflicts conditions and constantly pulls players toward it.",
+        "trigger": "Random Hallucination selection during phases 2 and 3.",
+        "telegraph": "Krait hallucinations appear on one side of the arena.",
+        "effect_on_fail": "Players pulled into Krait AoEs take heavy damage and condition stacks.",
+        "effect_on_success": "Players run away from the pull when Krait are close, using Stability or Immobilize to resist.",
+        "handling": "Run away from the Krait's direction of movement when they are nearby. Stability resists the pull. Immobilize on the Krait locks them in place.",
+        "role_tips": {
+          "dps": "Use Stability or run away when Krait are close to your position.",
+          "support": "Provide Stability when Krait are moving through the squad's area.",
+          "heal": "Cleanse conditions applied by Krait AoEs.",
+          "tank": "Call which side the Krait are on so the group knows which direction to retreat."
+        }
+      },
+      {
+        "id": "m6_lich_hallucination",
+        "name": "Lich Hallucination",
+        "phase": "p2_75_40",
+        "category": "Fixate / Kite",
+        "description": "A Lich hallucination spawns at one of the cardinal directions of the arena and fixates on a single player with a blue tether (visible only to the tethered player). The Lich pulls the tethered player toward it; the surrounding AoE deals heavy damage and applies conditions.",
+        "trigger": "Random Hallucination selection.",
+        "telegraph": "Blue tether visible to the targeted player only; Lich spawns at a cardinal arena edge.",
+        "effect_on_fail": "The tethered player is pulled into the Lich AoE and takes lethal damage.",
+        "effect_on_success": "The tethered player kites the Lich away from the group; Lich despawns after its duration.",
+        "handling": "If you have a blue tether, kite the Lich away from the group. Keep moving — do not let it pull you into its AoE. The Lich despawns after a short duration.",
+        "role_tips": {
+          "dps": "If tethered, kite immediately away from the group.",
+          "support": "Watch for the tethered player and help shield them with boons while they kite.",
+          "heal": "Heal the kiting player from a distance.",
+          "tank": "Call out which player is tethered so they know to move."
+        }
+      },
+      {
+        "id": "m7_necrotic_ritual",
+        "name": "Necrotic Ritual",
+        "phase": "p2_75_40",
+        "category": "Add Phase / Interrupt",
+        "description": "Ankka becomes invulnerable and immediately uses Necrotic Ritual, spawning three Reanimated Spites (crossed-sword icons) and many Reanimated Malice spider adds. Kill or break the breakbars of all three Spites. Each surviving Spite grants Ankka 25% increased damage and 25% damage reduction, plus 50% healing reduction on all players.",
+        "trigger": "Appears at a specific point in Ankka's rotation in phases 2 and 3.",
+        "telegraph": "Ankka becomes invulnerable; Spites and spider adds spawn.",
+        "effect_on_fail": "Surviving Spites stack Power of the Void on Ankka, making her extremely dangerous and nearly unkillable until the buff is removed by breaking her bar.",
+        "effect_on_success": "All three Spites are killed or broken; spiders despawn shortly if ignored. Squad restacks on Ankka.",
+        "handling": "Split up and focus on killing or breaking the breakbars of the three Reanimated Spites. Spiders can be ignored — they despawn if left alone. After all Spites are handled, restack on Ankka and resume DPS.",
+        "role_tips": {
+          "dps": "Split to the three Spite locations and burst or CC each one. Cleave spiders only if they are directly in your way.",
+          "support": "Coordinate the split. Call Spite positions clearly.",
+          "heal": "Manage healing during the split — players are spread and taking add damage.",
+          "tank": "Assign Spite targets before the pull so the group splits efficiently."
+        }
+      },
+      {
+        "id": "m8_reanimated_hatred",
+        "name": "Reanimated Hatred (Phase 3 Only)",
+        "phase": "p3_40_0",
+        "category": "Fixate / Wraith",
+        "description": "Spawns in phase 3 during Necrotic Ritual among the spider adds. Takes a wraith form, fixates on one player (icon visible only to that player), and spams heavy damage abilities.",
+        "trigger": "Spawns during Necrotic Ritual in phase 3 only.",
+        "telegraph": "Icon appears over the fixated player's head — visible only to them.",
+        "effect_on_fail": "Reanimated Hatred continuously attacks the fixated player and may kill them before the squad handles it.",
+        "effect_on_success": "Its breakbar is broken to despawn it, or the group cleaves it down quickly.",
+        "handling": "If you have the fixate icon, call it out. The group should cleave it immediately or break its breakbar to despawn it.",
+        "role_tips": {
+          "dps": "If you see the icon, call it and move toward the group so they can cleave the Hatred.",
+          "support": "Help CC or cleave the Reanimated Hatred when it appears.",
+          "heal": "Top off the fixated player who is taking heavy hits.",
+          "tank": "Be aware of the Hatred spawn in phase 3 — call it as soon as it appears."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "Phase 1: Break the bar every time it appears. Learn the rotation — hands, timed circles, hallucinations, pull.",
+      "At 75%, follow Ankka to the second arena. Avoid transition Death's Reach AoEs — they apply conditions.",
+      "Necrotic Ritual in phase 2: all three Spites must be handled — do not leave any alive.",
+      "At 40%, third arena is smaller. Necrotic Ritual now also includes Reanimated Hatred — call the fixate immediately.",
+      "Break bars aggressively to skip the Pull — getting pulled in is nearly always a death."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "Break Ankka's bar every time it appears — it interrupts her current attack including the Pull.",
+        "The Pull AoE in the center is instant death — never stand in or near it.",
+        "Death's Hand circles (loading timed AoEs) — move away from the group and ideally stack your circles together.",
+        "Krait pulls you toward them — run away or use Stability.",
+        "Lich tethers one player with a blue line only they can see — that player must kite away from the group.",
+        "Necrotic Ritual: all three Spite adds must be killed or broken. Assign targets before the pull."
+      ],
+      "phase_walkthrough": [
+        "Phase 1 (100-75%): Break bars. Avoid center pull. Move out for Death's Hand circles. Manage Hallucinations. Burn to 75%.",
+        "Phase 2 (75-40%): Same plus Necrotic Ritual. Split to all three Spites. Restack on Ankka after.",
+        "Phase 3 (40-0%): Smaller arena. Necrotic Ritual also spawns Reanimated Hatred — call the fixate and cleave or break it."
+      ],
+      "recovery_plans": [
+        "If a player is pulled into the center AoE and goes down, revive after Ankka moves away from the pull zone.",
+        "If Spites are left alive during Necrotic Ritual, break Ankka's bar immediately after she returns to remove the Power of the Void buff.",
+        "If Reanimated Hatred is ignored and kills the fixated player, cleave it off the next downed player immediately."
+      ]
+    },
+    "common_mistakes": [
+      "Standing in or near the central Pull AoE and getting instantly downed.",
+      "Not splitting for Death's Hand timed circles, causing heavy group damage.",
+      "Leaving Reanimated Spites alive during Necrotic Ritual, stacking Power of the Void on Ankka.",
+      "Running toward Krait Hallucinations instead of away from the pull direction.",
+      "Not kiting the Lich Hallucination when tethered, pulling it through the squad."
+    ],
+    "callouts": [
+      "Break the bar — interrupt her!",
+      "Pull AoE up — stay out of center!",
+      "Death's Hand circles — move away, stack them together!",
+      "Krait — run away from the pull!",
+      "Lich tether on you — kite it away!",
+      "Necrotic Ritual — split to the Spites, kill all three!"
+    ]
+  },
+  {
+    "id": "kaineng_overlook",
+    "name": "Kaineng Overlook",
+    "type": "Strike Mission",
+    "wing": "End of Dragons",
+    "difficulty": 4,
+    "overview": {
+      "summary": "A multi-phase encounter against Minister Li with two split phases featuring mini-bosses on a lower platform. Minister Li introduces positional mechanics (Cleave, Dash, Numbers) that grow more complex in each return phase. The first split has The Enforcer, Mindblade, and Ritualist; the second has The Mech Rider and Sniper linked by a shared health equalization mechanic.",
+      "goal": "Defeat Minister Li through three main phases interspersed with two split phases, managing mini-boss positioning, equalization prevention, and the Sniper's breakbar to avoid lethal attacks.",
+      "wipe_conditions": [
+        "Players are hit by Minister Li's Cleave and launched at the wrong moment during Spread.",
+        "Mech Rider and Sniper health pools diverge by more than 20%, triggering Equalization and its stacking DPS aura.",
+        "Snipe lands on the full squad because the Sniper's breakbar was not broken.",
+        "Enforcer and Mindblade are kept close together, activating Lethal Inspiration and making them nearly unkillable."
+      ],
+      "soft_enrage": [
+        "Each Equalization in the second split phase applies a 20-second 2000 DPS aura around both bosses, stacking to 4000 if triggered again within 20 seconds."
+      ],
+      "hard_enrage": "No explicit hard enrage, but Equalization stacking makes the second split progressively unrecoverable."
+    },
+    "phases": [
+      {
+        "id": "p1_li_100_66",
+        "name": "Phase 1 – Minister Li (100%–66%)",
+        "trigger": "Encounter start. Li leaps to the upper platform.",
+        "description": "Li uses Cleave (wide backward 180° arc), Dash to corners, and Numbers (three players marked I/II/III — waves fire in order and explode on contact with players; unmarked players should stack opposite the marked players)."
+      },
+      {
+        "id": "p1_split_66",
+        "name": "Split Phase 1 – Enforcer, Mindblade, Ritualist (66%)",
+        "trigger": "Li reaches 66% health; he becomes invulnerable and knocks the squad to the lower platform.",
+        "description": "Three mini-bosses must be defeated in order: Mindblade first (while kept separate from Enforcer to prevent Lethal Inspiration), then Enforcer, then return to the upper platform via zip line. Ritualist is stationary and uses Lightning Storm plus Ghost crowd control. Keep Enforcer away from Mindblade at all times."
+      },
+      {
+        "id": "p2_li_66_33",
+        "name": "Phase 2 – Minister Li (66%–33%)",
+        "trigger": "All three mini-bosses defeated; squad uses zip line back to Li.",
+        "description": "Adds Spread mechanic (5 closest players get expanding AoEs — two overlapping circles down a player). Pattern: Dash to far-left corner, Cleave+Spread combo, repeat for all corners, then center Numbers."
+      },
+      {
+        "id": "p2_split_33",
+        "name": "Split Phase 2 – Mech Rider and Sniper (33%)",
+        "trigger": "Li reaches 33%; knocks squad to lower platform.",
+        "description": "Mech Rider and Sniper share a health equalization link — if their health differs by more than 20%, Equalization Matrix stacks trigger an equalization resetting both to average health and applying a 2000 DPS aura. Keep health within 20%. Mech Rider needs a tank; Sniper needs soft CC to break its bar and cancel Snipe."
+      },
+      {
+        "id": "p3_li_33_0",
+        "name": "Phase 3 – Minister Li (33%–0%)",
+        "trigger": "Both split phase 2 bosses defeated; zip line back to Li.",
+        "description": "Adds Green Stacking mechanic alongside Cleave+Spread. A green circle requires at least three players inside when it closes. Non-spread players naturally stack behind the boss within the green AoE. More Numbers phases provide extra free DPS windows."
+      }
+    ],
+    "roles": {
+      "dps": "In split 1, burst the Mindblade first while keeping it away from the Enforcer. In split 2, maintain balanced damage on Mech Rider and Sniper — watch health percentages. Use soft CC for Sniper breakbar if assigned.",
+      "support": "Maintain boons on the mini-boss platforms. In split 1, stack near the Ritualist and pull Mindblade onto it for cleave. Avoid assigning banner or spirit users to Sniper roof duty — those summons are removed when leaving the main platform.",
+      "heal": "Be ready for Ritualist Lightning Storm boon strips in split 1. Heal through Mech Rider melee pressure in split 2.",
+      "tank": "Tank the Enforcer separate from the Mindblade in split 1. In split 2, a dedicated Mech Rider tank must maintain melee range and line of sight to prevent Barrage."
+    },
+    "mechanics": [
+      {
+        "id": "m1_cleave",
+        "name": "Cleave",
+        "phase": "p1_li_100_66",
+        "category": "Knockback / Positional",
+        "description": "Li launches players backward in an almost 180-degree arc in front of him. Repeats throughout all Li phases and is used in tandem with Spread in phases 2 and 3.",
+        "trigger": "Regular attack throughout all Li phases.",
+        "telegraph": "Cone indicator disappears immediately before the launch — the cone vanishing is the dodge cue.",
+        "effect_on_fail": "Players are launched and, in phase 2+, may be launched directly into a Spread AoE.",
+        "effect_on_success": "Players dodge as the cone disappears or stack behind Li to avoid the front arc.",
+        "handling": "Stay behind Li. Dodge when the cone indicator disappears. In phase 2, use Cleave timing: dodge the launch first, then wait for Spread detonation, then return behind Li.",
+        "role_tips": {
+          "dps": "Always be behind Li. Dodge when the cone vanishes.",
+          "support": "Maintain boons from behind Li.",
+          "heal": "Position behind Li at all times.",
+          "tank": "Face Li away from the group consistently."
+        }
+      },
+      {
+        "id": "m2_numbers",
+        "name": "Numbers",
+        "phase": "p1_li_100_66",
+        "category": "Spread / Wave",
+        "description": "Three players are marked with Roman numerals I, II, and III. Li sends waves toward each marked player in ascending order that explode on contact with players. Unmarked players hit by waves receive Vulnerability.",
+        "trigger": "Used after Li's Dash to center sequence.",
+        "telegraph": "Roman numeral markers appear over three players.",
+        "effect_on_fail": "Unmarked players stand in wave paths and take damage plus Vulnerability stacks.",
+        "effect_on_success": "Unmarked players stack on the opposite side of Li from the marked players; marked players let waves pass through them safely.",
+        "handling": "Marked players stay on one side of Li. Unmarked players immediately stack on the opposite side, out of the wave path. This gives an extended free DPS window on Li while waves are in flight.",
+        "role_tips": {
+          "dps": "If unmarked, immediately move to the opposite side of Li from the marked players.",
+          "support": "Call 'numbers — split' so marked and unmarked players separate.",
+          "heal": "Move to the unmarked side immediately.",
+          "tank": "Hold Li in position during Numbers to give a stable reference point."
+        }
+      },
+      {
+        "id": "m3_spread_li",
+        "name": "Spread (Phase 2+)",
+        "phase": "p2_li_66_33",
+        "category": "Spread AoE / Timing",
+        "description": "AoEs spawn on the 5 closest players that expand and explode after 5 seconds. Two overlapping circles down a player. Used in tandem with Cleave — Cleave fires 1-2 seconds before Spread detonation.",
+        "trigger": "Added in phase 2 and all subsequent Li phases. Always follows Cleave.",
+        "telegraph": "Expanding AoE circles appear on 5 players.",
+        "effect_on_fail": "Players stand in each other's Spread circles and are instantly downed.",
+        "effect_on_success": "Players dodge the Cleave launch first, wait for Spread detonation, then return behind Li.",
+        "handling": "Sequence: Cleave launches you — dodge it, remain spread, wait 5 seconds for Spread to detonate, then restack behind Li. Alternatively use a block or shield to absorb the Cleave instead of dodging.",
+        "role_tips": {
+          "dps": "Dodge Cleave, hold position during Spread, wait for detonation, then return.",
+          "support": "Do not restack behind Li until Spread detonates — you will down nearby players.",
+          "heal": "Hold position after the dodge until your circle detonates.",
+          "tank": "Call 'Cleave dodge, hold for Spread' so the group knows the sequence."
+        }
+      },
+      {
+        "id": "m4_lethal_inspiration",
+        "name": "Lethal Inspiration (Enforcer + Mindblade)",
+        "phase": "p1_split_66",
+        "category": "Boss Proximity Buff",
+        "description": "When the Enforcer and Mindblade are near each other, both gain Lethal Inspiration — they steal life and convert conditions to boons every 10 seconds. A visible tether indicates the effect is active.",
+        "trigger": "Enforcer and Mindblade come within proximity of each other.",
+        "telegraph": "A tether appears between the two bosses when they are too close.",
+        "effect_on_fail": "Both bosses become extremely durable — they heal from attacks and resist conditions.",
+        "effect_on_success": "Bosses are kept separated; Lethal Inspiration never activates.",
+        "handling": "Keep the Enforcer tanked away from the Mindblade at all times. Focus the Mindblade while the Enforcer is held at a distance. Only engage the Enforcer after the Mindblade is dead.",
+        "role_tips": {
+          "dps": "DPS the Mindblade exclusively until it is dead. Do not drag it toward the Enforcer.",
+          "support": "Stack near the Ritualist and bring the Mindblade onto it for cleave DPS.",
+          "heal": "Heal through Ritualist Lightning Storm boon strips.",
+          "tank": "Tank the Enforcer far from the Mindblade. This is the most important positioning task in split 1."
+        }
+      },
+      {
+        "id": "m5_ritualist_ghosts",
+        "name": "Ritualist Ghost Crowd Control",
+        "phase": "p1_split_66",
+        "category": "Crowd Control / Platform",
+        "description": "After the Enforcer's second dash sequence, the Ritualist teleports to the platform center and summons ghosts covering the platform with CC. She alternates between four launching ghosts or two pulling ghosts — each variant has distinct safe zones.",
+        "trigger": "Occurs after Enforcer's second dash during split 1.",
+        "telegraph": "Ritualist teleports to center and summons ghost patterns.",
+        "effect_on_fail": "Players caught by ghosts are launched or pulled, breaking positioning and interrupting DPS.",
+        "effect_on_success": "Players stand in the safe zones for their ghost variant and take no CC.",
+        "handling": "Learn which ghost pattern is active (4 launching or 2 pulling) and position in the correct safe zone. Prioritize Mindblade kill before this triggers if possible.",
+        "role_tips": {
+          "dps": "Learn the safe zones for each ghost variant. Commit to a safe spot.",
+          "support": "Stability can block ghost CC if timed correctly.",
+          "heal": "Stay in safe zones — do not chase players pulled away.",
+          "tank": "Maintain Enforcer positioning even during ghost CC."
+        }
+      },
+      {
+        "id": "m6_equalization",
+        "name": "Vitality Equalizer (Mech Rider + Sniper)",
+        "phase": "p2_split_33",
+        "category": "Shared Health / Wipe Threat",
+        "description": "Mech Rider and Sniper are linked by Vitality Equalizer. Each 1% health difference generates one Equalization Matrix stack. Above 20 stacks, both bosses equalize to their average health and apply Destructive Aura — a 2000 DPS AoE around each boss for 20 seconds. A second equalization within 20 seconds stacks to 4000 DPS.",
+        "trigger": "Continuously active whenever health percentages differ by more than 20%.",
+        "telegraph": "Equalization Matrix stacks visible on boss buff bars.",
+        "effect_on_fail": "Equalization triggers, resetting boss health and applying lethal damage aura.",
+        "effect_on_success": "Health is kept within 20% throughout; equalization never occurs.",
+        "handling": "Either split the group (e.g. 7-3 or 5-5) to damage both simultaneously, or swap targets frequently to equalize health manually. Constantly monitor both health bars.",
+        "role_tips": {
+          "dps": "Watch both health bars. Swap targets the moment one drops faster than the other.",
+          "support": "Call out equalization stack count if you can track it.",
+          "heal": "Be aware that Destructive Aura requires emergency healing if equalization triggers.",
+          "tank": "Mech Rider tank must maintain melee range. If equalization triggers, use defensive cooldowns immediately."
+        }
+      },
+      {
+        "id": "m7_sniper_breakbar",
+        "name": "Snipe (Sniper Breakbar)",
+        "phase": "p2_split_33",
+        "category": "Breakbar / Instant-Down",
+        "description": "The Sniper targets one player with a faint green line. Unless the Sniper's breakbar is broken before the Snipe fires, all players in range are instantly downed. Soft CC automatically breaks the Sniper's bar (vulnerability, chill, immobilize) — hard CC, knockdowns, pulls, and fears do not work.",
+        "trigger": "Sniper channels Snipe on a target player.",
+        "telegraph": "Faint green line from Sniper to target player; breakbar appears.",
+        "effect_on_fail": "Snipe fires and instantly downs all players in range of the target.",
+        "effect_on_success": "Breakbar is broken by soft CC; Snipe is canceled. A green stacking circle then spawns on one player requiring 3 players inside.",
+        "handling": "Assign one or two players with strong soft CC to take a zip line to the Sniper's perch and break its bar. Do not assign players with summoned spirits, banners, or minions — those are removed on leaving the main platform. Alternatively, some groups use enough passive soft CC from ranged abilities to break the bar without dedicated rooftop players.",
+        "role_tips": {
+          "dps": "If assigned to the Sniper roof, take the zip line immediately when Snipe begins. Use all soft CC.",
+          "support": "Do not take the roof if you have active banners or spirits.",
+          "heal": "Maintain healing on the main platform group. Sniper roof players are briefly out of heal range.",
+          "tank": "Coordinate Sniper assignments before the pull."
+        }
+      },
+      {
+        "id": "m8_green_stack",
+        "name": "Green Stacking Circle (Phase 3)",
+        "phase": "p3_li_33_0",
+        "category": "Stack Mechanic",
+        "description": "Added in phase 3 alongside Cleave+Spread. A green circle appears on one player requiring at least three players inside when it closes. Non-Spread players naturally stand behind Li within the green AoE.",
+        "trigger": "Added to Li's pattern in phase 3.",
+        "telegraph": "Green circle appears on one player near the Spread detonation sequence.",
+        "effect_on_fail": "Fewer than three players in the green circle — targeted player takes full unshared damage.",
+        "effect_on_success": "Three or more non-Spread players stack in the green circle and share damage.",
+        "handling": "Non-Spread players (not holding an AoE circle) naturally stand behind Li and are inside the green circle. Spread players hold their positions. The mechanic typically resolves itself if positioning discipline is maintained.",
+        "role_tips": {
+          "dps": "If you do not have a Spread circle, stay close behind Li — you are in the green.",
+          "support": "Stack behind Li unless you have a Spread AoE.",
+          "heal": "Stack behind Li with the non-Spread group.",
+          "tank": "Hold Li facing away from the group consistently so the green circle always spawns on the behind side."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "Phase 1: Learn Cleave positioning (behind Li) and Numbers (split marked/unmarked to opposite sides).",
+      "Split 1 at 66%: Kill Mindblade first, keep Enforcer separated. Ritualist Lightning Storm will strip boons — healers prepare.",
+      "Phase 2 at 66-33%: Cleave+Spread sequence. Dodge Cleave first, wait for Spread detonation, then restack.",
+      "Split 2 at 33%: Watch both health bars constantly. Assign Sniper roof CC players (no summons).",
+      "Phase 3: Cleave+Spread+Green. Stay behind Li if not spreading."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "Always stay behind Minister Li — his Cleave hits a 180-degree arc in front.",
+        "Numbers: if you have a numeral, stay on Li's front side. If unmarked, move to the opposite (back) side immediately.",
+        "Split 1: Kill the Mindblade first. Keep the Enforcer far from the Mindblade — if they are close you will see a tether and they become much harder to kill.",
+        "Phase 2 Spread: dodge the Cleave launch, stay spread for 5 seconds, wait for your circle to detonate, then restack.",
+        "Split 2: Both bosses must stay within 20% health of each other — monitor health bars and swap targets if one drops faster.",
+        "Assign Sniper roof players now — do not assign anyone with banners, spirits, or minions."
+      ],
+      "phase_walkthrough": [
+        "Phase 1 (100-66%): Behind Li at all times. Numbers — split marked/unmarked to opposite sides.",
+        "Split 1 (66%): Kill Mindblade (keep Enforcer separated). Then Enforcer. Ritualist Lightning Storm will strip boons. Manage Ritualist ghosts in safe zones.",
+        "Phase 2 (66-33%): Cleave+Spread combo. Dodge Cleave, hold for Spread detonation, then return.",
+        "Split 2 (33%): Monitor health bars. Mech Rider needs a tank. Sniper bar breaks by soft CC — assigned players take zip line.",
+        "Phase 3 (33-0%): Cleave+Spread+Green. Non-Spread players stack behind Li naturally. More Numbers = more free DPS."
+      ],
+      "recovery_plans": [
+        "If Lethal Inspiration activates (Enforcer+Mindblade tether), immediately separate them — pull Enforcer away.",
+        "If Equalization triggers in split 2, use all defensive cooldowns and equalize health immediately after the aura ends.",
+        "If Snipe fires and downs players, revive quickly — the Sniper perch assignment needs to be reinforced next attempt."
+      ]
+    },
+    "common_mistakes": [
+      "Standing in front of Minister Li and getting launched by Cleave.",
+      "Not separating Enforcer from Mindblade in split 1, triggering Lethal Inspiration.",
+      "Restacking behind Li immediately after Cleave instead of waiting for Spread to detonate.",
+      "Letting Mech Rider and Sniper health diverge by more than 20%, triggering Equalization.",
+      "Assigning summon-dependent players to the Sniper roof, losing their summons.",
+      "Not breaking the Sniper's soft CC breakbar, allowing Snipe to down the group."
+    ],
+    "callouts": [
+      "Always behind Li — face him away!",
+      "Numbers — marked players front, unmarked move to back!",
+      "Mindblade first — keep Enforcer far away!",
+      "Tether on bosses — separate them now!",
+      "Cleave dodge, hold for Spread detonation, then restack!",
+      "Watch health bars — keep them within 20%!",
+      "Sniper charging — soft CC, break the bar!"
+    ]
+  },
+  {
+    "id": "old_lions_court",
+    "name": "Old Lion's Court",
+    "type": "Strike Mission",
+    "wing": "End of Dragons",
+    "difficulty": 4,
+    "overview": {
+      "summary": "A three-Watchknight encounter against Prototype Vermilion (red, melee), Prototype Arsenite (green, melee), and Prototype Indigo (blue, ranged). Bosses are fought sequentially — one active and vulnerable at a time — in a fixed repeating order (Vermilion → Arsenite → Indigo). Inactive bosses are shielded and assist with Danger Zone attacks. Three puzzle phases require breaking the correct boss's defiance bar to create a safe zone.",
+      "goal": "Defeat all three Watchknights by targeting the correct unshielded boss in sequence, surviving Danger Zones, managing Fixation, and breaking the correct defiance bar during puzzle phases.",
+      "wipe_conditions": [
+        "Players stand in a Danger Zone red area when it detonates — instant defeat.",
+        "The wrong boss's defiance bar is broken during a puzzle phase — no safe zone is created, causing a squad wipe.",
+        "Power Transfer activates between two active bosses in phase 3, giving shielded bosses access to their full attack arsenal.",
+        "Boiling Aether puddles accumulate in the arena center, cutting off the DPS position."
+      ],
+      "soft_enrage": [
+        "Boiling Aether puddles accumulate across the arena as the fight progresses, reducing safe space."
+      ],
+      "hard_enrage": "No explicit hard enrage. Puddle accumulation and increasing Danger Zone overlap in later phases act as a de facto enrage."
+    },
+    "phases": [
+      {
+        "id": "p1_sequential_solo",
+        "name": "Phase 1 – Solo Sequential (100%–80%)",
+        "trigger": "Encounter start.",
+        "description": "Each boss fights solo in sequence: Vermilion → Arsenite → Indigo. Inactive bosses are fully shielded. When Indigo reaches 80%, the first puzzle phase triggers."
+      },
+      {
+        "id": "p1_puzzle_80",
+        "name": "Puzzle Phase 1 – 80%",
+        "trigger": "Indigo reaches 80% health.",
+        "description": "All three bosses simultaneously use Danger Zones. Break Arsenite's defiance bar to create the safe zone around Vermilion. Breaking the wrong bar causes a wipe."
+      },
+      {
+        "id": "p2_sequential_assisted",
+        "name": "Phase 2 – Sequential with Assists (80%–40%)",
+        "trigger": "After the 80% puzzle.",
+        "description": "Bosses continue solo sequentially, but inactive bosses now add extra Danger Zone attacks that overlap with the active boss. Arsenite assists Vermilion; Indigo assists Arsenite; Vermilion assists Indigo."
+      },
+      {
+        "id": "p2_puzzle_40",
+        "name": "Puzzle Phase 2 – 40%",
+        "trigger": "Active boss reaches 40% health.",
+        "description": "Break Vermilion's defiance bar to create the safe zone behind Indigo."
+      },
+      {
+        "id": "p3_dual_active",
+        "name": "Phase 3 – Two Bosses Active (40%–10%)",
+        "trigger": "After the 40% puzzle.",
+        "description": "Two bosses are active simultaneously. Only the current sequence target is vulnerable; the shielded boss uses auto-attacks only. Keep active bosses separated to prevent Power Transfer. If bosses get too close (blue tether), the shielded boss gains full attacks."
+      },
+      {
+        "id": "p3_puzzle_10",
+        "name": "Puzzle Phase 3 – 10%",
+        "trigger": "Current target reaches 10% health.",
+        "description": "Break Indigo's defiance bar to create the safe zone next to Vermilion."
+      },
+      {
+        "id": "p4_all_active",
+        "name": "Phase 4 – All Three Active (10%–0%)",
+        "trigger": "After the 10% puzzle.",
+        "description": "All three Watchknights are active without Danger Zones. No shielding. Burn all three to zero."
+      }
+    ],
+    "roles": {
+      "dps": "Focus the current unshielded boss in sequence. Bait Arsenite's Noxious Vapor Blade disc by positioning far from the boss. Spread for Indigo's Tri-Bolt. Commit fully to Dual Horizon's safe direction — hesitation spawns Gravitational Waves.",
+      "support": "Grab Fixation on Vermilion and Arsenite to control puddle placement. Position Vermilion at arena edges to place Boiling Aether away from center. In phase 3, keep the active boss separated from the shielded boss.",
+      "heal": "Conditions do not matter — focus direct healing. Watch Fixation targets under heavy pressure. Be ready for Gravitational Wave spikes if Dual Horizon is mishandled.",
+      "tank": "No traditional tank — Fixation targets the closest player. Supports should deliberately grab Fixation on melee bosses to control positioning."
+    },
+    "mechanics": [
+      {
+        "id": "m1_danger_zone",
+        "name": "Danger Zone",
+        "phase": "p1_sequential_solo",
+        "category": "Instant-Kill AoE / Safe Zone",
+        "description": "The active boss gains a defiance bar and channels an attack that creates a large red Danger Zone covering much of the arena. Standing in the red zone when it detonates causes instant defeat. A white safe zone remains in a specific area. Breaking the defiance bar inverts the safe/danger zones and applies Malfunctioning Ley-Woven Shielding (Expose on the next shield drop).",
+        "trigger": "Active boss gains defiance bar and channels Danger Zone.",
+        "telegraph": "Large red area covers the arena; a white safe zone is visible.",
+        "effect_on_fail": "Standing in red when it detonates — instant defeat.",
+        "effect_on_success": "All players in the white safe zone survive with no damage.",
+        "handling": "Move into the white safe zone immediately. Optionally break the defiance bar to invert the zones (this can be advantageous if the squad is already in the original safe position — but sometimes it is better NOT to break and stay in the current safe zone). During puzzle phases, all three Danger Zones fire simultaneously.",
+        "role_tips": {
+          "dps": "Move to white immediately when the red zone appears. Do not hesitate.",
+          "support": "Call the safe zone direction. Do not blindly follow others — each player's safe zone indicator is individual.",
+          "heal": "Move to white. Do not attempt to heal through red.",
+          "tank": "Breaking the bar is a strategic choice — communicate with the group before inverting."
+        }
+      },
+      {
+        "id": "m2_fixation",
+        "name": "Fixation",
+        "phase": "p1_sequential_solo",
+        "category": "Aggro / Condition Copy",
+        "description": "After a Danger Zone detonates or a boss lands, the boss Fixates on the closest player, following them and copying conditions applied to itself. Vermilion and Arsenite melee-follow the fixated player; Indigo fixates from a fixed ranged position. If the fixated player goes downstate, Fixation transfers to the next closest player.",
+        "trigger": "Triggered after each Danger Zone detonation.",
+        "telegraph": "Special sound effect and a colored diamond above the fixated player's character.",
+        "effect_on_fail": "Fixation is uncontrolled — bosses wander toward DPS players and puddles land in the middle of the arena.",
+        "effect_on_success": "Fixation is held by a designated support player who controls boss positioning and puddle placement.",
+        "handling": "Supports should deliberately be the closest player to Vermilion and Arsenite to grab Fixation. Lead the boss to the arena edge so Boiling Aether puddles drop away from center. Fixated players must prioritize survivability — if they go down, Fixation transfers.",
+        "role_tips": {
+          "dps": "Stay at a distance from bosses in melee range of Fixation holders. Avoid stealing Fixation.",
+          "support": "Be the closest player to Vermilion and Arsenite. Control where the boss goes — lead it to the edge.",
+          "heal": "Monitor Fixation holders — they take constant pressure from bosses following them.",
+          "tank": "Fixation replaces traditional tanking in this encounter."
+        }
+      },
+      {
+        "id": "m3_boiling_aether",
+        "name": "Boiling Aether",
+        "phase": "p1_sequential_solo",
+        "category": "Persistent Ground AoE",
+        "description": "Puddles that expand slowly dealing light damage, then heavy ticking damage when fully expanded. Spawned by specific boss attacks: Vermilion's Gravity Hammer (under the boss), Arsenite's Noxious Vapor Blade disc (under the player it connects with), and Indigo's Tri-Bolt tether teleport (at the player's location before teleport).",
+        "trigger": "Spawned by Gravity Hammer, Noxious Vapor Blade, and Tri-Bolt on alternating instances of each attack.",
+        "telegraph": "Small expanding puddle indicator at the spawn location.",
+        "effect_on_fail": "Puddles accumulate in the arena center, eliminating the DPS position and forcing the group into dangerous ground.",
+        "effect_on_success": "Puddles are consistently placed at the arena edge, keeping the center clean throughout the fight.",
+        "handling": "Fixation holders move Vermilion to the edge for Gravity Hammer. Players baiting Arsenite's disc stand at the edge. Indigo's tethered player runs to the edge before the teleport triggers. Always place puddles at the arena perimeter.",
+        "role_tips": {
+          "dps": "Run far from Arsenite while it auto-attacks to bait the disc to the edge.",
+          "support": "Lead Fixated bosses to the edge for puddle placement.",
+          "heal": "Check puddle locations — if center is being cluttered, call it out.",
+          "tank": "Fixation control is puddle control — the two are inseparable."
+        }
+      },
+      {
+        "id": "m4_dual_horizon",
+        "name": "Dual Horizon (Vermilion)",
+        "phase": "p1_sequential_solo",
+        "category": "Directional / Positional",
+        "description": "A red ring appears around Vermilion with white arrows pointing inward or outward indicating the safe direction. Players on the wrong side spawn damaging Gravitational Waves. The pattern reverses each cycle.",
+        "trigger": "Part of Vermilion's auto-attack rotation.",
+        "telegraph": "Red ring around Vermilion with white arrows indicating safe direction (inward = stand close; outward = stand far).",
+        "effect_on_fail": "Each out-of-position player spawns a damaging Gravitational Wave hitting the group.",
+        "effect_on_success": "All players are on the correct side; no Gravitational Waves spawn.",
+        "handling": "Read the white arrows — they indicate where to stand relative to the ring. Each player has their own indicator based on their position; do not copy others blindly. The pattern reverses each time, so the correct side alternates.",
+        "role_tips": {
+          "dps": "Read your own arrow. Do not follow squadmates who may be in the wrong spot.",
+          "support": "React to your personal arrow indicator, not the group's behavior.",
+          "heal": "Stand on the correct side of the ring. Pre-cast barriers if Gravitational Waves are likely.",
+          "tank": "Call 'in' or 'out' when you read the arrow, but remind the group it may differ per player."
+        }
+      },
+      {
+        "id": "m5_pernicious_vortex",
+        "name": "Pernicious Vortex (Arsenite)",
+        "phase": "p1_sequential_solo",
+        "category": "Proximity AoE / Expose",
+        "description": "Cascading AoEs intensify toward Arsenite. A red pool forms directly under Arsenite. Standing in the pool applies Expose and heavy damage; nearby proximity is also dangerous.",
+        "trigger": "Part of Arsenite's auto-attack rotation.",
+        "telegraph": "Cascading AoE indicators moving inward toward the boss; red pool under Arsenite.",
+        "effect_on_fail": "Standing in or very near the red pool applies Expose and deals heavy damage.",
+        "effect_on_success": "Players avoid the red pool beneath Arsenite; the ticking damage from cascades is evadeable.",
+        "handling": "Move away from directly under Arsenite when the cascade begins. The ticking damage from cascading AoEs can be evaded.",
+        "role_tips": {
+          "dps": "Step away from Arsenite's feet when the cascade appears.",
+          "support": "Move out from the pool — Fixation holders adjust boss position slightly.",
+          "heal": "Watch for players who get hit by the pool and clip Expose — they take amplified damage.",
+          "tank": "Do not stand in the pool even while holding Fixation."
+        }
+      },
+      {
+        "id": "m6_crackling_wind",
+        "name": "Crackling Wind (Indigo)",
+        "phase": "p1_sequential_solo",
+        "category": "Ranged Ring / Expose",
+        "description": "A bright red ring appears at long range around Indigo with cascading AoEs inside it. Standing far from Indigo applies Expose; the cascade ticking damage increases with distance.",
+        "trigger": "Part of Indigo's auto-attack rotation.",
+        "telegraph": "Bright red ring at long range; cascading AoEs inside the ring.",
+        "effect_on_fail": "Players far from Indigo take increasing damage and have Expose applied.",
+        "effect_on_success": "Players stack close to Indigo and take no ring damage.",
+        "handling": "Stay close to Indigo at all times. Indigo does not move due to Fixation, so the group should stack near Indigo's position.",
+        "role_tips": {
+          "dps": "Melee Indigo to stay inside the ring.",
+          "support": "Maintain boons from close range to Indigo.",
+          "heal": "Stay close to Indigo.",
+          "tank": "No Fixation control needed for Indigo — she does not move. Stack close."
+        }
+      },
+      {
+        "id": "m7_puzzle_phases",
+        "name": "Puzzle Phases – Break Correct Bar",
+        "phase": "p1_puzzle_80",
+        "category": "Breakbar / Puzzle",
+        "description": "At 80%, 40%, and 10%, all three Danger Zones activate simultaneously. Players must stand in the white safe zone while also breaking a specific boss's defiance bar. Breaking the wrong bar creates no safe zone and wipes the squad.",
+        "trigger": "Triggered at 80% (first boss in sequence), 40%, and 10% thresholds.",
+        "telegraph": "All three bosses simultaneously activate Danger Zones; one specific boss also has a defiance bar.",
+        "effect_on_fail": "Wrong bar broken — no safe zone created — squad wipes in the red Danger Zone.",
+        "effect_on_success": "Correct bar broken; safe zone confirmed; squad survives and continues.",
+        "handling": "Puzzle 1 (80%): Break Arsenite's bar, safe zone around Vermilion. Puzzle 2 (40%): Break Vermilion's bar, safe zone behind Indigo. Puzzle 3 (10%): Break Indigo's bar, safe zone next to Vermilion. Memorize the sequence: Arsenite → Vermilion → Indigo.",
+        "role_tips": {
+          "dps": "Focus all CC on the correct bar boss. Do not hit other bars.",
+          "support": "Call out which bar to break before each puzzle phase.",
+          "heal": "Move to safe zone first, then use CC if you have it.",
+          "tank": "Assign bar-breaking responsibility before the fight begins."
+        }
+      },
+      {
+        "id": "m8_power_transfer",
+        "name": "Power Transfer (Phase 3)",
+        "phase": "p3_dual_active",
+        "category": "Boss Proximity Debuff",
+        "description": "In phase 3 when two bosses are active, if they come too close together a blue tether forms between them and the shielded boss gains access to its full attack arsenal (Power Transfer). A brown tether warns of close proximity before the blue tether activates.",
+        "trigger": "Two active bosses approach each other — brown warning tether, then blue Power Transfer tether.",
+        "telegraph": "Brown tether (warning, no Power Transfer yet); blue tether (Power Transfer active).",
+        "effect_on_fail": "Shielded boss uses its full attack rotation, dramatically increasing incoming damage.",
+        "effect_on_success": "Bosses are kept separated; shielded boss only uses auto-attacks.",
+        "handling": "In phase 3, always maintain separation between the two active bosses. Fixation holders must actively lead bosses to opposite sides of the arena. Prioritize survival over perfect positioning if separation becomes difficult.",
+        "role_tips": {
+          "dps": "If you notice a brown tether, call it so Fixation holders can separate the bosses.",
+          "support": "As Fixation holder, actively walk your boss away from the other active boss.",
+          "heal": "If Power Transfer activates, use emergency cooldowns — the damage spike is severe.",
+          "tank": "Immediately separate bosses on any tether — do not wait for the blue tether."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "Phase 1: Learn Danger Zone safe spots. Control Fixation. Place Boiling Aether at the edge.",
+      "Puzzle 1 (80%): All Danger Zones fire — break Arsenite's bar, safe zone at Vermilion.",
+      "Phase 2: Inactive bosses add Danger Zone overlap. Two sets of red zones can appear.",
+      "Puzzle 2 (40%): Break Vermilion's bar, safe zone behind Indigo.",
+      "Phase 3: Two bosses active. Keep them separated — brown then blue tether means Power Transfer.",
+      "Puzzle 3 (10%): Break Indigo's bar, safe zone next to Vermilion.",
+      "Phase 4: All three active, no shielding — burn to zero."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "Bosses fight one at a time in order: Vermilion first, then Arsenite, then Indigo — repeat.",
+        "Only the current active boss takes damage — others are shielded.",
+        "Danger Zones: move to white immediately. Do not stand in red when it detonates.",
+        "Puzzle phases: break the correct bar. Puzzle 1 — Arsenite's bar. Puzzle 2 — Vermilion's bar. Puzzle 3 — Indigo's bar.",
+        "Boiling Aether puddles go to the arena edge — always. Fixation holders lead bosses to the edge.",
+        "Dual Horizon on Vermilion: read your own white arrows — do not copy the person next to you.",
+        "Phase 3 — two bosses active. Keep them separated. Brown tether = warning, blue tether = Power Transfer."
+      ],
+      "phase_walkthrough": [
+        "Phase 1 (100-80%): Vermilion, then Arsenite, then Indigo. One active at a time. Dodge Danger Zones.",
+        "Puzzle 1 (80%): All three Danger Zones fire — break Arsenite's bar, safe zone at Vermilion.",
+        "Phase 2 (80-40%): Same order, but inactive bosses add extra Danger Zone helpers.",
+        "Puzzle 2 (40%): Break Vermilion's bar, safe zone behind Indigo.",
+        "Phase 3 (40-10%): Two active bosses. Keep separated. Vulnerable target only.",
+        "Puzzle 3 (10%): Break Indigo's bar, safe zone next to Vermilion.",
+        "Phase 4 (10-0%): All three active, no shielding — full burn."
+      ],
+      "recovery_plans": [
+        "If a wrong bar is broken during a puzzle phase, the squad will wipe — accept it and reinforce bar assignments on the next pull.",
+        "If Power Transfer activates in phase 3, use all defensive cooldowns and immediately separate the bosses.",
+        "If Boiling Aether puddles fill the center, find the cleanest remaining ground and tighten boss positioning to stop adding more puddles."
+      ]
+    },
+    "common_mistakes": [
+      "Breaking the wrong defiance bar during a puzzle phase, causing an instant squad wipe.",
+      "Copying a nearby player's position for Dual Horizon instead of reading your own white arrows.",
+      "Allowing Boiling Aether puddles to accumulate in the arena center, cutting off the DPS position.",
+      "Not controlling Fixation, causing bosses to wander and drop puddles in the worst locations.",
+      "Allowing two active bosses to drift together in phase 3, triggering Power Transfer."
+    ],
+    "callouts": [
+      "Danger Zone — move to white!",
+      "Puzzle — break Arsenite's bar at 80%!",
+      "Puzzle — break Vermilion's bar at 40%!",
+      "Puzzle — break Indigo's bar at 10%!",
+      "Dual Horizon — read your own arrows!",
+      "Puddles to the edge — move the boss!",
+      "Brown tether — separate the bosses now!"
+    ]
+  },
+  {
+    "id": "cosmic_observatory",
+    "name": "Cosmic Observatory",
+    "type": "Strike Mission",
+    "wing": "Secrets of the Obscure",
+    "difficulty": 3,
+    "overview": {
+      "summary": "A fast-paced encounter against Dagda, a jotun wizard with high health and quick-startup attacks. Dagda uses a scripted attack rotation with mechanics that expand as health depletes. The critical fight-defining mechanics are Shooting Stars (body-blocking), Soul Feast (Special Action Skill), and Planet Crash (defiance bar that must always be broken).",
+      "goal": "Defeat Dagda by body-blocking Shooting Stars, destroying Soul Feast with the Purifying Light special action, breaking Planet Crash's defiance bar, and clearing add splits quickly.",
+      "wipe_conditions": [
+        "Shooting Stars fires on the target with fewer than 5 players blocking — target takes 90% max HP damage and the squad gains Infirm.",
+        "Planet Crash defiance bar is not broken — all players take 90% max HP unavoidable damage.",
+        "Players are slow to exit during intermission split phases and stand in the lethal red pool.",
+        "Demonic Fever circles overlap and instantly down multiple players."
+      ],
+      "soft_enrage": [
+        "Demonic Blast debuff stacks accumulate — at 10 stacks, affected players treat nearby squadmates as enemies."
+      ],
+      "hard_enrage": "No hard enrage. Time of day is locked at instance creation."
+    },
+    "phases": [
+      {
+        "id": "p1_100_75",
+        "name": "Phase 1 – 100% to 75%",
+        "trigger": "Encounter start.",
+        "description": "Dagda uses Shooting Stars and Spinning Nebula in rotation. At 90% health, Spreads or Soul Feast are added after Spinning Nebula."
+      },
+      {
+        "id": "p1_split_75",
+        "name": "Intermission 1 – Split Phase (75%)",
+        "trigger": "Dagda reaches 75% health.",
+        "description": "Dagda becomes untargetable, pushes players away, channels Demonic Blast (stand in safe zones between the cones), and spawns a large lethal red pool. Kill 2 Kryptis minions to make Dagda targetable again. Spread mechanic can continue during the transition."
+      },
+      {
+        "id": "p2_75_50",
+        "name": "Phase 2 – 75% to 50%",
+        "trigger": "After intermission 1.",
+        "description": "Soul Feast becomes available below 75%. Added after Spinning Nebula when Zojja screams."
+      },
+      {
+        "id": "p2_split_50",
+        "name": "Intermission 2 – Split Phase (50%)",
+        "trigger": "Dagda reaches 50% health.",
+        "description": "Same as intermission 1 but with 4 Kryptis minions to kill."
+      },
+      {
+        "id": "p3_50_25",
+        "name": "Phase 3 – 50% to 25%",
+        "trigger": "After intermission 2.",
+        "description": "Below 50%, Rain of Comets and Planet Crash (defiance bar) become available in addition to all prior mechanics."
+      },
+      {
+        "id": "p3_split_25",
+        "name": "Intermission 3 – Split Phase (25%)",
+        "trigger": "Dagda reaches 25% health.",
+        "description": "Same as prior intermissions but with 6 Kryptis minions to kill."
+      },
+      {
+        "id": "p4_25_0",
+        "name": "Phase 4 – 25% to 0%",
+        "trigger": "After intermission 3.",
+        "description": "All mechanics active. Planet Crash defiance bar remains a kill requirement. Burn Dagda to zero."
+      }
+    ],
+    "roles": {
+      "dps": "Body-block for Shooting Stars if you are not the target. Spread immediately during Demonic Fever. Pick up white orbs during Soul Feast and use the Purifying Light special action on the Soul Feast entity. Break the Planet Crash defiance bar.",
+      "support": "Provide projectile mitigation for Spinning Nebula. Maintain boons during intermission splits. Help clear Kryptis adds quickly.",
+      "heal": "Manage sustained spread damage and Demonic Blast hits. Be ready for emergencies if Planet Crash fires.",
+      "tank": "No traditional tank. Dagda targets randomly. Ensure all players are positioned in a cluster for body-blocking efficiency."
+    },
+    "mechanics": [
+      {
+        "id": "m1_shooting_stars",
+        "name": "Shooting Stars",
+        "phase": "p1_100_75",
+        "category": "Body-Block / Group Mechanic",
+        "description": "Dagda selects a random target. Red text appears: 'Beware the Shooting Stars. Hide behind your allies!' At least 5 squad members must position between Dagda and the target to body-block the attack. If fewer than 5 block, the target takes 90% max HP damage and the squad gains Infirm (50% max HP damage).",
+        "trigger": "Appears regularly throughout the fight — Dagda's primary repeating mechanic.",
+        "telegraph": "Red warning text on screen; target symbol appears above the targeted player; green arrow indicates the block direction.",
+        "effect_on_fail": "Target takes near-lethal damage; squad gains Infirm; significantly increases difficulty of subsequent mechanics.",
+        "effect_on_success": "The attack is blocked; target takes no damage; no Infirm applied.",
+        "handling": "If you are the target, move away from the group to allow blockers to line up cleanly. All other players position between Dagda and the target. At minimum 5 players must be in the blocking line.",
+        "role_tips": {
+          "dps": "If not the target, immediately position between Dagda and the target. Do not stand still while attacking.",
+          "support": "Move to block — boons can wait 2 seconds.",
+          "heal": "Block first. Heal after.",
+          "tank": "Call 'block up' and move to the blocking position immediately."
+        }
+      },
+      {
+        "id": "m2_spinning_nebula",
+        "name": "Spinning Nebula",
+        "phase": "p1_100_75",
+        "category": "Projectile AoE / Dodge",
+        "description": "Dagda spins with his greatsword and fires destructible or reflectable orbs dealing high damage. He may teleport away before spinning, in which case orbs aim only at the center.",
+        "trigger": "Second mechanic in Dagda's scripted rotation.",
+        "telegraph": "Dagda winds up a spin; orbs are visible in flight.",
+        "effect_on_fail": "Players take heavy damage from multiple orb hits, potentially causing downs without strong healing.",
+        "effect_on_success": "Players back away or dodge immediately; projectile destruction or reflects neutralize orbs.",
+        "handling": "Back away from Dagda or dodge immediately when the spin begins. Projectile reflect or destruction abilities can neutralize the orbs.",
+        "role_tips": {
+          "dps": "Dodge back when Dagda begins spinning.",
+          "support": "Use projectile mitigation for the orb volley.",
+          "heal": "Be ready for spikes — Spinning Nebula is high damage without mitigation.",
+          "tank": "Call the spin so the group backs away."
+        }
+      },
+      {
+        "id": "m3_demonic_fever",
+        "name": "Demonic Fever (Spread)",
+        "phase": "p1_100_75",
+        "category": "Spread AoE / Instant Down",
+        "description": "Large expanding AoEs appear centered on 7 random players. Two or more overlapping circles instantly down players inside them.",
+        "trigger": "Occasional throughout phases; can coincide with intermission transitions.",
+        "telegraph": "Large expanding circles appear on affected players.",
+        "effect_on_fail": "Players cluster — circles overlap and instant-down multiple players.",
+        "effect_on_success": "Players spread to separate positions and hold still; circles detonate without overlap.",
+        "handling": "Pick a spot and move immediately. Hold position once separated. Ranged and support players move further out; melee stay closer to avoid being forced to the arena edge where movement is limited.",
+        "role_tips": {
+          "dps": "Pick a direction and commit to it. Do not bunch near others with circles.",
+          "support": "Spread away from the group. Swiftness helps everyone find separate spots quickly.",
+          "heal": "Spread. Do not stand near anyone else with a circle.",
+          "tank": "Call 'spread' the instant circles appear."
+        }
+      },
+      {
+        "id": "m4_demonic_blast",
+        "name": "Demonic Blast (Pizza Cones)",
+        "phase": "p1_split_75",
+        "category": "Safe Zone / Debuff",
+        "description": "Eight cone-shaped AoEs radiate from Dagda with a long delay before detonating. Detonation applies 3 stacks of a debuff that becomes dangerous at 10 stacks (players treat nearby squadmates as enemies).",
+        "trigger": "Channeled during all intermission split phases.",
+        "telegraph": "Eight pizza-slice cone indicators radiating from Dagda.",
+        "effect_on_fail": "Players stand in cones and accumulate the debuff. At 10 stacks they attack allies.",
+        "effect_on_success": "Players stand between cones in safe zones and take no hit.",
+        "handling": "Stand between two adjacent cones. Dodge toward a safe zone if caught in a cone.",
+        "role_tips": {
+          "dps": "Find a gap between cones and stand in it.",
+          "support": "Same — stand in a safe gap.",
+          "heal": "Position between cones immediately when intermission begins.",
+          "tank": "Call out the Demonic Blast cones as a reminder to find gaps."
+        }
+      },
+      {
+        "id": "m5_soul_feast",
+        "name": "Soul Feast (Special Action Skill)",
+        "phase": "p2_75_50",
+        "category": "Special Action Key / Destroy Entity",
+        "description": "A targetable Soul Feast entity spawns with 2 white orbs nearby. It applies a debuff and Infirm and fixates on a random player with the text 'You are targeted by Soul Feast. Run!' A player must pick up a white orb to gain the Purifying Light special action skill, then target the Soul Feast entity and activate the skill to destroy it.",
+        "trigger": "Spawns after Spinning Nebula below 75% health, triggered by Zojja's scream.",
+        "telegraph": "Soul Feast entity spawns; target text appears on the fixated player.",
+        "effect_on_fail": "Soul Feast continues applying Infirm debuff. If not destroyed, it persists and debilitates the group.",
+        "effect_on_success": "Player picks up white orb, gains Purifying Light special action, targets Soul Feast (use TAB), activates skill — entity destroyed.",
+        "handling": "When Soul Feast spawns, a nearby player picks up one of the two white orbs and gains the Purifying Light special action. Target the Soul Feast entity with TAB and activate the skill. Ensure clear line of sight — the boss can body-block the ability. Lingering models after destruction are harmless.",
+        "role_tips": {
+          "dps": "If you are near a white orb, pick it up and destroy the Soul Feast. Tab-target it.",
+          "support": "Assign a specific player per pull to handle Soul Feast pickup to avoid confusion.",
+          "heal": "Manage Infirm debuff on the fixated player while Soul Feast is alive.",
+          "tank": "Call out Soul Feast spawns so the assigned player picks up the orb quickly."
+        }
+      },
+      {
+        "id": "m6_planet_crash",
+        "name": "Planet Crash (Defiance Bar)",
+        "phase": "p3_50_25",
+        "category": "Breakbar / Wipe Prevention",
+        "description": "Below 50% health, Dagda periodically gains a defiance bar and summons a massive celestial body. The group has a 10-second window to break the bar. Failure causes the celestial body to crash, dealing 90% max HP unavoidable damage to all players. Success causes Dagda to become Exposed, significantly speeding up the fight.",
+        "trigger": "Appears periodically below 50% health.",
+        "telegraph": "Dagda gains a defiance bar; massive celestial body appears above the arena.",
+        "effect_on_fail": "All players take 90% max HP damage — combined with any Infirm stacks this is lethal.",
+        "effect_on_success": "Bar broken; Dagda gains Exposed debuff; lighter AoE spawns instead (safe to ignore).",
+        "handling": "This bar must always be broken. Save major CC skills for Planet Crash. Dump all CC the instant the bar appears. The Exposed buff from a successful break dramatically accelerates the final phases.",
+        "role_tips": {
+          "dps": "Save at least one major CC skill for Planet Crash at all times below 50%.",
+          "support": "Coordinate CC with the group. This is the most important breakbar in the instance.",
+          "heal": "Use any CC utilities you have. Prepare emergency healing for a failed bar.",
+          "tank": "Call 'Planet Crash bar — all CC now' immediately."
+        }
+      },
+      {
+        "id": "m7_rain_of_comets",
+        "name": "Rain of Comets",
+        "phase": "p3_50_25",
+        "category": "Half-Arena AoE",
+        "description": "A meteor shower covers half the arena with pulsing damage. The visual comet effects themselves do not deal damage — only the ground AoE zones do.",
+        "trigger": "Used occasionally below 50% health.",
+        "telegraph": "Half the arena lights up with comet impact indicators.",
+        "effect_on_fail": "Players standing in the dangerous half take repeated pulsing damage.",
+        "effect_on_success": "Players walk into the safe half of the arena and take no damage.",
+        "handling": "Walk into the safe half immediately when Rain of Comets appears. Can be followed by Demonic Fever — continue managing spread while in the safe half.",
+        "role_tips": {
+          "dps": "Walk to safe side. Maintain ranged attacks while moving.",
+          "support": "Move to safe side. Maintain boons.",
+          "heal": "Move to safe side. Continue healing from the safe half.",
+          "tank": "Call 'Rain of Comets — move to safe side' immediately."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "100-75%: Body-block Shooting Stars constantly. Dodge Spinning Nebula.",
+      "Intermissions: Stand between Demonic Blast cones. Kill Kryptis adds quickly. Exit the red pool area fast.",
+      "75-50%: Soul Feast begins. Assign someone to pick up white orbs and use Purifying Light.",
+      "50%+: Planet Crash bar appears — save CC always. Break it every time.",
+      "Final burn: All mechanics layered. Prioritize Planet Crash bar above everything."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "When you see 'Beware the Shooting Stars' — if you are the target, move away. Everyone else body-block between Dagda and the target. Need 5 blockers minimum.",
+        "Spinning Nebula — back away or dodge immediately.",
+        "Spread circles — pick a spot and move, do not overlap.",
+        "Intermissions — find a gap between the pizza cones. Kill the Kryptis adds fast. Get out of the red pool.",
+        "Soul Feast: pick up the white orb, tab-target the Soul Feast entity, use the Purifying Light special action to destroy it.",
+        "Planet Crash bar below 50% — always break it. Save CC."
+      ],
+      "phase_walkthrough": [
+        "Phase 1 (100-75%): Shooting Stars body-block every time. Dodge Spinning Nebula. Spread on circles.",
+        "Intermission 1 (75%): Avoid Demonic Blast cones. Kill 2 adds. Get away from lethal red pool.",
+        "Phase 2 (75-50%): Soul Feast begins — destroy it with Purifying Light.",
+        "Intermission 2 (50%): Same as before but 4 adds to kill.",
+        "Phase 3 (50-25%): Planet Crash bar — all CC. Rain of Comets — walk to safe side.",
+        "Intermission 3 (25%): 6 adds to kill.",
+        "Phase 4 (25-0%): Everything active. Break Planet Crash always. Burn Dagda."
+      ],
+      "recovery_plans": [
+        "If Planet Crash fires (bar missed), use every defensive cooldown and emergency heal — it deals 90% HP to all.",
+        "If Shooting Stars fails and Infirm is applied, tighten body-blocking discipline and top off players immediately.",
+        "If adds are slow to die in intermission, move the group to the lethal pool's edge and cleave from maximum safe range."
+      ]
+    },
+    "common_mistakes": [
+      "Standing still attacking during Shooting Stars instead of moving to body-block.",
+      "Not breaking the Planet Crash defiance bar — it deals 90% max HP to all players.",
+      "Being slow to exit the lethal red pool during intermission phases.",
+      "Spreading circles near the arena edge and being forced into movement that overlaps other players.",
+      "Blocking the Purifying Light cast with Dagda's body — ensure line of sight to the Soul Feast entity."
+    ],
+    "callouts": [
+      "Shooting Stars — blockers between Dagda and the target, need 5!",
+      "Spinning Nebula — back away!",
+      "Spread circles — pick a spot and hold it!",
+      "Intermission — avoid the cones, kill the adds!",
+      "Soul Feast — pick up the orb, tab-target, use Purifying Light!",
+      "Planet Crash bar — all CC now, always break it!"
+    ]
+  },
+  {
+    "id": "temple_of_febe",
+    "name": "Temple of Febe",
+    "type": "Strike Mission",
+    "wing": "Secrets of the Obscure",
+    "difficulty": 5,
+    "overview": {
+      "summary": "An encounter against Cerus featuring six repeating sin-themed mechanics. Failing mechanics grants Cerus Empowered stacks that directly scale the damage of the final phase. Two split phases at 80% and 50% require defeating exactly two Embodiments from the empowered set. A defiance bar at 80%, 50%, and 10% must be broken to avoid a lethal Petrify cast that also heals Cerus.",
+      "goal": "Defeat Cerus by managing all six mechanics cleanly, defeating exactly two Embodiments from the empowered set in each split phase, and breaking the defiance bar at every threshold.",
+      "wipe_conditions": [
+        "Defiance bar at 80%, 50%, or 10% is not broken — squad is frozen for 8 seconds and Cerus heals 20% health.",
+        "Wail of Despair (red) pools are dropped on top of the boss, blocking navigation for the Envious Gaze wall.",
+        "Envious Gaze wall catches the squad on the wrong side, stripping all boons repeatedly.",
+        "Two non-empowered Embodiments are killed during a split phase — all three empowered Embodiments are active in the next boss phase.",
+        "Empowered stacks exceed ~30 by the final phase, making Enraged Smash unsurvivable."
+      ],
+      "soft_enrage": [
+        "Empowered stacks accumulate from every failed mechanic. High stacks make Enraged Smash increasingly lethal.",
+        "No hard enrage timer — Cerus has 53 million health, requiring sustained DPS."
+      ],
+      "hard_enrage": "No hard enrage timer. Petrify at breakbar thresholds is the closest equivalent — missing it heals the boss 20% and freezes the squad."
+    },
+    "phases": [
+      {
+        "id": "p1_100_80",
+        "name": "Phase 1 – 100% to 80%",
+        "trigger": "Encounter start.",
+        "description": "Cerus cycles through all six sin mechanics: Crushing Regret (greens), Wail of Despair (reds), Envious Gaze (wall), Malicious Intent (adds), Insatiable Hunger (orbs), Cry of Rage (large AoE). Repeat until 80%."
+      },
+      {
+        "id": "p1_split_80",
+        "name": "Split Phase 1 – 80%",
+        "trigger": "Cerus reaches 80% health; Petrify defiance bar appears.",
+        "description": "Break Cerus's defiance bar to trigger the split. Boss separates into six Embodiments — one per sin. Kill exactly two from the empowered set (Eastern set randomized each pull: Rage, Regret, or Envy). Community standard targets Regret and Gluttony. Kill order from empowered set: right Embodiment first, then left, leave center alive."
+      },
+      {
+        "id": "p2_80_50",
+        "name": "Phase 2 – 80% to 50%",
+        "trigger": "Split phase 1 complete.",
+        "description": "Modified mechanic sequence: Regret → Envy → Gluttony → Rage → Malice → Despair. Same mechanics, same handling."
+      },
+      {
+        "id": "p2_split_50",
+        "name": "Split Phase 2 – 50%",
+        "trigger": "Cerus reaches 50% health; Petrify defiance bar appears.",
+        "description": "Break the bar; another split. Same rules — kill exactly two empowered Embodiments. Any failed Embodiment kills from split 1 carry over."
+      },
+      {
+        "id": "p3_50_10",
+        "name": "Phase 3 – 50% to 10%",
+        "trigger": "Split phase 2 complete.",
+        "description": "All mechanics continue. Empowered versions of mechanics from failed splits may be active."
+      },
+      {
+        "id": "p4_final",
+        "name": "Final Phase – 10% Enraged Smash",
+        "trigger": "Cerus reaches 10% health; Petrify defiance bar appears.",
+        "description": "Break the 10% bar to trigger Enraged Smash — Cerus smashes the ground every 3 seconds with platform-wide explosions. Severity scales directly with accumulated Empowered stacks. Burn Cerus to zero while surviving Enraged Smash."
+      }
+    ],
+    "roles": {
+      "dps": "Stack in green circles (Regret). Spread reds away from boss and each other (Despair). Dodge or stay outside Rage AoE. Rotate around boss to collect large orbs (Gluttony). Soft-CC Malicious Intent shadows. Rotate past the wall clockwise (Envy).",
+      "support": "Soft CC for Malicious Intent shadows — immobilize only, no hard CC, knockdowns, or pulls. Provide Stability for Enraged Smash in the final phase. Maintain boon uptime through wall rotations.",
+      "heal": "Manage sustained damage from all mechanics. Final phase Enraged Smash scales with Empowered — high stacks require dedicated healing focus. Petrify condition from Cerus's tether passively stacks — breaking the bar clears 2 stacks.",
+      "tank": "No traditional tank. Cerus has no auto-attacks outside the six sin mechanics. Closest player positioning matters only for Malicious Intent shadow baiting."
+    },
+    "mechanics": [
+      {
+        "id": "m1_crushing_regret",
+        "name": "Crushing Regret (Greens)",
+        "phase": "p1_100_80",
+        "category": "Stack Mechanic",
+        "description": "A large green circle appears on a random player. Five players must be inside the circle at detonation. Failure deals squad-wide damage, applies Expose, and gives Cerus 5 Empowered stacks. Empowered version spawns three smaller circles each requiring 3 players.",
+        "trigger": "Cerus waves arms upward.",
+        "telegraph": "Large green circle on one player.",
+        "effect_on_fail": "Squad-wide damage, Expose, 5 Empowered stacks on Cerus.",
+        "effect_on_success": "Moderate damage shared among 5+ players. No Empowered stacks.",
+        "handling": "Stack tightly near Cerus at all times. When the green circle appears, all non-spread players move onto it. Avoid forced-movement skills while greens are active.",
+        "role_tips": {
+          "dps": "Move onto the green circle immediately. Do not use mobility skills that could push you out.",
+          "support": "Stack on the green. Call 'green — stack on it' for new players.",
+          "heal": "Stack on the green. Pre-cast barriers before detonation.",
+          "tank": "Keep the group near Cerus so green stacking is always fast."
+        }
+      },
+      {
+        "id": "m2_wail_of_despair",
+        "name": "Wail of Despair (Reds)",
+        "phase": "p1_100_80",
+        "category": "Spread AoE / Ground Denial",
+        "description": "A red orb spawns above every player and drops after 5 seconds, creating a persistent pool lasting 60 seconds. Players who remain in pools take sustained damage. Empowered version doubles the pool radius.",
+        "trigger": "Cerus stands ramrod straight; whooshing sound intensifies before drop.",
+        "telegraph": "Red orb above each player; audio cue; Cerus voice lines 'You will suffocate.'",
+        "effect_on_fail": "Reds dropped on or near the boss create persistent pools that block navigation for Envious Gaze and crowd the arena.",
+        "effect_on_success": "Players backstep away from Cerus and drop reds safely away from the boss hitbox; pools land in a clear area.",
+        "handling": "When reds appear, backstep away from Cerus and spread slightly so pools do not overlap. Never drop reds on the boss itself — this blocks wall navigation. Pools last 60 seconds and clutch the arena if poorly placed.",
+        "role_tips": {
+          "dps": "Backstep away from Cerus immediately. Move far enough that your pool does not overlap others.",
+          "support": "Call 'reds — backstep' and model correct behavior.",
+          "heal": "Backstep. Heal anyone who clips the pool after detonation.",
+          "tank": "Call out red timing from audio cues. Remind group never to drop on the boss."
+        }
+      },
+      {
+        "id": "m3_envious_gaze",
+        "name": "Envious Gaze (Wall)",
+        "phase": "p1_100_80",
+        "category": "Rotating Wall / Boon Corruption",
+        "description": "Cerus turns to face a random player. An arrow telegraph points in the wall's direction. A massive wall spawns and rotates counterclockwise, corrupting 3 boons per tick and dealing moderate damage to players it hits. The boss's hitbox center is safe — the wall does not extend into it.",
+        "trigger": "Cerus turns and faces a random player; arrow telegraph appears.",
+        "telegraph": "Arrow indicator on Cerus pointing direction of wall; wall visibly materializes and begins rotating.",
+        "effect_on_fail": "Players caught by the wall lose boons continuously and take sustained damage. Empowered version adds a second wall.",
+        "effect_on_success": "Players strafe past the clockwise side of the arrow indicator and rotate around the boss in lockstep with the wall.",
+        "handling": "When the wall spawns, move to the clockwise side of the arrow indicator and rotate around Cerus in the same direction as the rotation (counterclockwise wall means move counterclockwise to stay just ahead of it). If caught on the wrong side, dodge through the boss's center hitbox. Empowered: a second arrow spawns half a rotation away — move past the counterclockwise side of the player arrow, then past the slower wall's starting point.",
+        "role_tips": {
+          "dps": "Watch the arrow. Move counterclockwise around the boss to stay ahead of the wall.",
+          "support": "Keep the group moving together. Call rotation direction if needed.",
+          "heal": "Rotate with the group. Do not stop to heal during the wall rotation.",
+          "tank": "Call 'wall rotating — keep moving counterclockwise' so the group stays together."
+        }
+      },
+      {
+        "id": "m4_malicious_intent",
+        "name": "Malicious Intent (Malice Shadow)",
+        "phase": "p1_100_80",
+        "category": "Soft CC / Add",
+        "description": "A demonic tether attaches to a random player with a 5-second timer. When the timer expires, a Malicious Shadow spawns at the player's location and walks toward Cerus. If it reaches the boss, Cerus gains 5 Empowered stacks and heals. Soft CC (Immobilize, Cripple, Chill — not hard CC, knockdowns, pulls, or fear) stops the shadow. Empowered version targets three players for 15 potential stacks.",
+        "trigger": "Cerus slams the ground with all limbs; timer above player's head.",
+        "telegraph": "Demonic tether on player; timer fills above head; screen message 'Cerus is drawing out your malice'; pulsating sound intensifies.",
+        "effect_on_fail": "Shadow reaches Cerus — 5 Empowered stacks and boss heals. Empowered: 15 stacks.",
+        "effect_on_success": "Shadow is immobilized by soft CC before reaching Cerus; group cleaves it down.",
+        "handling": "If you have the tether, dodge backward to spawn the shadow away from Cerus. Organized groups use soft CC (Immobilize) on the shadow near the boss so it can be cleaved simultaneously with boss damage. Use ONLY soft CC — hard CC, knockdowns, pulls, and fears do not work and waste cooldowns.",
+        "role_tips": {
+          "dps": "Use Immobilize or Cripple on the shadow when it spawns. Do not use knockbacks or pulls.",
+          "support": "Apply soft CC to the shadow. Coordinate with other support players.",
+          "heal": "Soft CC the shadow if you have it. Avoid accidental hard CC.",
+          "tank": "Call 'malice — soft CC only' before the pull as a reminder."
+        }
+      },
+      {
+        "id": "m5_insatiable_hunger",
+        "name": "Insatiable Hunger (Gluttony Orbs)",
+        "phase": "p1_100_80",
+        "category": "Collection / Rotation",
+        "description": "Demonic orbs spawn at the arena edge. Small orbs can be destroyed or reflected (which heals Cerus — do not reflect). Three large orbs only disappear when a player walks through them; each grants Cerus 1 Empowered stack and applies 30 seconds of Torment (350 damage/second per stack) to the collecting player. All three large orbs must be collected. Empowered version spawns five large orbs lasting 3 minutes of Torment.",
+        "trigger": "Cerus props on appendages, eating from hands.",
+        "telegraph": "Orbs visibly spawn at platform edge; Cerus voice lines 'I feed…'",
+        "effect_on_fail": "Large orbs reach Cerus — each applies 1 Empowered stack.",
+        "effect_on_success": "All three large orbs are collected by players rotating around the boss. Torment is distributed across multiple players.",
+        "handling": "Rotate around the boss and walk through all three large orbs to collect them. Place reflect or absorb abilities on Cerus as small orbs approach — this prevents small orbs from healing Cerus. Distribute large orb collection so no single player takes more than 2-3 (especially important in the Empowered 5-orb version).",
+        "role_tips": {
+          "dps": "Rotate around the boss to collect large orbs. Do not all converge on the same orb.",
+          "support": "Place absorb abilities on Cerus for small orbs. Help collect large orbs if nearby.",
+          "heal": "Manage Torment damage on orb collectors. Cleanse where possible.",
+          "tank": "Call orb positions to help the group collect all three (or five in Empowered)."
+        }
+      },
+      {
+        "id": "m6_cry_of_rage",
+        "name": "Cry of Rage (Rage AoE)",
+        "phase": "p1_100_80",
+        "category": "Large AoE / Dodge",
+        "description": "A large expanding AoE appears at Cerus's feet and detonates after about 5 seconds, dealing massive damage and applying Expose. Empowered version is undodgeable — the AoE becomes large enough that it cannot be outrun with a single dodge.",
+        "trigger": "Cerus cries out and drums his appendages.",
+        "telegraph": "Large expanding AoE indicator at Cerus's feet.",
+        "effect_on_fail": "Hit by the explosion — high damage and Expose applied.",
+        "effect_on_success": "Dodge timed correctly as the AoE fills; or stand outside the AoE range.",
+        "handling": "Dodge as the AoE indicator fills, not at the start. High-ping players should move slightly earlier. Empowered: the AoE is undodgeable — the group must preemptively move outside the range entirely, or use invulnerability sources.",
+        "role_tips": {
+          "dps": "Dodge the AoE as it fills. Do not dodge at the start of the cast.",
+          "support": "Dodge or position outside the AoE. Call Empowered Rage early so the group repositions.",
+          "heal": "Dodge or move out. After detonation, cleanse Expose from anyone caught.",
+          "tank": "Call 'Rage AoE — prepare to dodge' so the group times it correctly."
+        }
+      },
+      {
+        "id": "m7_petrify_breakbar",
+        "name": "Petrify (Defiance Bar)",
+        "phase": "p1_split_80",
+        "category": "Breakbar / Wipe Prevention",
+        "description": "At 80%, 50%, and 10% health, Cerus channels Petrify. If the full cast completes, the squad is frozen for 8 seconds, takes high damage, and Cerus heals 20% of his maximum health (affected by Poison). Breaking the bar interrupts the cast and transitions the phase. Cerus also passively applies Petrify stacks via his tether throughout the fight, reducing movement, damage, and skill speed — breaking the bar removes 2 stacks immediately.",
+        "trigger": "Cerus reaches 80%, 50%, and 10% health thresholds.",
+        "telegraph": "Blue defiance bar appears; Cerus channels Petrify.",
+        "effect_on_fail": "Squad frozen for 8 seconds; high damage; Cerus heals 20% health. Healing can be partially mitigated by Poison.",
+        "effect_on_success": "Bar broken; Petrify cast interrupted; 2 Petrify stacks removed; phase transitions.",
+        "handling": "Save major CC skills for each bar. Dump all CC the instant the bar appears. Coordinate CC to break it as fast as possible — the 20% heal on failure can extend the fight significantly.",
+        "role_tips": {
+          "dps": "Always have CC available for the defiance bar. Do not blow CC skills on non-critical moments.",
+          "support": "Coordinate CC timing. Call 'bar up — CC now.'",
+          "heal": "Apply Poison to Cerus before a potential Petrify failure to reduce the heal.",
+          "tank": "Call each bar immediately and lead the CC dump."
+        }
+      },
+      {
+        "id": "m8_split_phase_embodiments",
+        "name": "Split Phase – Embodiments",
+        "phase": "p1_split_80",
+        "category": "Add Phase / Kill Selection",
+        "description": "After breaking the Petrify bar at 80% and 50%, Cerus splits into six Embodiments (one per sin mechanic). An Eastern set (randomly empowered each pull: Rage, Regret, or Envy) and Western set (Malice, Gluttony, Despair). Kill exactly two Embodiments from the empowered set and leave all others alive. Killing non-empowered Embodiments causes all three empowered Embodiments to be active in the next boss phase.",
+        "trigger": "Petrify defiance bar broken at 80% and 50%.",
+        "telegraph": "Cerus splits into six distinct Embodiment figures in the arena.",
+        "effect_on_fail": "Wrong Embodiments killed — all three empowered Embodiments active next phase, stacking multiple Empowered mechanics simultaneously.",
+        "effect_on_success": "Exactly two empowered Embodiments killed — only one empowered mechanic active next phase (from the surviving center Embodiment).",
+        "handling": "Community standard: target Regret and Gluttony (lowest fail impact). Kill the rightmost Embodiment of the empowered set first, then the leftmost, and leave the center alive. Each Embodiment uses its own mechanic without voice line warnings — watch the arena constantly during splits. Drop Wail of Despair (red) pools away from other Embodiments.",
+        "role_tips": {
+          "dps": "Focus the assigned Embodiment targets only. Do not AoE into non-target Embodiments accidentally.",
+          "support": "Call which Embodiments to kill. Watch the non-target side for dangerous mechanics.",
+          "heal": "Keep the group alive during the split — Embodiments use mechanics without voice line warnings.",
+          "tank": "Assign Embodiment targets before the pull and reconfirm before each split phase."
+        }
+      },
+      {
+        "id": "m9_enraged_smash",
+        "name": "Enraged Smash (Final Phase)",
+        "phase": "p4_final",
+        "category": "Phase Mechanic / Damage Scaling",
+        "description": "Triggered by breaking the 10% defiance bar. Cerus smashes the ground every 3 seconds, generating platform-wide demonic energy expulsions. Damage scales directly with accumulated Empowered stacks — below 30 stacks is manageable with standard healing; above 30 stacks requires dedicated emergency healing.",
+        "trigger": "Breaking the 10% Petrify defiance bar.",
+        "telegraph": "Cerus begins ground smashing; energy eruptions on platform.",
+        "effect_on_fail": "Players fail to block, dodge, or use invulnerability — take repeated heavy hits that scale with Empowered stacks.",
+        "effect_on_success": "Players cycle blocks, dodges, and invulnerability sources; healers manage the sustained damage. Cerus dies before Empowered stacks make it unrecoverable.",
+        "handling": "Block, dodge, or use invulnerability for each smash. Cycle defensive cooldowns. Burn Cerus as fast as possible — the fight ends when he dies.",
+        "role_tips": {
+          "dps": "Cycle blocks and dodges. Burn Cerus — the faster he dies, the fewer smashes you take.",
+          "support": "Provide Stability to prevent knockbacks from smashes. Maintain boons during the burn.",
+          "heal": "This is the healing check. Stack Empowered stacks below 30 to keep it manageable. Use major healing cooldowns.",
+          "tank": "Call 'Enraged Smash — block, dodge, invuln cycle' so everyone rotates defensives."
+        }
+      }
+    ],
+    "timeline_notes": [
+      "Phase 1 (100-80%): Learn all six mechanics. Stack greens, backstep reds away from boss, rotate for wall, soft-CC shadows, collect orbs, dodge Rage.",
+      "80% bar: Break it. Split phase — kill exactly two empowered Embodiments.",
+      "Phase 2 (80-50%): Modified mechanic order. Empowered versions may appear from failed mechanics.",
+      "50% bar: Break it. Second split phase — kill exactly two empowered Embodiments.",
+      "Phase 3 (50-10%): All mechanics plus Empowered versions from split failures.",
+      "10% bar: Break it — triggers Enraged Smash. Burn Cerus. Scale of final phase determined by total Empowered stacks accumulated."
+    ],
+    "training_script": {
+      "pre_pull": [
+        "Six mechanics repeat throughout the fight. Each failure gives Cerus Empowered stacks that make the final phase harder.",
+        "Greens (Regret): stack on the circle — need 5 players inside.",
+        "Reds (Despair): backstep away from Cerus, spread, never drop red pools on the boss.",
+        "Wall (Envy): rotate counterclockwise around Cerus to stay ahead of the wall.",
+        "Shadows (Malice): soft CC only — Immobilize, Cripple, Chill. No knockbacks, no pulls, no fears.",
+        "Orbs (Gluttony): walk through the three large orbs to collect them. Do not reflect small orbs.",
+        "Rage: dodge as the AoE fills, not at the start.",
+        "Defiance bars at 80%, 50%, 10%: always break them — failing heals Cerus 20%.",
+        "Split phases: kill exactly two empowered Embodiments. Do not accidentally kill non-empowered ones."
+      ],
+      "phase_walkthrough": [
+        "Phase 1 (100-80%): All six mechanics in rotation. Handle each cleanly.",
+        "80% bar: Break it → split. Kill right empowered first, left second, leave center alive.",
+        "Phase 2 (80-50%): Modified order. Empowered versions possible. Continue clean mechanic execution.",
+        "50% bar: Break it → split. Same Embodiment kill priority.",
+        "Phase 3 (50-10%): All mechanics. Avoid letting Empowered stacks climb above 30.",
+        "10% bar: Break it → Enraged Smash. Cycle blocks, dodges, invulns. Burn Cerus to zero."
+      ],
+      "recovery_plans": [
+        "If the Petrify bar is missed, Cerus heals 20% — apply Poison before a potential failure to reduce the heal. Accept the setback and continue.",
+        "If wrong Embodiments are killed in a split phase, three empowered Embodiment mechanics will be active next phase — use all defensive resources and prioritize mechanic execution over DPS.",
+        "If Empowered stacks are above 30 going into Enraged Smash, maximize defensive cooldown cycling and emergency healing."
+      ]
+    },
+    "common_mistakes": [
+      "Dropping red pools on or near the boss, blocking wall rotation paths.",
+      "Using hard CC on Malicious Intent shadows instead of soft CC — shadows are immune to hard CC.",
+      "Killing non-empowered Embodiments during split phases, causing three active empowered mechanics next phase.",
+      "Not breaking the Petrify defiance bar at 80%, 50%, or 10%, allowing Cerus to heal 20%.",
+      "Accumulated Empowered stacks above 30 making Enraged Smash unmanageable in the final phase."
+    ],
+    "callouts": [
+      "Greens — stack on the circle, need 5!",
+      "Reds — backstep away from Cerus, spread out!",
+      "Wall rotating — move counterclockwise!",
+      "Shadow spawning — soft CC only, Immobilize it!",
+      "Orbs — rotate and collect the three large ones!",
+      "Rage AoE — dodge as it fills!",
+      "Bar at 80/50/10% — all CC now, break it!",
+      "Split phase — kill right then left empowered, leave center alive!"
+    ]
+  }
+]

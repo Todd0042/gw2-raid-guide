@@ -3,89 +3,236 @@
     "Conjured Amalgamate": {
       "major_mechanics": [
         {
-          "name": "Arm Breaks",
-          "when": "Occurs during each damage phase when the boss exposes its arms.",
-          "watch_for": "The Amalgamate raises its arms and glowing weak points appear on each one.",
-          "what_to_do": "Split into left and right groups, break both arms quickly to expose the core.",
-          "failure": "If arms are not broken in time, the phase ends early and the fight drags on.",
-          "common_mistakes": "Groups unevenly split; players attacking the wrong arm; ignoring add pressure."
+          "name": "Arm Phases & Add Spawns",
+          "when": "Throughout the fight. The boss alternates smashing one of four arena tiles. The squad stacks on the middle two tiles, starting on the right by convention.",
+          "watch_for": "The boss's arm slamming down on an arena tile. The first smash spawns Sword adds; the second smash spawns Shield adds with defiance bars.",
+          "what_to_do": "Stack on the middle two tiles. Dodge or use defensive skills to avoid the initial arm smash knockdown. Kill Sword adds immediately — use pull skills (e.g. Into the Void) to group them. Kill Shield adds and break their defiance bars using saved Conjured Slash SAKs. Save the last five Sword Bubbles collected for the next hand phase for maximum value.",
+          "failure": "Letting Swords and Shields survive too long causes them to walk toward each other and merge into Warriors, which have higher health and deal more damage.",
+          "common_mistakes": "Not grouping Sword adds for cleave; wasting Conjured Slash SAKs on Sword adds instead of saving them to break Shield defiance bars."
         },
         {
-          "name": "Conjured Shields",
-          "when": "Spawn during the arm phases and before core exposure.",
-          "watch_for": "Floating shields appear around the arena with glowing protective barriers.",
-          "what_to_do": "Break the shields quickly to prevent them from blocking damage to arms or the core.",
-          "failure": "Shields block critical damage windows, causing phase failures.",
-          "common_mistakes": "Players tunneling the boss; ignoring shield spawns; poor target prioritization."
+          "name": "SAK System (Conjured Slash & Conjured Protection)",
+          "when": "SAKs are gained by killing Sword adds (Conjured Slash) and Shield adds (Conjured Protection). Used to negate specific mechanics.",
+          "watch_for": "Conjured Slash SAK (from Sword add kills) — used to break Shield add defiance bars and deal burst damage. Conjured Protection SAK (from Shield add kills) — used to negate Junk Wall and Thunderhead Clap.",
+          "what_to_do": "Assign two dedicated Collectors to gather orbs during collection phases. The Sword Collector gathers four Sword Bubbles and uses Conjured Slash on the fifth, repeating the cycle. The Shield Collector saves all Conjured Protection stacks for Junk Wall and Thunderhead Clap. Do not use Protection SAKs carelessly — they are required for survival mechanics.",
+          "failure": "Using Protection SAKs at the wrong time leaves the squad unprotected against Junk Wall or Thunderhead Clap, causing mass downs or wipes.",
+          "common_mistakes": "Random players picking up SAK orbs instead of designated Collectors; using Conjured Protection against Junk Wall and having none left for Thunderhead Clap."
         },
         {
-          "name": "Orb Delivery",
-          "when": "Occurs during each core phase after both arms are broken.",
-          "watch_for": "Orbs dropping from the sky and glowing collection points on the platform.",
-          "what_to_do": "Pick up orbs and deliver them to the designated spots to weaken the boss.",
-          "failure": "Insufficient orb deliveries result in a shortened or failed burn phase.",
-          "common_mistakes": "Players dropping orbs; multiple players grabbing the same orb; inefficient routing."
+          "name": "Orb Delivery (Collection Phase)",
+          "when": "Occurs after each arm is destroyed. Three types of orbs fly in from behind the platform.",
+          "watch_for": "Three orb types: purple Damage Bubbles (damage players on contact), green Sword Bubbles (white line inside — grant Conjured Slash), green Shield Bubbles (white outline — grant Conjured Protection). Two Collectors move to intercept them before they reach the boss.",
+          "what_to_do": "Dedicated Collectors move to intercept orbs mid-flight, preventing them from reaching the boss. Damage Bubbles must be avoided; Sword and Shield Bubbles must be collected by their respective assigned Collector. Orbs that reach the boss unintercepted grant Conjured Amalgamate buffs.",
+          "failure": "Uncollected Sword and Shield Bubbles reaching the boss grant it additional strength. Damage Bubbles hitting players deal heavy damage.",
+          "common_mistakes": "Collectors walking into Damage Bubbles while intercepting; non-Collectors picking up orbs and disrupting SAK economy."
+        },
+        {
+          "name": "Junk Wall",
+          "when": "Occurs after collection phase following the destruction of each arm. Originates from the side of the destroyed arm and sweeps across the platform. If both arms are destroyed, the wall returns from the opposite direction.",
+          "watch_for": "A wall of debris advancing across the platform from the arm's side.",
+          "what_to_do": "Use saved Conjured Protection SAKs to block the wall and prevent deaths. High-DPS groups that kill the boss before the wall returns need only one set of shields. Lower-DPS groups reposition to the opposite side of the platform to use one shield set against both passes.",
+          "failure": "A Junk Wall hitting players without Conjured Protection active deals lethal damage to the squad.",
+          "common_mistakes": "Not having Conjured Protection ready when the wall arrives; lower-DPS groups not repositioning to handle the returning wall."
+        },
+        {
+          "name": "Thunderhead Clap (50% HP)",
+          "when": "Triggers at exactly 50% boss HP. The boss becomes invulnerable.",
+          "watch_for": "The boss animation for Thunderhead Clap — it instantly downs every player on the platform.",
+          "what_to_do": "Use saved Conjured Protection SAKs to negate the Thunderhead Clap. Alternatively, players with defensive skills (e.g., Rebound!) can survive it. This is the primary reason to save Shield stacks from the first half of the fight.",
+          "failure": "Without Conjured Protection, every player is downed simultaneously, causing a squad wipe.",
+          "common_mistakes": "Spending all Conjured Protection SAKs on Junk Walls and having none available for Thunderhead Clap."
+        },
+        {
+          "name": "Warriors (Merged Adds)",
+          "when": "Occurs when Sword and Shield adds are not killed quickly enough and walk toward each other.",
+          "watch_for": "Sword and Shield adds moving toward each other and merging into larger Warrior enemies.",
+          "what_to_do": "Prevent merging entirely by killing adds as soon as they spawn. If Warriors do appear, eliminate them immediately — they require CC and deal significantly more damage than their component adds.",
+          "failure": "Warriors left alive create sustained pressure that disrupts the orb collection phase and SAK economy.",
+          "common_mistakes": "Letting adds live while the group chases DPS on the boss; not using pull skills to group Sword adds for fast cleave."
         }
       ],
-      "minor_mechanics": []
+      "minor_mechanics": [
+        {
+          "name": "25% Phase (Second Arm Respawn)",
+          "summary": "At 25% HP, both arms respawn at 50% of their HP. Killing each arm removes an additional 10% from the boss, leaving 5% remaining. If the second arm takes too long, the first arm respawns again."
+        },
+        {
+          "name": "Initial Smash Knockdown",
+          "summary": "The first arm smash at the start of the fight knocks down players unless dodged or negated with a defensive skill. Position on the middle two tiles and be ready to dodge the initial slam."
+        }
+      ]
     },
     "Twin Largos (Nikare & Kenut)": {
       "major_mechanics": [
         {
-          "name": "Bubble Pulls",
-          "when": "Occurs throughout the fight, especially during high-pressure phases.",
-          "watch_for": "Large water bubbles forming around players and pulling them inward.",
-          "what_to_do": "Dodge or move out of the bubble radius before being pulled in.",
-          "failure": "Being pulled into a bubble can immobilize players and lead to lethal follow-up damage.",
-          "common_mistakes": "Players dodging too late; stacking too tightly; ignoring bubble spawn points."
+          "name": "Split Platform Structure & Phase Order",
+          "when": "The encounter is divided into four phases. The squad splits across two separate platforms in Phases 3 and 4.",
+          "watch_for": "Phase 1: Nikare alone (100%–50%). Phase 2: Kenut alone (100%–50%). Phase 3: Both active simultaneously on split platforms (50%–25%). Phase 4: Both active simultaneously on split platforms (25%–0%).",
+          "what_to_do": "In Phases 1 and 2, the full squad handles each boss sequentially. In Phases 3 and 4, split the squad: one group handles Nikare on their platform, the other handles Kenut on theirs. Coordinate HP across both bosses — if one side kills their boss while the other is far behind, the encounter becomes significantly harder.",
+          "failure": "Uncoordinated kills leave the surviving boss with full attention needed from both groups. Poor split balance leads to wipes in Phase 4.",
+          "common_mistakes": "Not assigning a clear split before Phase 3; one side burning too fast without communicating HP to the other group."
         },
         {
-          "name": "Platform Drops",
-          "when": "Happens during the final phase as the arena begins to collapse.",
-          "watch_for": "Platforms glowing red and shaking before falling away.",
-          "what_to_do": "Move quickly to safe platforms while maintaining DPS on the active boss.",
-          "failure": "Falling results in instant death and reduces group DPS significantly.",
-          "common_mistakes": "Players waiting too long; misjudging jump distances; splitting from the group."
+          "name": "Aquatic Detainment (Nikare)",
+          "when": "Every 23 seconds. Nikare creates small orange circles under every player.",
+          "watch_for": "Small orange circles appearing beneath every player's feet.",
+          "what_to_do": "Dodge, block, or use a stun break to escape the orange circle before it triggers. Being caught floats the player airborne for 4 seconds while dealing ticking damage.",
+          "failure": "Players caught in Aquatic Detainment are floated and take 4 seconds of ticking damage, reducing their effective DPS window and exposing them to follow-up mechanics.",
+          "common_mistakes": "Burning dodges too early and having none available when Aquatic Detainment activates; ignoring it and soaking unnecessary damage."
         },
         {
-          "name": "Tidal Waves",
-          "when": "Triggered by Kenut at regular intervals.",
-          "watch_for": "A massive wave forming behind Kenut and sweeping across the arena.",
-          "what_to_do": "Dodge through the wave or move to a safe zone to avoid heavy damage.",
-          "failure": "Being hit by the wave deals massive damage and can knock players off platforms.",
-          "common_mistakes": "Players dodging too early; standing behind Kenut; ignoring wave direction."
+          "name": "Geyser (Nikare)",
+          "when": "Every 10 seconds when no other mechanics are active. Targets two random players with large orange circles.",
+          "watch_for": "Large orange circles appearing under two random players, followed by a knockback explosion.",
+          "what_to_do": "Move or dodge out of the orange circle before it explodes. Being hit applies Waterlogged stacks and risks being knocked off the platform.",
+          "failure": "Being knocked off the platform by a Geyser is lethal. Stacking Waterlogged from repeated hits is dangerous — 10 stacks causes instant death.",
+          "common_mistakes": "Standing still when the orange circle appears; not monitoring Waterlogged stack count."
+        },
+        {
+          "name": "Tidal Pool (Nikare)",
+          "when": "Every 13 seconds. Applied as a timed debuff to a non-tank player.",
+          "watch_for": "A debuff on a non-tank player. After 5 seconds, the player's position becomes an expanding water AoE.",
+          "what_to_do": "The targeted player immediately moves to the edge of the platform to drop the Tidal Pool away from the group. The pool applies Waterlogged to anyone standing in it.",
+          "failure": "A Tidal Pool dropped in the center of the platform applies Waterlogged to the entire stack, rapidly accumulating toward the 10-stack instant-death threshold.",
+          "common_mistakes": "Targeted player not reacting fast enough and dropping the pool in the stack; dropping the pool near the platform edge in a way that blocks movement."
+        },
+        {
+          "name": "Vapor Rush (Nikare)",
+          "when": "Every 23 seconds. Nikare performs three fast dash attacks.",
+          "watch_for": "An arrow indicator at Nikare's feet telegraphing dash direction. The first two dashes target the furthest player; the third targets the tank.",
+          "what_to_do": "Watch the arrow indicator and sidestep each dash. The furthest player should be aware they will be targeted twice. The tank positions to take the third dash safely.",
+          "failure": "Being hit by Vapor Rush deals heavy damage and applies conditions.",
+          "common_mistakes": "Standing in the dash path after seeing the arrow indicator; the furthest player not moving after the first dash and being hit by the second."
+        },
+        {
+          "name": "Sea Swell (Kenut)",
+          "when": "Kenut pulses an orange warning circle then blasts a water swell across the platform.",
+          "watch_for": "An orange circle pulse from Kenut followed immediately by a large wave sweeping the platform.",
+          "what_to_do": "Jump over the wave, dodge through it, or use an invulnerability or block skill to negate it. Do not stand and take the hit — each player hit grants Kenut a protective stack.",
+          "failure": "Players hit by Sea Swell take heavy damage, are launched, and grant Kenut protective stacks per player hit, reducing the squad's damage output.",
+          "common_mistakes": "Dodging too early and having the dodge expire before the wave arrives; standing behind Kenut where the wave originates."
+        },
+        {
+          "name": "Vapor Jet (Kenut)",
+          "when": "Every 20 seconds. Kenut teleports to the furthest player.",
+          "watch_for": "Kenut teleporting to the furthest player's position and unleashing a small orange rectangular attack in front of her.",
+          "what_to_do": "Assign one player to predictably kite this by staying as the furthest player at a consistent position. That player dodges or sidesteps the rectangular attack. Being hit steals boons and applies Poison.",
+          "failure": "Boon strips from repeated Vapor Jet hits compound with other boon-removal mechanics and weaken the squad significantly.",
+          "common_mistakes": "No designated kiter assigned, causing Kenut to teleport randomly into the stack; the kiter not sidestepping the rectangular telegraph."
+        },
+        {
+          "name": "Cyclone Burst (Kenut)",
+          "when": "Water flows from Kenut creating various circles on the platform.",
+          "watch_for": "Multiple circles appearing across the platform from Kenut.",
+          "what_to_do": "Sidestep the circles rather than using dodge or defensive cooldowns — the damage is moderate and those resources are better saved for Sea Swell and Vapor Jet. Each hit grants Kenut a protective stack.",
+          "failure": "Standing in Cyclone Burst circles applies bleeds and grants Kenut protective stacks, reducing damage dealt.",
+          "common_mistakes": "Wasting dodge rolls on Cyclone Burst and having none available for Sea Swell."
+        },
+        {
+          "name": "Aquatic Barrage (Phases 3 & 4)",
+          "when": "During Phase 3 (50%–25%) and Phase 4 (25%–0%). Both bosses simultaneously gain defiance bars.",
+          "watch_for": "Both bosses spinning centrally and shooting water bolts across the platform. In Phase 4, they also hurl projectiles cross-platform causing daze.",
+          "what_to_do": "Break both defiance bars quickly and simultaneously using squad CC. In Phase 4, use projectile destruction skills to mitigate cross-platform projectiles causing daze.",
+          "failure": "Failing to break the defiance bars allows Aquatic Barrage to continue dealing sustained heavy damage. Phase 4 cross-platform projectiles cause daze that disrupts DPS and CC timing.",
+          "common_mistakes": "Not coordinating CC between split groups; running out of CC skills because they were used on individual boss mechanics earlier."
+        },
+        {
+          "name": "Aquatic Aura (Phase 4)",
+          "when": "Active throughout Phase 4 (25%–0%). Applies continuously to all players.",
+          "watch_for": "Aquatic Aura debuff stacking on all players, increasing incoming damage by 2% every three seconds.",
+          "what_to_do": "Maximize DPS in Phase 4. The longer Phase 4 runs, the more damage the squad takes from all sources. Condition cleansing remains critical as Waterlogged stacks compound with Aquatic Aura pressure.",
+          "failure": "A slow Phase 4 with high Aquatic Aura stacks plus accumulated Waterlogged causes the squad to take lethal incoming damage.",
+          "common_mistakes": "Treating Phase 4 like the earlier phases in terms of pacing; not cleansing conditions aggressively enough."
+        },
+        {
+          "name": "Water Tornadoes",
+          "when": "Three tornadoes path across Kenut's platform, moving approximately clockwise from corner to corner.",
+          "watch_for": "Three rotating water tornadoes moving in a clockwise pattern across the platform.",
+          "what_to_do": "Track tornado positions and move to avoid their paths. Being hit applies damage and conditions including Waterlogged.",
+          "failure": "Repeated tornado hits rapidly stack Waterlogged, moving toward the 10-stack instant-death threshold.",
+          "common_mistakes": "Standing still and letting a tornado catch up; not watching tornado pathing while managing other Kenut mechanics."
         }
       ],
-      "minor_mechanics": []
+      "minor_mechanics": [
+        {
+          "name": "Waterlogged",
+          "summary": "A persistent debuff applied by water attacks, boss abilities, and platform hazards. At 10 stacks the player dies instantly. Condition cleansing is essential throughout all phases. Monitor your stack count."
+        }
+      ]
     },
     "Qadim": {
       "major_mechanics": [
         {
-          "name": "Elemental Essences",
-          "when": "Occurs during each pylon phase as players defeat elemental creatures.",
-          "watch_for": "Essences dropping from defeated elementals and glowing with their respective colors.",
-          "what_to_do": "Collect essences and deliver them to pylons to empower them and progress the fight.",
-          "failure": "Insufficient essence delivery prolongs the phase and increases arena pressure.",
-          "common_mistakes": "Players forgetting to pick up essences; delivering to the wrong pylon; poor routing."
+          "name": "Pylon Structure & Lair Phases",
+          "when": "The fight is divided into three pylon phases at 100%–66%, 66%–33%, and 33%–0% HP. At each threshold Qadim jumps to the corresponding pylon platform.",
+          "watch_for": "Qadim jumping to a pylon platform. Each pylon contains a lair guardian: Hydra (Phase 1), Apocalypse Bringer/Destroyer (Phase 2), Wyvern Matriarch and Patriarch (Phase 3).",
+          "what_to_do": "Split the squad: the majority fights the lair guardian on the pylon platform while a dedicated kiter remains on Qadim's main platform managing Lava Elementals. Defeat the lair guardian to complete the lamp and phase Qadim back to the main platform. After each lamp completion, an allied NPC deals massive damage to the lair creature, assisting the kill.",
+          "failure": "Failing to defeat the lair guardian prevents Qadim from phasing. If no players are on Qadim's platform, he instantly gains 5 Fiery Empowerment stacks.",
+          "common_mistakes": "Leaving Qadim's platform entirely unattended during lair phases; not having a lamp strategy prepared for each lair guardian's mechanics."
         },
         {
-          "name": "Pylon Control",
-          "when": "Active throughout the encounter during each pylon phase.",
-          "watch_for": "Pylons activating with beams connecting them to Qadim.",
-          "what_to_do": "Assign players to each pylon to maintain control and prevent Qadim from gaining strength.",
-          "failure": "Losing control of pylons causes Qadim to gain stacks and deal more damage.",
-          "common_mistakes": "Players leaving pylons unattended; insufficient CC on pylon adds; poor communication."
+          "name": "Lava Elemental Kiting",
+          "when": "Active whenever the squad is on Qadim's main platform. Lava Elementals spawn and move toward Qadim.",
+          "watch_for": "Lava Elementals spawning and walking toward Qadim. Each one that reaches him grants a stack of Fiery Empowerment (+20% attack speed and damage per stack).",
+          "what_to_do": "Assign a dedicated kiter (typically Rifle Deadeye or another ranged DPS) to stay on Qadim's platform and eliminate all Lava Elementals before they reach the boss. The kiter must engage and kill elementals continuously while the rest of the squad handles lair guardians. Greater Magma Elementals are invulnerable until their summoner reaches 50% HP or leaves range.",
+          "failure": "Each Lava Elemental reaching Qadim grants Fiery Empowerment. Multiple stacks make Qadim's attacks lethal for the squad during main platform phases.",
+          "common_mistakes": "No dedicated kiter assigned; kiter leaving Qadim's platform during lair phases, allowing elementals to reach the boss unchecked."
         },
         {
-          "name": "Wyvern and Hydra Adds",
-          "when": "Spawn during each pylon phase and during transitions.",
-          "watch_for": "Large wyverns and hydras entering the arena with distinct animations.",
-          "what_to_do": "Kill these adds quickly to reduce arena pressure and prevent lethal attacks.",
-          "failure": "Unmanaged adds overwhelm the group with AoEs and heavy damage.",
-          "common_mistakes": "Players tunneling Qadim; ignoring add mechanics; poor positioning."
+          "name": "Flame Wave",
+          "when": "Occurs as part of Qadim's repeating attack pattern (third attack in the cycle: Slash → Slash → Flame Wave → Slash → Flame Dance).",
+          "watch_for": "Qadim winding up for a sweeping attack that knocks players backward.",
+          "what_to_do": "Evade the Flame Wave by dodging or repositioning before it hits. Being struck knocks the player backward, interrupting positioning and potentially pushing them off the platform.",
+          "failure": "Players knocked backward by Flame Wave can be pushed into hazards or off the platform.",
+          "common_mistakes": "Not tracking Qadim's attack pattern and being caught off guard by the wave; dodging too early and being hit anyway."
+        },
+        {
+          "name": "Flame Dance",
+          "when": "Occurs as the fifth attack in Qadim's repeating attack pattern.",
+          "watch_for": "Leaping flames appearing across lines on the platform floor. Lit lines are hazardous; unlit lines are safe.",
+          "what_to_do": "Stand on unlit platform lines. Do not stand on or move across lit lines during the animation.",
+          "failure": "Standing on a lit flame line deals heavy damage.",
+          "common_mistakes": "Repositioning during Flame Dance and accidentally moving onto a lit line; not identifying safe lines quickly enough."
+        },
+        {
+          "name": "Shockwave & Breakbar",
+          "when": "Occurs after Qadim's fourth attack in the repeating pattern. A second Shockwave triggers invulnerability and a defiance bar.",
+          "watch_for": "First Shockwave: orange circle collapsing inward — dodge or jump. Second Shockwave: Qadim becomes invulnerable and gains a defiance bar.",
+          "what_to_do": "Dodge or jump over the first Shockwave to avoid heavy damage and knockback. Break Qadim's defiance bar during the invulnerability window. If the break bar is not broken, Qadim deals massive damage to the squad. As an emergency measure, retreat to Pyre platforms, but breaking the bar is the standard strategy.",
+          "failure": "Failing to break the defiance bar results in massive squad damage. Failing the first Shockwave dodge deals heavy damage and knockback.",
+          "common_mistakes": "Not saving sufficient CC for the breakbar; trying to dodge the first Shockwave too late."
+        },
+        {
+          "name": "Pyres & Fireballs",
+          "when": "Three Pyres spawn around the arena perimeter. Each grants a specific buff; unkilled Pyres spawn bouncing Fireballs continuously.",
+          "watch_for": "Three Pyres: North-West (Aegis), South-West (Vigor), East (Stability). Bouncing Fireballs from any Pyre that is not killed.",
+          "what_to_do": "Choose which Pyres to kill based on squad composition (condition groups kill Vigor Pyre; power groups kill Aegis Pyre; CC-weak groups kill Stability Pyre). Kill chosen Pyres to stop their Fireball spawns. Avoid bouncing Fireballs from remaining unkilled Pyres — they down players on contact.",
+          "failure": "Unkilled Pyres spawn Fireballs continuously that instantly down players on contact.",
+          "common_mistakes": "Not assigning Pyre targets before the fight; walking into Fireball paths while focused on other mechanics."
+        },
+        {
+          "name": "Red Circle Teleport",
+          "when": "Occurs when Qadim moves between platforms (at lair transitions). Legendary enemies gain red circles at their second breakbar activation.",
+          "watch_for": "Red circles appearing beneath players on the current platform when a transition is about to occur.",
+          "what_to_do": "Move off any red circle within 2 seconds. Players who remain in the red circle are teleported to Qadim's new location, separated from the group.",
+          "failure": "Being teleported into Qadim's location separated from the group often results in death from Lava Elementals and Qadim's attacks with no support.",
+          "common_mistakes": "Not noticing red circles during the chaos of a lair guardian kill; being too slow to step out within the 2-second window."
         }
       ],
-      "minor_mechanics": []
+      "minor_mechanics": [
+        {
+          "name": "Tanking (Proximity-Based Aggro)",
+          "summary": "Qadim's aggro is proximity-based — the closest player is always targeted. The designated tank maintains position at Qadim's center to control attack direction away from the group. Proximity tanking is easily disturbed by players moving too close, so the group must maintain distance from the boss."
+        },
+        {
+          "name": "Lamp System",
+          "summary": "Three mandatory lamp completions occur at fight start, 66%, and 33% HP. A sub-group traverses a lamp room defeating mobs, then signals the squad to open the lamp. One player gains a green circle that ports remaining lamp players and the allied creature to the main arena, dealing massive damage to the lair guardian."
+        },
+        {
+          "name": "Phase 3 Wyvern Split",
+          "summary": "In Phase 3, Wyvern Matriarch and Patriarch spawn simultaneously and require two tanks: one isolates the Matriarch, one handles the Patriarch with the group. The Matriarch occasionally pushes players off the platform — tank defensively."
+        }
+      ]
     }
   }
 }
