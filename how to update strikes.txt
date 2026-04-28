@@ -1,0 +1,4 @@
+Quick Play — Boneskinner, Whisper of Jormag, and the 6 EoD/SotO strikes
+Strike Missions — "Icebrood Saga" heading, then Shiverpeaks Pass, Voice and Claw of the Fallen, Fraenir of Jormag
+Spirit Vale through Mount Balrior — Wings 1–8
+If you add more non-quick-play strike missions later, just add a new JSON file, generator, and section heading in DrawStrikeMissionsTab().
